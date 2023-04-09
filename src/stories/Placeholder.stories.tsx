@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ComponentMeta } from "@storybook/react";
+import { run as runHolder } from "holderjs";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -11,6 +12,14 @@ export default {
   subcomponents: {
     PlaceholderButton: Placeholder.Button,
   },
+  decorators: [
+    (Story) => {
+      useEffect(() => {
+        runHolder();
+      }, []);
+      return <Story />;
+    },
+  ],
 } as ComponentMeta<typeof Placeholder>;
 
 export const Basic = () => (
@@ -62,19 +71,19 @@ export const Width = () => (
 );
 
 export const Color = () => (
-    <>
-      <Placeholder xs={12} />
+  <>
+    <Placeholder xs={12} />
 
-      <Placeholder xs={12} bg="primary" />
-      <Placeholder xs={12} bg="secondary" />
-      <Placeholder xs={12} bg="success" />
-      <Placeholder xs={12} bg="danger" />
-      <Placeholder xs={12} bg="warning" />
-      <Placeholder xs={12} bg="info" />
-      <Placeholder xs={12} bg="light" />
-      <Placeholder xs={12} bg="dark" />
-    </>
-  );
+    <Placeholder xs={12} bg="primary" />
+    <Placeholder xs={12} bg="secondary" />
+    <Placeholder xs={12} bg="success" />
+    <Placeholder xs={12} bg="danger" />
+    <Placeholder xs={12} bg="warning" />
+    <Placeholder xs={12} bg="info" />
+    <Placeholder xs={12} bg="light" />
+    <Placeholder xs={12} bg="dark" />
+  </>
+);
 
 export const Sizing = () => (
   <>

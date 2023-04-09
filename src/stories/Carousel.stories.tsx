@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { run as runHolder } from "holderjs";
 
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from "react-bootstrap/Carousel";
 
 export default {
   title: "Components/Carousel",
@@ -10,11 +11,19 @@ export default {
     CarouselItem: Carousel.Item,
     CarouselCaption: Carousel.Caption,
   },
+  decorators: [
+    (Story) => {
+      useEffect(() => {
+        runHolder();
+      }, []);
+      return <Story />;
+    },
+  ],
 } as ComponentMeta<typeof Carousel>;
 
 const Template: ComponentStory<typeof Carousel> = (props) => (
   <Carousel {...props}>
-    <Carousel.Item >
+    <Carousel.Item>
       <img
         className="d-block w-100"
         src="holder.js/800x400?text=First slide&bg=373940"
@@ -25,7 +34,7 @@ const Template: ComponentStory<typeof Carousel> = (props) => (
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </Carousel.Caption>
     </Carousel.Item>
-    <Carousel.Item >
+    <Carousel.Item>
       <img
         className="d-block w-100"
         src="holder.js/800x400?text=Second slide&bg=282c34"
@@ -61,19 +70,20 @@ export const Controlled: ComponentStory<typeof Carousel> = () => {
       onSelect={(selectedIndex) => setIndex(selectedIndex)}
     ></Template>
   );
-}
+};
 
-export const CrossFade:ComponentStory<typeof Carousel> = Template.bind({});
+export const CrossFade: ComponentStory<typeof Carousel> = Template.bind({});
 
 CrossFade.args = {
   fade: true,
 };
 
-export const NoTransitionAnimation:ComponentStory<typeof Carousel> = Template.bind({});
+export const NoTransitionAnimation: ComponentStory<typeof Carousel> =
+  Template.bind({});
 
 NoTransitionAnimation.args = {
-    slide:false,
-}
+  slide: false,
+};
 
 export const IndividualItemIntervals: ComponentStory<typeof Carousel> = () => (
   <Carousel>

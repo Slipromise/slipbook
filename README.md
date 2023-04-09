@@ -4,7 +4,7 @@
 
 ## 代辦事項
 
-- [ ] Bootstrap 基本元件
+- [X] Bootstrap 基本元件
 - [ ] Bootstrap 切換主題
 - [ ] i18next 整合
 - [ ] nine slice border scss
@@ -15,3 +15,4 @@
 - [ ] storybook links
 - [ ] storybook interaction
 - [ ] storybook chromatic
+- [ ] 升級storybook到7

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { run as runHolder } from "holderjs";
 
 import Toast from "react-bootstrap/Toast";
 import ToastHeader from "react-bootstrap/ToastHeader";
@@ -17,6 +18,14 @@ export default {
     ToastBody,
     ToastContainer,
   },
+  decorators: [
+    (Story) => {
+      useEffect(() => {
+        runHolder();
+      }, []);
+      return <Story />;
+    },
+  ],
 } as ComponentMeta<typeof Toast>;
 
 export const Basic = () => (

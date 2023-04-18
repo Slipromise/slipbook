@@ -1,7 +1,6 @@
-// import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import "../src/styles/index.scss";
-import "holderjs/holder";
-// import { withThemeByDataAttribute } from "@storybook/addon-styling";
+import { withThemeByDataAttribute } from "@storybook/addon-styling";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,12 +15,12 @@ export const parameters = {
 // snipped for brevity
 
 export const decorators = [
-  // withThemeByDataAttribute({
-  //   themes: {
-  //     light: "light",
-  //     dark: "dark",
-  //   },
-  //   defaultTheme: "light",
-  //   attributeName: "data-bs-theme",
-  // }),
+  withThemeByDataAttribute({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+    attributeName: "data-bs-theme",
+  }),
 ];

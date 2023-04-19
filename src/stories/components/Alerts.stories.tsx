@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Alert from "react-bootstrap/Alert";
 
 export default {
-  title: "Components/Alert",
   component: Alert,
   subcomponents: { AlertLink: Alert.Link, AlertHeading: Alert.Heading },
 } as ComponentMeta<typeof Alert>;

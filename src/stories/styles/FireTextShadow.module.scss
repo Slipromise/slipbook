@@ -1,0 +1,43 @@
+@use "../../styles/mixins/fire-text-shadow" as *;
+
+.normal {
+    @include fire-text-shadow
+}
+
+.animation {
+    span {
+        animation-name: fireTextAni;
+        animation-duration: 500ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+
+        &:nth-child(even) {
+            animation-direction: reverse;
+        }
+
+    }
+
+}
+
+// TODO: 微調顏色
+.variants {
+    @include fire-text-shadow(#c3eccf #8fe599 #5be764 #1dc723 #0e9504, 60deg)
+}
+
+@keyframes fireTextAni {
+    0% {
+        @include fire-text-shadow
+    }
+
+    33% {
+        @include fire-text-shadow
+    }
+
+    66% {
+        @include fire-text-shadow
+    }
+
+    100% {
+        @include fire-text-shadow
+    }
+}

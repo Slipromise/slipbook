@@ -8,7 +8,6 @@ import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Dropdown from "react-bootstrap/esm/Dropdown";
 
 export default {
-  title: "Components/Button",
   component: Button,
   subcomponents: { ButtonGroup, ButtonToolbar, DropdownButton, Dropdown },
 } as ComponentMeta<typeof Button>;
@@ -130,28 +129,29 @@ export const ButtonGroupSizingExample: ComponentStory<typeof Button> = () => (
   </>
 );
 
-export const DropdownButtonExample: ComponentStory<typeof DropdownButton> =
-  () => (
-    <>
-      <ButtonGroup size="lg" className="mb-2">
-        <Button>Left</Button>
-        <Button>Middle</Button>
-        <Button>Right</Button>
-      </ButtonGroup>
-      <br />
-      <ButtonGroup className="mb-2">
-        <Button>Left</Button>
-        <Button>Middle</Button>
-        <Button>Right</Button>
-      </ButtonGroup>
-      <br />
-      <ButtonGroup size="sm">
-        <Button>Left</Button>
-        <Button>Middle</Button>
-        <Button>Right</Button>
-      </ButtonGroup>
-    </>
-  );
+export const DropdownButtonExample: ComponentStory<
+  typeof DropdownButton
+> = () => (
+  <>
+    <ButtonGroup size="lg" className="mb-2">
+      <Button>Left</Button>
+      <Button>Middle</Button>
+      <Button>Right</Button>
+    </ButtonGroup>
+    <br />
+    <ButtonGroup className="mb-2">
+      <Button>Left</Button>
+      <Button>Middle</Button>
+      <Button>Right</Button>
+    </ButtonGroup>
+    <br />
+    <ButtonGroup size="sm">
+      <Button>Left</Button>
+      <Button>Middle</Button>
+      <Button>Right</Button>
+    </ButtonGroup>
+  </>
+);
 
 export const ButtonGroupVerticalExample: ComponentStory<typeof Button> = () => (
   <ButtonGroup vertical>

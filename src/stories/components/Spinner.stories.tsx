@@ -1,10 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 
 export default {
-  title: "Components/Spinner",
   component: Spinner,
 } as ComponentMeta<typeof Spinner>;
 
@@ -31,11 +30,11 @@ const Template: ComponentStory<typeof Spinner> = (props) => (
 
 export const Basic = Template.bind({});
 
-export const Sizing = Template.bind({})
+export const Sizing = Template.bind({});
 
 Sizing.args = {
-    size:'sm'
-}
+  size: "sm",
+};
 
 export const Accessibility = () => (
   <Spinner animation="border" role="status">

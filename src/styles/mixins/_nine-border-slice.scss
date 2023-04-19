@@ -1,0 +1,12 @@
+@mixin nine-border-slice($imagePath, $slice) {
+    $width: ();
+
+    @for $i from 1 through length($slice) {
+        $width: append($width, nth($slice, $i) + px);
+    }
+
+    border-image-source: url($imagePath);
+    border-image-slice: $slice fill;
+    border-width: $width;
+    border-style: solid;
+}

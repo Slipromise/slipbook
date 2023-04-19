@@ -8,7 +8,6 @@ import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
 
 export default {
-  title: "Components/Card",
   component: Card,
   subcomponents: {
     CardBody: Card.Body,

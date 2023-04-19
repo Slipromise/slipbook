@@ -16,7 +16,6 @@ import * as yup from "yup";
 import { Formik } from "formik";
 
 export default {
-  title: "Components/Form",
   component: Form,
   subcomponents: {
     FormGroup: Form.Group,

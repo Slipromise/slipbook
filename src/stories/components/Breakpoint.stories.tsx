@@ -4,7 +4,6 @@ import { ComponentMeta } from "@storybook/react";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
 
 export default {
-  title: "Components/ThemeProvider",
   component: ThemeProvider,
 } as ComponentMeta<typeof ThemeProvider>;
 

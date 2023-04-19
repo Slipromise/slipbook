@@ -1,12 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Badge from 'react-bootstrap/Badge'
+import Badge from "react-bootstrap/Badge";
 
 export default {
-    title:'Components/Badge',
-    component:Badge,
-} as ComponentMeta<typeof Badge>
+  component: Badge,
+} as ComponentMeta<typeof Badge>;
 
 const Template: ComponentStory<typeof Badge> = (props) => (
   <div>

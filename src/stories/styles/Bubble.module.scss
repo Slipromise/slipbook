@@ -1,0 +1,37 @@
+@use "../../styles/mixins/bubble-random" as *;
+
+.normal {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    @include bubble-random;
+}
+
+.stereoscopic {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at 0% 0%,
+            rgb(3, 110, 250),
+            rgb(5, 232, 164));
+    box-shadow: 0 -2vmin 4vmin rgb(26, 81, 165) inset,
+        0 1vmin 4vmin rgb(54, 131, 71) inset,
+        0 -2vmin 7vmin rgb(66, 131, 121) inset;
+    @include bubble-random;
+}
+
+.animation {
+    animation-name: bubbleAni;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bubbleAni {
+    $count: 7;
+    $space: 100 / ($count + 1);
+
+    @for $i from 1 through $count {
+        #{$space * $i * 1% } {
+            @include bubble-random;
+        }
+    }
+}

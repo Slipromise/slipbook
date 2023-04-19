@@ -7,9 +7,9 @@
 - [X] Bootstrap 基本元件
 - [X] Bootstrap 切換主題
 - [ ] i18next 整合
-- [ ] nine slice border scss
-- [ ] bubble animation scss
-- [ ] fire text scss
+- [X] nine slice border scss
+- [X] bubble animation scss
+- [X] fire text scss
 - [ ] glare text scss
 - [ ] storybook accessibility
 - [ ] storybook links
@@ -17,3 +17,4 @@
 - [ ] storybook chromatic
 - [X] 升級storybook到7
 - [ ] 添加dark & light 主題
+- [ ] 樣板調動控制

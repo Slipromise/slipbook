@@ -7,7 +7,6 @@ import Card from "react-bootstrap/Card";
 import Placeholder from "react-bootstrap/Placeholder";
 
 export default {
-  title: "Components/Placeholder",
   component: Placeholder,
   subcomponents: {
     PlaceholderButton: Placeholder.Button,

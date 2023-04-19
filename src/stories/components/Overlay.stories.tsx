@@ -11,7 +11,6 @@ import PopoverHeader from "react-bootstrap/PopoverHeader";
 import { Placement } from "react-bootstrap/esm/types";
 
 export default {
-  title: "Components/Overlay",
   component: Overlay,
   subcomponents: {
     OverlayTrigger,

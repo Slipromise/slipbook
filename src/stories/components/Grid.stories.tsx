@@ -6,7 +6,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 export default {
-  title: "Components/Grid",
   component: Container,
   subcomponents: {
     Row,

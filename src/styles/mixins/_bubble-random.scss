@@ -1,0 +1,9 @@
+@use '../functions/random' as *;
+
+@mixin bubble-random {
+    $top: randomNum(20, 80);
+    $right: randomNum(20, 80);
+    $bottom: randomNum(20, 80);
+    $left: randomNum(20, 80);
+    border-radius: #{$top * 1%} #{(100 - $top) * 1%} #{$bottom * 1%} #{( 100 - $bottom ) * 1%}/ #{$left * 1%} #{$right * 1%} #{(100-$right) * 1%} #{(100-$left) * 1%};
+}

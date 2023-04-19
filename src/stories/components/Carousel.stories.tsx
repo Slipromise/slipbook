@@ -5,7 +5,6 @@ import { run as runHolder } from "holderjs";
 import Carousel from "react-bootstrap/Carousel";
 
 export default {
-  title: "Components/Carousel",
   component: Carousel,
   subcomponents: {
     CarouselItem: Carousel.Item,

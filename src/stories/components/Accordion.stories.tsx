@@ -4,7 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Accordion from "react-bootstrap/Accordion";
 
 export default {
-  title: "Components/Accordion",
   component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 
@@ -58,6 +57,5 @@ AlwaysOpen.args = {
   defaultActiveKey: "0",
   alwaysOpen: true,
 };
-
 
 // TODO: useAccordionButton

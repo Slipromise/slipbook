@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
 
 export default {
-    title:'Components/Offcanvas',
-    component: Offcanvas,
-    subcomponents:{
-        OffcanvasHeader:Offcanvas.Header,
-        OffcanvasTitle:Offcanvas.Title,
-        OffcanvasBody:Offcanvas.Body
-    }
+  component: Offcanvas,
+  subcomponents: {
+    OffcanvasHeader: Offcanvas.Header,
+    OffcanvasTitle: Offcanvas.Title,
+    OffcanvasBody: Offcanvas.Body,
+  },
 } as ComponentMeta<typeof Offcanvas>;
 
 const Template: ComponentStory<typeof Offcanvas> = (props) => {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -37,7 +36,7 @@ const Template: ComponentStory<typeof Offcanvas> = (props) => {
       </Offcanvas>
     </>
   );
-}
+};
 
 export const Basic = Template.bind({});
 
@@ -56,13 +55,12 @@ Placement.args = {
 export const Backdrop = Template.bind({});
 
 Backdrop.args = {
-    scroll: true,
-    backdrop:false,
-}
-
+  scroll: true,
+  backdrop: false,
+};
 
 export const StaticBackdrop = Template.bind({});
 
 StaticBackdrop.args = {
-    backdrop:'static',
-}
+  backdrop: "static",
+};

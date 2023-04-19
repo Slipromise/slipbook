@@ -1,10 +1,10 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroup from "react-bootstrap/ListGroup";
 
 export default {
-    title:'Components/ListGroup'
+  component: ListGroup,
 } as ComponentMeta<typeof ListGroup>;
 
 export const ActiveExample: ComponentStory<typeof ListGroup> = () => (
@@ -28,11 +28,14 @@ export const ActionableExample: ComponentStory<typeof ListGroup> = () => (
     <ListGroup.Item action href="#link2" disabled>
       Link 2
     </ListGroup.Item>
-    <ListGroup.Item action onClick={()=>alert('You clicked the third ListGroupItem')}>
+    <ListGroup.Item
+      action
+      onClick={() => alert("You clicked the third ListGroupItem")}
+    >
       This one is a button
     </ListGroup.Item>
   </ListGroup>
-); 
+);
 
 export const FlushExample: ComponentStory<typeof ListGroup> = () => (
   <ListGroup variant="flush">
@@ -51,7 +54,9 @@ export const NumberedExample: ComponentStory<typeof ListGroup> = () => (
   </ListGroup>
 );
 
-export const HorizontalResponsiveExample: ComponentStory<typeof ListGroup> = () => (
+export const HorizontalResponsiveExample: ComponentStory<
+  typeof ListGroup
+> = () => (
   <>
     {["sm", "md", "lg", "xl", "xxl"].map((breakpoint) => (
       <ListGroup key={breakpoint} horizontal={breakpoint} className="my-2">

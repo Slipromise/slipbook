@@ -1,16 +1,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import SplitButton from 'react-bootstrap/SplitButton';
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import SplitButton from "react-bootstrap/SplitButton";
 import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
 import Button from "react-bootstrap/esm/Button";
 import { DropDirection } from "react-bootstrap/esm/DropdownContext";
 
-
 export default {
-  title: "Components/Dropdown",
   component: Dropdown,
   subcomponents: {
     DropdownButton,
@@ -37,7 +35,9 @@ export const basic: ComponentStory<typeof Dropdown> = () => (
   </Dropdown>
 );
 
-export const DropdownButtonExample: ComponentStory<typeof DropdownButton> = () => (
+export const DropdownButtonExample: ComponentStory<
+  typeof DropdownButton
+> = () => (
   <DropdownButton id="dropdown-basic-button" title="Dropdown button">
     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
     <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
@@ -45,30 +45,31 @@ export const DropdownButtonExample: ComponentStory<typeof DropdownButton> = () =
   </DropdownButton>
 );
 
-export const VariantsDropdownButtonExample: ComponentStory<typeof DropdownButton> =
-  () => (
-    <>
-      {["Primary", "Secondary", "Success", "Info", "Warning", "Danger"].map(
-        (variant) => (
-          <DropdownButton
-            as={ButtonGroup}
-            key={variant}
-            id={`dropdown-variants-${variant}`}
-            variant={variant.toLowerCase()}
-            title={variant}
-          >
-            <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-            <Dropdown.Item eventKey="3" active>
-              Active Item
-            </Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
-          </DropdownButton>
-        )
-      )}
-    </>
-  );
+export const VariantsDropdownButtonExample: ComponentStory<
+  typeof DropdownButton
+> = () => (
+  <>
+    {["Primary", "Secondary", "Success", "Info", "Warning", "Danger"].map(
+      (variant) => (
+        <DropdownButton
+          as={ButtonGroup}
+          key={variant}
+          id={`dropdown-variants-${variant}`}
+          variant={variant.toLowerCase()}
+          title={variant}
+        >
+          <Dropdown.Item eventKey="1">Action</Dropdown.Item>
+          <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
+          <Dropdown.Item eventKey="3" active>
+            Active Item
+          </Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
+        </DropdownButton>
+      )
+    )}
+  </>
+);
 
 export const SplitBasicExample: ComponentStory<typeof Dropdown> = () => (
   <Dropdown as={ButtonGroup}>
@@ -166,7 +167,9 @@ export const DropDirectionExample: ComponentStory<typeof SplitButton> = () => (
   </>
 );
 
-export const MenuAlignEndExample: ComponentStory<typeof DropdownButton> = () => (
+export const MenuAlignEndExample: ComponentStory<
+  typeof DropdownButton
+> = () => (
   <DropdownButton align="end" title="Dropdown end" id="dropdown-menu-align-end">
     <Dropdown.Item eventKey="1">Action</Dropdown.Item>
     <Dropdown.Item eventKey="2">Another action</Dropdown.Item>

@@ -11,7 +11,6 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 export default {
-  title: "Components/Toast",
   component: Toast,
   subcomponents: {
     ToastHeader,

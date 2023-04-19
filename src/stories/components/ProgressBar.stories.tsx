@@ -1,11 +1,10 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 export default {
-    title:'Components/ProgressBar',
-    component:ProgressBar,
+  component: ProgressBar,
 } as ComponentMeta<typeof ProgressBar>;
 
 const Template: ComponentStory<typeof ProgressBar> = (props) => (
@@ -19,11 +18,11 @@ const Template: ComponentStory<typeof ProgressBar> = (props) => (
 
 export const Basic = Template.bind({});
 
-export const WithLabel =  Template.bind({});
+export const WithLabel = Template.bind({});
 
 WithLabel.args = {
-    label:'??%'
-}
+  label: "??%",
+};
 
 export const Striped = Template.bind({});
 
@@ -34,8 +33,8 @@ Striped.args = {
 export const Animated = Template.bind({});
 
 Animated.args = {
-    animated: true
-}
+  animated: true,
+};
 
 export const Stacked = () => (
   <ProgressBar>

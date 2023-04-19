@@ -17,7 +17,6 @@ const sonnets = [
 ];
 
 export default {
-  title: "Components/Tabs",
   component: Tabs,
   subcomponents: {
     Tab,

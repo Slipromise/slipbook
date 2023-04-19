@@ -1,0 +1,20 @@
+@use "./mixins/nine-border-slice" as *;
+
+.container {
+    background-color: red;
+    width: 600px;
+    height: 400px;
+
+    color: black;
+    // background-image: url('../stories/assets/speech_bubble.png');
+    // border-image-source: url('../stories/assets/speech_bubble.png');
+    @include nine-border-slice('../stories/assets/speech_bubble.png', 19 44 95 25);
+    // border-width: 19px 44px 95px 25px;
+
+    // border-style: solid;
+}
+
+// border-image-source: url('../stories/assets/speech_bubble.png');
+// border-image-slice: 19 44 95 25 fill;
+// border-width: 19px 44px 95px 25px;
+// border-style: solid;

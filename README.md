@@ -10,7 +10,7 @@
 - [X] nine slice border scss
 - [X] bubble animation scss
 - [X] fire text scss
-- [ ] glare text scss
+- [X] light sweep scss
 - [ ] storybook accessibility
 - [ ] storybook links
 - [ ] storybook interaction

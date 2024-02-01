@@ -1,0 +1,42 @@
+.container {
+    width: 6em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    :global(.figure-img),
+    *[data-default-image] {
+        width: 5em;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    *[data-default-image] {
+        background-color: brown;
+        // align-items: center;
+        // justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-bottom: 0.5em;
+
+        span {
+            width: 1em;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+            font-size: 3em;
+            text-align: center;
+        }
+    }
+
+    figcaption {
+        text-align: center;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

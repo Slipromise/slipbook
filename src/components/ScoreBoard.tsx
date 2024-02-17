@@ -3,6 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "../styles/components/ScoreBoard.module.scss";
 import dayjs from "dayjs";
+import { useSpring, animated } from "@react-spring/web";
 
 type Props = {
   aTitle: string;
@@ -31,14 +32,27 @@ function ScoreBoard({
     [aScore, bScore]
   );
 
+  //   TODO: 文件型別 @react-spring/web
+  const scores = useSpring({
+    aScore,
+    bScore,
+    config: {
+      duration: 300,
+    },
+  });
+
   return (
     <Container className={styles.container} style={containerStyle}>
       <Stack direction="horizontal" data-team style={{ flexGrow: aScore }}>
         <span data-team-name>{aTitle}</span>
-        <span data-team-score>{aScore}</span>
+        <animated.span data-team-score>
+          {scores.aScore.to((n) => Math.floor(n))}
+        </animated.span>
       </Stack>
       <Stack direction="horizontal" data-team style={{ flexGrow: bScore }}>
-        <span data-team-score>{bScore}</span>
+        <animated.span data-team-score>
+          {scores.bScore.to((n) => Math.floor(n))}
+        </animated.span>
         <span data-team-name>{bTitle}</span>
       </Stack>
       {countDownTime && (

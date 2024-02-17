@@ -1,13 +1,32 @@
+@use 'sass:list';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import '~bootstrap/scss/mixins';
+
 $homeTeamColor: #c21a2aff !default;
 $awayTeamColor: #3971c4ff !default;
+$teamLimitedWidths: 300px 250px 100px !default;
+
+
+
 
 // TODO: RWD
-// TODO: animation
+
+@property --percent {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 50%;
+}
 
 .container {
+
+
     --home-team-color: #{$homeTeamColor};
     --away-team-color: #{$awayTeamColor};
-    --middle-position: clamp(calc(300px + 1em), var(--percent), calc(100% - 300px - 1em));
+    --team-limited-width: #{list.nth($teamLimitedWidths,1)};
+    --middle-position: clamp(calc(var(--team-limited-width) + 1em),
+            var(--percent),
+            calc(100% - var(--team-limited-width) - 1em));
 
 
 
@@ -28,15 +47,18 @@ $awayTeamColor: #3971c4ff !default;
     border-radius: 2em;
     padding: 0;
     background-position-x: var(--bg-position, 50%);
+    transition: --percent 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-
+    &:hover {
+        --percent: 20%
+    }
 
     *[data-team] {
         flex: 1;
         justify-content: space-between;
-        min-width: 300px;
+        min-width: var(--team-limited-width);
         padding: 0 1em;
-
+        transition: flex-grow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
         *[data-team-name] {
             font-size: 2.5em;
@@ -59,7 +81,6 @@ $awayTeamColor: #3971c4ff !default;
     *[data-countdown] {
         font-size: 1.3em;
         font-weight: bold;
-        // width: 3em;
         padding: 0 1em;
         text-align: center;
         position: absolute;
@@ -71,7 +92,6 @@ $awayTeamColor: #3971c4ff !default;
     *[data-subtitle] {
         font-size: 1.1em;
         font-weight: bold;
-        // width: 3em;
         padding: 0 1em;
         text-align: center;
         overflow: hidden;
@@ -83,4 +103,47 @@ $awayTeamColor: #3971c4ff !default;
         bottom: -1em
     }
 
+    @include media-breakpoint-down(xl) {
+        --team-limited-width: #{list.nth($teamLimitedWidths,2)};
+        font-size: 0.8em;
+    }
+
+    @include media-breakpoint-down(md) {
+        --team-limited-width: #{list.nth($teamLimitedWidths,3)};
+        font-size: 0.6em;
+        text-shadow: 1px 2px black;
+
+        *[data-team] {
+            font-size: .8em;
+
+            &:first-child {
+                justify-content: flex-start;
+            }
+
+            &:nth-child(2) {
+                justify-content: flex-end;
+            }
+
+            *[data-team-name] {
+                position: absolute;
+                top: -0.9em;
+                padding: 0 0.3em;
+                border-radius: 1em 1em 0 0;
+                max-width: calc(var(--team-limited-width) - 2%);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-wrap: nowrap;
+
+                &:first-child {
+                    background-color: var(--home-team-color);
+                    left: 0;
+                }
+
+                &:last-child {
+                    background-color: var(--away-team-color);
+                    right: 0;
+                }
+            }
+        }
+    }
 }

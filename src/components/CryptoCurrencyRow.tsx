@@ -2,8 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/esm/Image";
 import numeral from "numeral";
 import styles from "../styles/components/CryptoCurrencyRow.module.scss";
-
-// TODO: animation
+import { useSpring, animated } from "@react-spring/web";
 
 type Props = {
   name: string;
@@ -36,6 +35,18 @@ function CryptoCurrencyRow({
   onSubscribe,
   onClick,
 }: Props) {
+  const animateValues = useSpring({
+    price,
+    changeIn1h,
+    changeIn24h,
+    changeIn1w,
+    marketCap,
+    volume24h,
+    config: {
+      duration: 300,
+    },
+  });
+
   return (
     <tr className={styles.container}>
       <td data-rank>
@@ -47,28 +58,55 @@ function CryptoCurrencyRow({
         <span>{symbol}</span>
       </td>
       <td data-price>
-        <span>{numeral(price).format("$0,0.00")}</span>
+        <animated.span>
+          {animateValues.price.to((n) =>
+            numeral(n).format("$0,0.00", Math.floor)
+          )}
+        </animated.span>
       </td>
       <td data-changeIn1h>
-        <span data-positive={changeIn1h > 0} data-negative={changeIn1h < 0}>
-          {numeral(changeIn1h / 100).format("+0.00%")}
-        </span>
+        <animated.span
+          data-positive={changeIn1h > 0}
+          data-negative={changeIn1h < 0}
+        >
+          {animateValues.changeIn1h.to((n) =>
+            numeral(n / 100).format("+0.00%", Math.floor)
+          )}
+        </animated.span>
       </td>
       <td data-changeIn24h>
-        <span data-positive={changeIn24h > 0} data-negative={changeIn24h < 0}>
-          {numeral(changeIn24h / 100).format("+0.00%")}
-        </span>
+        <animated.span
+          data-positive={changeIn24h > 0}
+          data-negative={changeIn24h < 0}
+        >
+          {animateValues.changeIn24h.to((n) =>
+            numeral(n / 100).format("+0.00%", Math.floor)
+          )}
+        </animated.span>
       </td>
       <td data-changeIn1w>
-        <span data-positive={changeIn1w > 0} data-negative={changeIn1w < 0}>
-          {numeral(changeIn1w / 100).format("+0.00%")}
-        </span>
+        <animated.span
+          data-positive={changeIn1w > 0}
+          data-negative={changeIn1w < 0}
+        >
+          {animateValues.changeIn1w.to((n) =>
+            numeral(n / 100).format("+0.00%", Math.floor)
+          )}
+        </animated.span>
       </td>
       <td data-marketCap>
-        <span>{numeral(marketCap).format("$0,0.00a")}</span>
+        <animated.span>
+          {animateValues.marketCap.to((n) =>
+            numeral(n / 100).format("$0,0.00a", Math.floor)
+          )}
+        </animated.span>
       </td>
       <td data-volume24h>
-        <span>{numeral(volume24h).format("$0,0.00a")}</span>
+        <animated.span>
+          {animateValues.volume24h.to((n) =>
+            numeral(n / 100).format("$0,0.00a", Math.floor)
+          )}
+        </animated.span>
       </td>
     </tr>
   );

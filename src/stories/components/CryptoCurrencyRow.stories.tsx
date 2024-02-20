@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
+import React, { useEffect } from "react";
 import CryptoCurrencyRow, {
   CryptoCurrencyHeaderRow,
 } from "../../components/CryptoCurrencyRow";
 import Table from "react-bootstrap/Table";
-import { withHolder } from "../../components/withHolder";
+import { run as runHolder } from "holderjs";
 
 // TODO: 組合式Story
 
@@ -12,7 +12,13 @@ const meta: Meta<typeof CryptoCurrencyRow> = {
   component: CryptoCurrencyRow,
   decorators: [
     (story) => {
-      const StoryComponent = withHolder(story);
+      const StoryComponent = story;
+
+      // TODO: 無法使用withHolder
+
+      useEffect(() => {
+        runHolder();
+      }, []);
       return (
         <Table striped bordered hover>
           <thead>

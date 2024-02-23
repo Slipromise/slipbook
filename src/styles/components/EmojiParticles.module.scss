@@ -1,0 +1,166 @@
+@property --swing-distance-scale {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 1;
+}
+
+// TODO: 優化animation 使用Mixin
+// TODO: 單數與雙數序錯開
+
+.container {
+
+    --duration: 3000ms;
+    --swing-count: 3;
+    --swing-distance: 2em;
+    overflow: hidden;
+
+    width: 500px;
+    height: 750px;
+    background-color: rgb(162, 162, 162);
+    position: relative;
+
+
+
+    .icon {
+        --delay: 200ms;
+        --pre-duration: calc(var(--duration) / var(--swing-count) / 4);
+        --icon-duration: calc(var(--duration) / var(--swing-count) / 4);
+
+        font-size: 1.5em;
+        position: absolute;
+        transition: all var(--duration);
+        animation:
+            var(--duration) linear bubbleUp,
+            var(--pre-duration) cubic-bezier(0.55, 0.09, 0.68, 0.53) preBubbleSwing,
+            var(--icon-duration) infinite alternate cubic-bezier(0.46, 0.03, 0.52, 0.96) bubbleSwing;
+
+        animation-delay: var(--delay), calc(var(--pre-duration) + var(--delay)), var(--delay);
+        opacity: 0;
+        top: 100%;
+
+    }
+
+
+
+    &[data-direction='BottomRight'] .icon {
+        animation-name: bubbleBottomRightoTop,
+            preBubbleSwing,
+            bubbleSwing;
+    }
+
+    &[data-direction='BottomLeft'] .icon {
+        animation-name: bubbleBottomLeftToTop,
+            preBubbleSwing,
+            bubbleSwing;
+    }
+
+    &[data-direction='BottomCenter'] .icon {
+        animation-name: bubbleBottomCenterToTop,
+            preBubbleSwing,
+            bubbleSwing;
+    }
+}
+
+@keyframes bubbleUp {
+    from {
+        --swing-distance-scale: 1;
+        opacity: 0;
+        top: 100%;
+    }
+
+    20% {
+        // --swing-distance-scale: 1;
+        opacity: 1;
+        top: 80%
+    }
+
+    to {
+        --swing-distance-scale: 0;
+        opacity: 0;
+        top: 0;
+    }
+}
+
+@keyframes bubbleBottomLeftToTop {
+    from {
+        --swing-distance-scale: 1;
+        opacity: 0;
+        top: 100%;
+        left: 0;
+    }
+
+    20% {
+        // --swing-distance-scale: 1;
+        opacity: 1;
+        top: 80%
+    }
+
+    to {
+        --swing-distance-scale: 0;
+        opacity: 0;
+        top: 0;
+    }
+}
+
+@keyframes bubbleBottomRightoTop {
+    from {
+        --swing-distance-scale: 1;
+        opacity: 0;
+        top: 100%;
+        left: 100%;
+    }
+
+    20% {
+        // --swing-distance-scale: 1;
+        opacity: 1;
+        top: 80%
+    }
+
+    to {
+        --swing-distance-scale: 0;
+        opacity: 0;
+        top: 0;
+    }
+}
+
+@keyframes bubbleBottomCenterToTop {
+    from {
+        --swing-distance-scale: 1;
+        opacity: 0;
+        top: 100%;
+        left: 50%;
+    }
+
+    20% {
+        // --swing-distance-scale: 1;
+        opacity: 1;
+        top: 80%
+    }
+
+    to {
+        --swing-distance-scale: 0;
+        opacity: 0;
+        top: 0;
+    }
+}
+
+
+@keyframes preBubbleSwing {
+    from {
+        transform: translateX(0) scale(var(--scale));
+    }
+
+    to {
+        transform: translateX(calc(var(--swing-distance) * var(--swing-distance-scale))) scale(var(--scale));
+    }
+}
+
+@keyframes bubbleSwing {
+    from {
+        transform: translateX(calc(var(--swing-distance) * var(--swing-distance-scale))) scale(var(--scale));
+    }
+
+    to {
+        transform: translateX(calc(var(--swing-distance) * var(--swing-distance-scale) * -1)) scale(var(--scale));
+    }
+}

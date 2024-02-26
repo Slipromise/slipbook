@@ -49,9 +49,6 @@ $teamLimitedWidths: 300px 250px 100px !default;
     background-position-x: var(--bg-position, 50%);
     transition: --percent 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:hover {
-        --percent: 20%
-    }
 
     *[data-team] {
         flex: 1;

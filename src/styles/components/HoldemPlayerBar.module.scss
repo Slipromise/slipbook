@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2em;
+    align-items: center;
+
+    // flex-grow: 0;
+    >*[data-left] {
+        flex-grow: 0;
+        gap: 0.2em;
+
+        img {
+            height: 4em;
+            aspect-ratio: 9/10;
+            object-fit: fill;
+        }
+
+        span {
+            background-color: rgb(97, 97, 97);
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    >*[data-middle] {
+        max-width: 140px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+
+        >*[data-cards] {
+            display: flex;
+            flex-direction: row;
+            gap: 0.3em;
+            // background-color: rgb(123, 123, 123);
+
+            >*[data-card] {
+
+                background: linear-gradient(#d4d4d4, white);
+                padding: 0.1em 0.4em;
+                border-radius: 0.7em 0.7em 0 0;
+                overflow: hidden;
+                box-shadow: 2px 0 rgb(73, 73, 73);
+
+                &[data-card^='C'],
+                &[data-card^='S'] {
+                    color: black;
+                }
+
+                &[data-card^='H'],
+                &[data-card^='D'] {
+                    color: red;
+                }
+
+
+                &[data-card^='C']::after {
+                    content: '♣️'
+                }
+
+                &[data-card^='S']::after {
+                    content: '♠️'
+                }
+
+                &[data-card^='D']::after {
+                    content: '♦️'
+                }
+
+                &[data-card^='H']::after {
+                    content: '♥️'
+                }
+            }
+        }
+
+        >*[data-name-container] {
+            background-color: #043258;
+            color: white;
+            height: 1.8em;
+            line-height: 1.8em;
+            padding: 0 0.4em;
+            // text-transform: uppercase;
+            font-variant: small-caps;
+            font-weight: bolder;
+        }
+
+        >*[data-status-container] {
+            background-color: #25323E;
+            color: white;
+            height: 1.8em;
+            line-height: 1.8em;
+            padding: 0 0.4em;
+            text-transform: uppercase;
+        }
+    }
+
+    >*[data-position] {
+        background-color: #3C454F;
+        height: 1.8em;
+        padding: 0 0.3em;
+        border-radius: 0 50% 50% 0;
+        line-height: 1.8em;
+        text-align: center;
+        color: white;
+
+        &[data-position='D'] {
+            background-color: #C9CBCB;
+            color: #0A0A0B;
+        }
+
+    }
+}

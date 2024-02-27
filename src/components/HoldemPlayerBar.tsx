@@ -1,8 +1,10 @@
 import numeral from "numeral";
-import React from "react";
+import React, { useMemo, useRef } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "../styles/components/HoldemPlayerBar.module.scss";
+import { CSSTransition } from "react-transition-group";
+import { useSpring, animated } from "@react-spring/web";
 
 type PokerCard =
   | "SA"
@@ -56,7 +58,8 @@ type PokerCard =
   | "CT"
   | "CJ"
   | "CQ"
-  | "CK";
+  | "CK"
+  | undefined;
 
 type Props = {
   avatarUri: string;
@@ -68,6 +71,8 @@ type Props = {
   isTurn: boolean;
 };
 
+// TODO: CSSTransition 優化 （裝飾器or 父層Wrap）
+
 function HoldemPokerPlayerBar({
   avatarUri,
   chipAmount,
@@ -75,27 +80,59 @@ function HoldemPokerPlayerBar({
   status = "",
   cards,
   position,
+  isTurn,
 }: Props) {
+  const nodeRef = useRef<HTMLDivElement>(null);
+  const isIn = useMemo(() => status !== "FOLD", [status]);
+  const springValues = useSpring({
+    chipAmount,
+    config: {
+      duration: 300,
+    },
+  });
   return (
-    <Container className={styles.container}>
-      <Stack data-left>
-        <img src={avatarUri} alt="" />
-        <span>{numeral(chipAmount).format("0a", Math.floor)}</span>
-      </Stack>
-      <Stack data-middle>
-        <div data-cards>
-          <span data-card={cards[0]}>{cards[0][1]}</span>
-          <span data-card={cards[1]}>{cards[1][1]}</span>
-        </div>
-        <div data-name-container>
-          <span>{name}</span>
-        </div>
-        <div data-status-container>
-          <span>{status}</span>
-        </div>
-      </Stack>
-      <span data-position={position}>{position}</span>
-    </Container>
+    <CSSTransition
+      nodeRef={nodeRef}
+      in={isIn}
+      timeout={{ appear: 400, enter: 400, exit: 300 }}
+      classNames={styles.container}
+      appear
+      unmountOnExit
+    >
+      <Container
+        className={styles.container}
+        ref={nodeRef}
+        data-is-turn={isTurn}
+      >
+        <Stack data-left>
+          <img src={avatarUri} alt="" />
+          <animated.span>
+            {springValues.chipAmount.to((n) =>
+              numeral(n).format("0a", Math.floor)
+            )}
+          </animated.span>
+        </Stack>
+        <Stack data-middle>
+          <div data-cards>
+            <div data-card={cards[0] ? cards[0] : ""}>
+              <span data-front-card>{cards[0]?.[1]}</span>
+              <span data-back-card></span>
+            </div>
+            <div data-card={cards[1] ? cards[1] : ""}>
+              <span data-front-card>{cards[1]?.[1]}</span>
+              <span data-back-card></span>
+            </div>
+          </div>
+          <div data-name-container>
+            <span>{name}</span>
+          </div>
+          <div data-status-container>
+            <span>{status}</span>
+          </div>
+        </Stack>
+        <span data-position={position}>{position}</span>
+      </Container>
+    </CSSTransition>
   );
 }
 

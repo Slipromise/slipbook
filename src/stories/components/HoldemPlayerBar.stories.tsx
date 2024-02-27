@@ -30,3 +30,37 @@ export const Normal: Story = {
     position: "D",
   },
 };
+
+export const InTurn: Story = {
+  args: {
+    avatarUri: "holder.js/30x40?auto=yes&random=yes",
+    chipAmount: 123944320,
+    name: "PlayerName",
+    status: "CHECK",
+    cards: ["SA", "DJ"],
+    position: "D",
+    isTurn: true,
+  },
+};
+
+export const Cover: Story = {
+  args: {
+    avatarUri: "holder.js/30x40?auto=yes&random=yes",
+    chipAmount: 123944320,
+    name: "PlayerName",
+    status: "CHECK",
+    cards: [undefined, undefined],
+    position: "D",
+  },
+};
+
+export const Fold: Story = {
+  args: {
+    avatarUri: "holder.js/30x40?auto=yes&random=yes",
+    chipAmount: 123944320,
+    name: "PlayerName",
+    status: "FOLD",
+    cards: ["CK", "HT"],
+    position: "D",
+  },
+};

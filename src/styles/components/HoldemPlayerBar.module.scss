@@ -1,0 +1,225 @@
+@property --mask-position {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+// TODO: CSSTransition Mixin 優化
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2em;
+    align-items: center;
+    max-width: 300px;
+
+    &[data-is-turn='true'] {
+        >*[data-left] {
+            animation: .5s linear infinite alternate isTurnGlow;
+        }
+    }
+
+    >*[data-left] {
+        flex-grow: 0;
+        gap: 0.2em;
+
+        img {
+            height: 4em;
+            aspect-ratio: 9/10;
+            object-fit: fill;
+        }
+
+        span {
+            background-color: rgb(97, 97, 97);
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    >*[data-middle] {
+        max-width: 140px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+
+        >*[data-cards] {
+            display: flex;
+            flex-direction: row;
+            height: 1.8em;
+            gap: 0.3em;
+            position: relative;
+            perspective: 100px;
+            // background-color: rgb(123, 123, 123);
+            // transform: translateY(2em);
+
+            >*[data-card] {
+
+
+                line-height: 1.8em;
+                height: 100%;
+                width: 2.4em;
+                text-align: center;
+                position: relative;
+                transform: rotateY(180deg);
+                transform-style: preserve-3d;
+                transition: transform .3s;
+
+                &[data-card^='C'],
+                &[data-card^='S'] {
+                    color: black;
+                    transform: initial;
+                }
+
+                &[data-card^='H'],
+                &[data-card^='D'] {
+                    color: red;
+                    transform: initial;
+                }
+
+                &[data-card^='C'] *[data-front-card]::after {
+                    content: '♣️'
+                }
+
+                &[data-card^='S'] *[data-front-card]::after {
+                    content: '♠️'
+                }
+
+                &[data-card^='D'] *[data-front-card]::after {
+                    content: '♦️'
+                }
+
+                &[data-card^='H'] *[data-front-card]::after {
+                    content: '♥️'
+                }
+
+                >*[data-front-card] {
+
+                    // transform: skewY(30deg);
+                    border-radius: 0.7em 0.7em 0 0;
+                    display: block;
+                    position: absolute;
+                    background: linear-gradient(#d4d4d4, white);
+                    inset: 0;
+                    transform: rotateY(0);
+                    backface-visibility: hidden;
+                    box-shadow: 2px 0 black;
+
+                }
+
+                >*[data-back-card] {
+                    border-radius: 0.7em 0.7em 0 0;
+                    display: block;
+                    position: absolute;
+                    background: linear-gradient(rgb(195, 195, 195), #25323E);
+                    inset: 0;
+                    transform: rotateY(180deg);
+                    backface-visibility: hidden;
+                    box-shadow: 2px 0 black;
+                }
+            }
+
+
+        }
+
+        >*[data-name-container] {
+            background-color: #043258;
+            color: white;
+            height: 1.8em;
+            line-height: 1.8em;
+            padding: 0 0.4em;
+            // text-transform: uppercase;
+            font-variant: small-caps;
+            font-weight: bolder;
+            position: relative;
+        }
+
+        >*[data-status-container] {
+            background-color: #25323E;
+            color: white;
+            height: 1.8em;
+            line-height: 1.8em;
+            padding: 0 0.4em;
+            text-transform: uppercase;
+            position: relative;
+        }
+    }
+
+    >*[data-position] {
+        background-color: #3C454F;
+        height: 1.8em;
+        padding: 0 0.3em;
+        border-radius: 0 50% 50% 0;
+        line-height: 1.8em;
+        text-align: center;
+        color: white;
+
+        &[data-position='D'] {
+            background-color: #C9CBCB;
+            color: #0A0A0B;
+        }
+
+    }
+
+    // TODO: 顏色有點不太對 :global()
+
+    &:global(-exit) {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    &:global(-exit-active) {
+        transform: scaleY(0);
+        transition: transform 0.3s;
+    }
+
+    &:global(-enter),
+    &:global(-appear) {
+        --mask-position: 0%;
+        // opacity: 0;
+        mask-image: linear-gradient(90deg, #fff, #fff calc(var(--mask-position) - 20%), #0000 var(--mask-position), #0000);
+        mask-size: 100%;
+        mask-composite: exclude;
+
+        >*[data-left] {
+            transform: scale(0);
+        }
+
+        >*[data-middle] {
+            >*[data-cards] {
+                transform: translateY(2em);
+            }
+        }
+    }
+
+    &:global(-enter-active),
+    &:global(-appear-active) {
+        // opacity: 1;
+        --mask-position: 100%;
+        transition: --mask-position .4s;
+
+        >*[data-left] {
+            transform: scale(1);
+            transition: transform .4s;
+        }
+
+        >*[data-middle] {
+            >*[data-cards] {
+                transform: translateY(0);
+                transition: transform .4s;
+            }
+        }
+    }
+
+
+}
+
+@keyframes isTurnGlow {
+    from {
+        box-shadow: 0 0 20px 8px #e2cf24;
+    }
+
+    to {
+        box-shadow: 0 0 20px 8px #e27d24;
+    }
+}

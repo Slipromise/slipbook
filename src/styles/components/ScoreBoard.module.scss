@@ -1,0 +1,146 @@
+@use 'sass:list';
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import '~bootstrap/scss/mixins';
+
+$homeTeamColor: #c21a2aff !default;
+$awayTeamColor: #3971c4ff !default;
+$teamLimitedWidths: 300px 250px 100px !default;
+
+
+
+
+// TODO: RWD
+
+@property --percent {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 50%;
+}
+
+.container {
+
+
+    --home-team-color: #{$homeTeamColor};
+    --away-team-color: #{$awayTeamColor};
+    --team-limited-width: #{list.nth($teamLimitedWidths,1)};
+    --middle-position: clamp(calc(var(--team-limited-width) + 1em),
+            var(--percent),
+            calc(100% - var(--team-limited-width) - 1em));
+
+
+
+    justify-content: center;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    background: linear-gradient(90deg,
+            var(--home-team-color),
+            var(--home-team-color) calc(var(--middle-position, 50%) - 5%),
+            white var(--middle-position, 50%),
+            var(--away-team-color) calc(var(--middle-position, 50%) + 5%),
+            var(--away-team-color));
+    color: white;
+    gap: 2em;
+    text-shadow: 3px 3px black;
+    border-radius: 2em;
+    padding: 0;
+    background-position-x: var(--bg-position, 50%);
+    transition: --percent 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    *[data-team] {
+        flex: 1;
+        justify-content: space-between;
+        min-width: var(--team-limited-width);
+        padding: 0 1em;
+        transition: flex-grow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        *[data-team-name] {
+            font-size: 2.5em;
+            font-weight: bolder;
+            font-variant: small-caps;
+            text-transform: capitalize;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            flex-shrink: 1;
+            max-width: 70%;
+        }
+
+        *[data-team-score] {
+            font-size: 4em;
+            font-weight: bolder;
+        }
+    }
+
+    *[data-countdown] {
+        font-size: 1.3em;
+        font-weight: bold;
+        padding: 0 1em;
+        text-align: center;
+        position: absolute;
+        background-color: gray;
+        border-radius: 1em;
+        top: -1em
+    }
+
+    *[data-subtitle] {
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 0 1em;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: wrap;
+        position: absolute;
+        background-color: gray;
+        border-radius: 1em;
+        bottom: -1em
+    }
+
+    @include media-breakpoint-down(xl) {
+        --team-limited-width: #{list.nth($teamLimitedWidths,2)};
+        font-size: 0.8em;
+    }
+
+    @include media-breakpoint-down(md) {
+        --team-limited-width: #{list.nth($teamLimitedWidths,3)};
+        font-size: 0.6em;
+        text-shadow: 1px 2px black;
+
+        *[data-team] {
+            font-size: .8em;
+
+            &:first-child {
+                justify-content: flex-start;
+            }
+
+            &:nth-child(2) {
+                justify-content: flex-end;
+            }
+
+            *[data-team-name] {
+                position: absolute;
+                top: -0.9em;
+                padding: 0 0.3em;
+                border-radius: 1em 1em 0 0;
+                max-width: calc(var(--team-limited-width) - 2%);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-wrap: nowrap;
+
+                &:first-child {
+                    background-color: var(--home-team-color);
+                    left: 0;
+                }
+
+                &:last-child {
+                    background-color: var(--away-team-color);
+                    right: 0;
+                }
+            }
+        }
+    }
+}

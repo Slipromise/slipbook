@@ -1,0 +1,51 @@
+.container {
+    :global(.card-header) {
+        background-color: white;
+
+
+        :global(.card-title) {
+            font-size: 2.5em;
+            font-weight: bolder;
+        }
+
+        :global(.card-subtitle) {
+            color: rgb(41, 41, 41);
+        }
+    }
+
+    :global(.card-body) {
+        display: flex;
+        flex-direction: row;
+        // gap: 2em;
+
+        >*:first-child {
+            flex: 0;
+            flex-basis: auto;
+            align-items: center;
+        }
+
+        >*:last-child {
+            margin-left: 0.5em;
+            border-left: 2px groove;
+            padding-left: 0.5em;
+        }
+    }
+
+    :global(.card-footer) {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bs-gray-300);
+
+        .collapsed-icon {
+            background-color: var(--bs-gray-300);
+            font-size: 2em;
+            padding: .15em;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -.5em;
+            align-self: center;
+        }
+    }
+
+
+}

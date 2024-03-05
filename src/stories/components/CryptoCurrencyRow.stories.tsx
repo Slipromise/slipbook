@@ -10,6 +10,7 @@ import { run as runHolder } from "holderjs";
 
 const meta: Meta<typeof CryptoCurrencyRow> = {
   component: CryptoCurrencyRow,
+  tags: ["autodocs"],
   decorators: [
     (story) => {
       const StoryComponent = story;

@@ -14,6 +14,7 @@ const meta: Meta<typeof HoldemPlayerBar> = {
       return <SC></SC>;
     },
   ],
+  tags: ["autodocs"],
 };
 
 export default meta;

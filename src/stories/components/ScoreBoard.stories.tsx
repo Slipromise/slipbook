@@ -4,6 +4,7 @@ import ScoreBoard from "../../components/ScoreBoard";
 
 const meta: Meta<typeof ScoreBoard> = {
   component: ScoreBoard,
+  tags: ["autodocs"],
 };
 
 export default meta;

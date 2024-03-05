@@ -4,6 +4,7 @@ import VocabularyCard from "../../components/VocabularyCard";
 
 const meta: Meta<typeof VocabularyCard> = {
   component: VocabularyCard,
+  tags: ["autodocs"],
 };
 
 export default meta;

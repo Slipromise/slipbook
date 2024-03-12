@@ -1,0 +1,18 @@
+@import '~bootstrap/scss/mixins/banner';
+@include bsBanner(Custom2);
+
+$prefix: custom2-;
+$primary: #871981;
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/variables-dark';
+@import '~bootstrap/scss/maps';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/utilities';
+
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import 'buttonByExtend'
+
+// TODO: 設計新的樣式

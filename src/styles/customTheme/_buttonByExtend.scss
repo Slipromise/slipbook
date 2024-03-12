@@ -1,0 +1,15 @@
+$componentPrefix: '' !default;
+
+// @debug $prefix !=bs--;
+
+@if $prefix !=bs- {
+    $componentPrefix: $prefix
+}
+
+
+.#{$componentPrefix}btn {
+    // scss-docs-start btn-css-vars
+    --#{$prefix}btn-bg: #{$primary};
+    // scss-docs-end btn-css-vars
+    background-color: var(--#{$prefix}btn-bg);
+}

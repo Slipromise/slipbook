@@ -1,35 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Button from "react-bootstrap/Button";
+import { run as runHolder } from "holderjs";
+import React, { useEffect } from "react";
+import BootstrapComponents from "./BootstrapComponents";
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+const meta: Meta<typeof BootstrapComponents> = {
+  component: BootstrapComponents,
+  decorators: [
+    (SC) => {
+      useEffect(() => {
+        runHolder();
+      }, []);
+      return <SC></SC>;
+    },
+  ],
 };
 
 export default meta;
 
-// TODO: 製作顯示所有bootstrap元件的頁面
+type Story = StoryObj<typeof BootstrapComponents>;
 
-type Story = StoryObj<typeof Button>;
+// TODO: 需要使用動態替換Bootstrap樣式來進行
 
-export const BootstrapDefault: Story = {
-  args: {
-    type: "button",
-    children: "test",
-  },
-};
-
-export const Custom: Story = {
-  args: {
-    type: "button",
-    children: "test",
-    bsPrefix: "custom-btn",
-  },
-};
-
-export const CustomByExtend: Story = {
-  args: {
-    type: "button",
-    children: "test",
-    className: "custom2-btn",
-  },
-};
+export const BootstrapDefault: Story = {};

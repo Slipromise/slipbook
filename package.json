@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
@@ -42,6 +43,7 @@
     "@storybook/nextjs": "^7.6.17",
     "@storybook/react": "^7.6.17",
     "@storybook/test": "^7.6.17",
+    "@storybook/test-runner": "^0.17.0",
     "@types/holderjs": "^2.9.4",
     "@types/node": "^20",
     "@types/numeral": "^2.0.5",

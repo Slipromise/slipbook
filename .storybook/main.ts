@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     "@storybook/addon-styling-webpack",
     "@storybook/addon-themes",
     "@storybook/addon-a11y",
+    "@storybook/addon-coverage",
   ],
   framework: {
     name: "@storybook/nextjs",

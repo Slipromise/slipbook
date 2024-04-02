@@ -9,7 +9,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "storybook:test": "test-storybook --coverage --coverageDirectory .storybook && nyc report --reporter=text -t coverage/storybook --report-dir .storybook"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-coverage": "^1.0.1",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
@@ -53,6 +55,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.2",
     "eslint-plugin-storybook": "^0.8.0",
+    "nyc": "^15.1.0",
     "sass": "^1.71.1",
     "storybook": "^7.6.17",
     "typescript": "^5"

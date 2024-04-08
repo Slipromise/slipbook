@@ -1,65 +1,13 @@
 import numeral from "numeral";
-import React, { useMemo, useRef } from "react";
+import React, { ComponentProps, useMemo, useRef } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "../styles/components/HoldemPlayerBar.module.scss";
 import { CSSTransition } from "react-transition-group";
 import { useSpring, animated } from "@react-spring/web";
+import PokerCard from "./PokerCard";
 
-type PokerCard =
-  | "SA"
-  | "S2"
-  | "S3"
-  | "S4"
-  | "S5"
-  | "S6"
-  | "S7"
-  | "S8"
-  | "S9"
-  | "ST"
-  | "SJ"
-  | "SQ"
-  | "SK"
-  | "HA"
-  | "H2"
-  | "H3"
-  | "H4"
-  | "H5"
-  | "H6"
-  | "H7"
-  | "H8"
-  | "H9"
-  | "HT"
-  | "HJ"
-  | "HQ"
-  | "HK"
-  | "DA"
-  | "D2"
-  | "D3"
-  | "D4"
-  | "D5"
-  | "D6"
-  | "D7"
-  | "D8"
-  | "D9"
-  | "DT"
-  | "DJ"
-  | "DQ"
-  | "DK"
-  | "CA"
-  | "C2"
-  | "C3"
-  | "C4"
-  | "C5"
-  | "C6"
-  | "C7"
-  | "C8"
-  | "C9"
-  | "CT"
-  | "CJ"
-  | "CQ"
-  | "CK"
-  | undefined;
+type PokerCard = ComponentProps<typeof PokerCard>["value"];
 
 type Props = {
   avatarUri: string;
@@ -114,14 +62,8 @@ function HoldemPokerPlayerBar({
         </Stack>
         <Stack data-middle>
           <div data-cards>
-            <div data-card={cards[0] ? cards[0] : ""}>
-              <span data-front-card>{cards[0]?.[1]}</span>
-              <span data-back-card></span>
-            </div>
-            <div data-card={cards[1] ? cards[1] : ""}>
-              <span data-front-card>{cards[1]?.[1]}</span>
-              <span data-back-card></span>
-            </div>
+            <PokerCard value={cards[0]} />
+            <PokerCard value={cards[1]} />
           </div>
           <div data-name-container>
             <span>{name}</span>

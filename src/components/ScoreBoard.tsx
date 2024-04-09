@@ -44,16 +44,20 @@ function ScoreBoard({
   return (
     <Container className={styles.container} style={containerStyle}>
       <Stack direction="horizontal" data-team style={{ flexGrow: aScore }}>
-        <span data-team-name>{aTitle}</span>
-        <animated.span data-team-score>
+        <span data-team-name data-testId="homeTitle">
+          {aTitle}
+        </span>
+        <animated.span data-team-score data-testId="homeScore">
           {scores.aScore.to((n) => Math.floor(n))}
         </animated.span>
       </Stack>
       <Stack direction="horizontal" data-team style={{ flexGrow: bScore }}>
-        <animated.span data-team-score>
+        <animated.span data-team-score data-testId="awayScore">
           {scores.bScore.to((n) => Math.floor(n))}
         </animated.span>
-        <span data-team-name>{bTitle}</span>
+        <span data-team-name data-testId="awayTitle">
+          {bTitle}
+        </span>
       </Stack>
       {countDownTime && (
         <span data-countdown>

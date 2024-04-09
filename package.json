@@ -33,6 +33,7 @@
     "react-use": "^17.5.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.43.0",
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-coverage": "^1.0.1",
     "@storybook/addon-essentials": "^7.6.17",

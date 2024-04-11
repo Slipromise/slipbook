@@ -85,11 +85,13 @@ function VocabularyCard({
           <BsChevronDoubleDown
             onClick={() => setIsCollapsed((b) => !b)}
             className={styles["collapsed-icon"]}
+            data-testid="collapseIcon"
           />
         ) : (
           <BsChevronDoubleUp
             onClick={() => setIsCollapsed((b) => !b)}
             className={styles["collapsed-icon"]}
+            data-testid="collapseIcon"
           />
         )}
       </Card.Footer>

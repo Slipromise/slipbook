@@ -13,6 +13,7 @@ const meta: Meta<typeof CompetitionListItem> = {
     },
   ],
   argTypes: { startTime: { control: "date" } },
+  tags: ["autodocs"],
 };
 
 export default meta;

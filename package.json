@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test-storybook": "test-storybook",
-    "storybook:test": "test-storybook --coverage --coverageDirectory .storybook && nyc report --reporter=text -t coverage/storybook --report-dir .storybook"
+    "storybook:test": "test-storybook --coverage --coverageDirectory .storybook && nyc report --reporter=text -t coverage/storybook --report-dir .storybook",
+    "chromatic": "npx chromatic --project-token=e7f5da77ebc8"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",
@@ -53,6 +54,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "axe-playwright": "^2.0.1",
+    "chromatic": "^11.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.2",
     "eslint-plugin-storybook": "^0.8.0",

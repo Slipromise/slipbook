@@ -4,9 +4,6 @@
     initial-value: 1;
 }
 
-// TODO: 優化animation 使用Mixin
-// TODO: 單數與雙數序錯開
-
 .container {
 
     --duration: 3000ms;
@@ -38,7 +35,11 @@
         opacity: 0;
         top: 100%;
 
+        &:nth-child(even) {
+            animation-direction: normal, reverse, alternate-reverse;
+        }
     }
+
 
 
 

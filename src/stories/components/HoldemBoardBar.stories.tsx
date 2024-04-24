@@ -1,4 +1,4 @@
-import HoldemBoardBar from "../../components/HoldemBoardBar";
+import HoldemBoardBar from "@/components/HoldemBoardBar";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof HoldemBoardBar> = {

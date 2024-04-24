@@ -1,10 +1,10 @@
+@use "../../styles//mixins/css-transition" as *;
+
 @property --mask-position {
     syntax: '<percentage>';
     inherits: false;
     initial-value: 0%;
 }
-
-// TODO: CSSTransition Mixin 優化
 
 .container {
     display: flex;
@@ -95,20 +95,20 @@
 
     }
 
-    // TODO: 顏色有點不太對 :global()
-
-    &:global(-exit) {
+    @include css-transition(-exit) {
         transform: scaleY(1);
         transform-origin: bottom;
     }
 
-    &:global(-exit-active) {
+
+    @include css-transition(-exit-active) {
         transform: scaleY(0);
-        transition: transform 0.3s;
+        transition: transform .3s;
     }
 
-    &:global(-enter),
-    &:global(-appear) {
+
+
+    @include css-transition((-enter, -appear)) {
         --mask-position: 0%;
         // opacity: 0;
         mask-image: linear-gradient(90deg, #fff, #fff calc(var(--mask-position) - 20%), #0000 var(--mask-position), #0000);
@@ -126,9 +126,8 @@
         }
     }
 
-    &:global(-enter-active),
-    &:global(-appear-active) {
-        // opacity: 1;
+
+    @include css-transition((-enter-active, -appear-active)) {
         --mask-position: 100%;
         transition: --mask-position .4s;
 
@@ -144,6 +143,7 @@
             }
         }
     }
+
 
 
 }

@@ -4,8 +4,6 @@ import CryptoCurrencyRow, {
   CryptoCurrencyHeaderRow,
 } from "./CryptoCurrencyRow";
 
-// TODO: SubComponent 命名空間
-
 type Props = {
   items: ComponentProps<typeof CryptoCurrencyRow>[];
 };
@@ -25,4 +23,4 @@ function CryptoCurrencyTable({ items }: Props) {
   );
 }
 
-export default CryptoCurrencyTable;
+export default Object.assign(CryptoCurrencyTable, { Row: CryptoCurrencyRow });

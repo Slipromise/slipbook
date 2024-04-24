@@ -2,10 +2,11 @@ import numeral from "numeral";
 import React, { ComponentProps, useMemo, useRef } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
-import styles from "../styles/components/HoldemPlayerBar.module.scss";
+import styles from "@/styles/components/HoldemPlayerBar.module.scss";
 import { CSSTransition } from "react-transition-group";
 import { useSpring, animated } from "@react-spring/web";
 import PokerCard from "./PokerCard";
+import { Image } from "react-bootstrap";
 
 type PokerCard = ComponentProps<typeof PokerCard>["value"];
 
@@ -18,8 +19,6 @@ type Props = {
   position: "BB" | "SB" | "D" | "CO" | "UTG";
   isTurn: boolean;
 };
-
-// TODO: CSSTransition 優化 （裝飾器or 父層Wrap）
 
 function HoldemPokerPlayerBar({
   avatarUri,
@@ -53,7 +52,7 @@ function HoldemPokerPlayerBar({
         data-is-turn={isTurn}
       >
         <Stack data-left>
-          <img src={avatarUri} alt="" />
+          <Image src={avatarUri} alt="" />
           <animated.span>
             {springValues.chipAmount.to((n) =>
               numeral(n).format("0a", Math.floor)

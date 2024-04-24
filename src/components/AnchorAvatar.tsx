@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Figure from "react-bootstrap/Figure";
-import styles from "../styles/components/AnchorAvatar.module.scss";
+import styles from "@/styles/components/AnchorAvatar.module.scss";
 
 type Props = {
   src?: string;

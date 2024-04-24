@@ -1,4 +1,4 @@
-// TODO: 全域的樣式名稱會衝突，待Sass的技巧來避免，暫且複製並加上前綴
+// 全域的樣式名稱會衝突，待Sass的技巧來避免，暫且複製並加上前綴
 $componentPrefix: '' !default;
 
 @if $prefix !=bs- {

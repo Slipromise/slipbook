@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
-import styles from "../styles/components/ScoreBoard.module.scss";
+import styles from "@/styles/components/ScoreBoard.module.scss";
 import dayjs from "dayjs";
-import { useSpring, animated } from "@react-spring/web";
+import { useSpring, animated, AnimationConfig } from "@react-spring/web";
 
 type Props = {
   aTitle: string;
@@ -28,17 +28,16 @@ function ScoreBoard({
     () =>
       ({
         "--percent": `${(aScore / (aScore + bScore)) * 100}%`,
-      } as React.CSSProperties),
+      }) as React.CSSProperties,
     [aScore, bScore]
   );
 
-  //   TODO: 文件型別 @react-spring/web
-  const scores = useSpring({
+  const scores = useSpring<{ aScore: number; bScore: number }>({
     aScore,
     bScore,
     config: {
       duration: 300,
-    },
+    } as AnimationConfig,
   });
 
   return (

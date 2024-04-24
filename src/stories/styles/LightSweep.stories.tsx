@@ -32,5 +32,5 @@ export const Box: Story = {
   args: {
     className: styles.box,
   },
-  storyName: "Box(Hover)",
+  name: "Box(Hover)",
 };

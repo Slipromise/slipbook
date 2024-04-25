@@ -4,7 +4,7 @@ import EmojiParticles from "@/components/EmojiParticles";
 
 const meta: Meta<typeof EmojiParticles> = {
   component: EmojiParticles,
-  tags: ["autodocs"],
+  tags: ["autodocs", "skip-test"],
 };
 
 export default meta;

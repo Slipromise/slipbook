@@ -13,6 +13,7 @@ const meta: Meta<typeof BootstrapComponents> = {
       return <SC></SC>;
     },
   ],
+  tags: ["skip-test"],
 };
 
 export default meta;

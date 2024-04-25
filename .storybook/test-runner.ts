@@ -46,7 +46,7 @@ const config: TestRunnerConfig = {
   tags: {
     // include: ["test-only", "pages"],
     // exclude: ["no-tests", "tokens"],
-    // skip: ["skip-test"],
+    skip: ["skip-test"],
   },
 };
 

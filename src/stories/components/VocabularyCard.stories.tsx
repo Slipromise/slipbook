@@ -2,10 +2,14 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import VocabularyCard from "@/components/VocabularyCard";
 import { userEvent, within, expect } from "@storybook/test";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof VocabularyCard> = {
   component: VocabularyCard,
   tags: ["autodocs"],
+  args: {
+    onVoice: fn(),
+  },
 };
 
 export default meta;

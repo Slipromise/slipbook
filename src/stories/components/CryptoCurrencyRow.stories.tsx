@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import CryptoCurrencyTable from "@/components/CryptoCurrencyTable";
 import { withHolder } from "@/components/withHolder";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof CryptoCurrencyTable.Row> = {
   component: CryptoCurrencyTable.Row,
@@ -12,6 +13,10 @@ const meta: Meta<typeof CryptoCurrencyTable.Row> = {
       return <Component></Component>;
     },
   ],
+  args: {
+    onClick: fn(),
+    onSubscribe: fn(),
+  },
 };
 
 export default meta;

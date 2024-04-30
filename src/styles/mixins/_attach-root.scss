@@ -1,0 +1,18 @@
+@use 'sass:list';
+
+@mixin attach-root($new-class) {
+    $current-selector: &; // array
+    $new-selector: (
+    ); // new array
+
+@each $item in $current-selector {
+    $first-node: nth($item, 1);
+    $appended-node: $first-node + $new-class;
+    $new-item: set-nth($item, 1, $appended-node); // replace target node
+    $new-selector: append($new-item, $new-selector);
+}
+
+@at-root #{$new-selector} {
+    @content;
+}
+}

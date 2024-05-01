@@ -36,10 +36,10 @@ function CircularProgressBar({
 
   return (
     <div className={styles.container} style={containerStyle}>
-      <animated.h2>
+      <animated.h1>
         {animatedValues.percent.to((n) => Math.floor(n))}
-      </animated.h2>
-      {title && <h4>{title}</h4>}
+      </animated.h1>
+      {title && <h2>{title}</h2>}
     </div>
   );
 }

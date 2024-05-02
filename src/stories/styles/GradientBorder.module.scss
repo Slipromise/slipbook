@@ -1,0 +1,89 @@
+@property --degree {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@property --blurValue {
+    syntax: "<length>";
+    inherits: false;
+    initial-value: 10px;
+}
+
+.container {
+    --gradient-colors: #0f0, #ff0, #0ff, #f0f, #0f0;
+    --animation-duration: 1s;
+
+    position: relative;
+
+    width: 400px;
+    height: 300px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: conic-gradient(from var(--degree), var(--gradient-colors));
+        filter: blur(var(--blurValue, 30px));
+    }
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: conic-gradient(from var(--degree), var(--gradient-colors));
+        border-radius: 25px;
+    }
+
+    &.flow {
+
+        &::before,
+        &::after {
+            animation-name: flowAnimation;
+            animation-duration: var(--animation-duration);
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+
+    &.breathe {
+
+        &::before {
+            animation-name: breatheAnimation;
+            animation-duration: var(--animation-duration);
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate-reverse;
+        }
+    }
+
+    .insideBox {
+        position: absolute;
+        inset: 5px;
+        background: black;
+        border-radius: 20px;
+        z-index: 10;
+        padding: 1em;
+    }
+}
+
+@keyframes flowAnimation {
+    from {
+        --degree: 0deg
+    }
+
+    to {
+        --degree: 360deg
+    }
+}
+
+@keyframes breatheAnimation {
+    from {
+        --blurValue: 10px
+    }
+
+    to {
+        --blurValue: 40px
+    }
+}

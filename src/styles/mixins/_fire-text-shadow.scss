@@ -1,23 +1,26 @@
 @use '../functions/random' as *;
 @use 'sass:math';
 
-// TODO: 微調命名
+
 $_colors: #fefcc9 #feec85 #ffae34 #ec760c #cd4606 #973716 #451b0e;
 $_angle: 30deg;
-$_space: 2px;
-$_blurRadius: 5px;
+$_space: 4px;
+$_blurRadius: 10px;
+
 
 @mixin fire-text-shadow($colors: $_colors, $angle: $_angle, $space: $_space) {
     $radius: 0;
-    $text-shadows: ();
+    // TODO: 排版規則
+    $text-shadows: (
+    );
 
-    @for $i from 1 through length($colors) {
-        $radius: $radius - $space;
-        $randomAngle: randomNum(90deg - $angle/2, 90deg + $angle/2);
-        $XOffset: $radius * math.cos($randomAngle);
-        $YOffset: $radius * math.sin($randomAngle);
-        $text-shadows: append($text-shadows, $XOffset $YOffset $_blurRadius nth($colors, $i), comma);
-    }
+@for $i from 1 through length($colors) {
+    $radius: $radius - $space;
+    $randomAngle: randomNum(90deg - $angle/2, 90deg + $angle/2);
+    $XOffset: $radius * math.cos($randomAngle);
+    $YOffset: $radius * math.sin($randomAngle);
+    $text-shadows: append($text-shadows, $XOffset $YOffset $_blurRadius nth($colors, $i), comma);
+}
 
-    text-shadow: $text-shadows;
+text-shadow: $text-shadows;
 }

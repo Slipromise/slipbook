@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "react-bootstrap/esm/Image";
 import numeral from "numeral";
-import styles from "../styles/components/CryptoCurrencyRow.module.scss";
+import styles from "@/styles/components/CryptoCurrencyRow.module.scss";
 import { useSpring, animated } from "@react-spring/web";
 
 type Props = {
@@ -53,7 +53,7 @@ function CryptoCurrencyRow({
         <span>{rank}</span>
       </td>
       <td data-name>
-        <Image src={symbolUri} />
+        <Image src={symbolUri} alt="Crypto Currency" />
         <span>{name}</span>
         <span>{symbol}</span>
       </td>

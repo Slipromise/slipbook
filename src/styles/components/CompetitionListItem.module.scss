@@ -143,28 +143,6 @@ $awayTeamColor: #3971c4ff !default;
                 display: none;
             }
 
-            >*:not(:first-child):not(:last-child):not(:nth-last-child(2)) {
-                margin: 0 -1.5em;
-
-                // position: relative;
-                &:hover {
-                    margin: 0 1.5em;
-                }
-            }
-
-            >*:first-child {
-                margin: 0 -1.5em 0 0;
-
-                // position: relative;
-                &:hover {
-                    margin: 0 1.5em 0 0;
-                }
-            }
-
-            >*:nth-last-child(2) {
-                margin: 0 0 0 -1.5em;
-
-            }
 
         }
 

@@ -1,11 +1,15 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import VocabularyCard from "../../components/VocabularyCard";
+import VocabularyCard from "@/components/VocabularyCard";
 import { userEvent, within, expect } from "@storybook/test";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof VocabularyCard> = {
   component: VocabularyCard,
   tags: ["autodocs"],
+  args: {
+    onVoice: fn(),
+  },
 };
 
 export default meta;
@@ -27,13 +31,6 @@ export const Normal: Story = {
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-
-    // TODO: toBeInTheDocument 無法
-    // await expect(
-    //   canvas.findAllByText(
-    //     /There's not enough interaction between management and the workers./i
-    //   )
-    // ).toBeInTheDocument();
 
     await expect(
       canvas.queryAllByText(

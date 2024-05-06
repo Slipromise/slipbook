@@ -1,0 +1,7 @@
+@mixin css-transition($list) {
+    @each $element in $list {
+        @at-root #{&}:global(#{$element}) {
+            @content;
+        }
+    }
+}

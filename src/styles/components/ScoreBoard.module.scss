@@ -8,10 +8,6 @@ $awayTeamColor: #3971c4ff !default;
 $teamLimitedWidths: 300px 250px 100px !default;
 
 
-
-
-// TODO: RWD
-
 @property --percent {
     syntax: '<percentage>';
     inherits: false;
@@ -87,7 +83,7 @@ $teamLimitedWidths: 300px 250px 100px !default;
     }
 
     *[data-subtitle] {
-        font-size: 1.1em;
+        font-size: 1.3em;
         font-weight: bold;
         padding: 0 1em;
         text-align: center;
@@ -109,6 +105,7 @@ $teamLimitedWidths: 300px 250px 100px !default;
         --team-limited-width: #{list.nth($teamLimitedWidths,3)};
         font-size: 0.6em;
         text-shadow: 1px 2px black;
+        border-radius: 0 0 2em 2em;
 
         *[data-team] {
             font-size: .8em;

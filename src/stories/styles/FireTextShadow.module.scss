@@ -1,7 +1,8 @@
 @use "../../styles/mixins/fire-text-shadow" as *;
 
 .normal {
-    @include fire-text-shadow
+    @include fire-text-shadow;
+    font-size: 100px;
 }
 
 .animation {
@@ -17,11 +18,12 @@
 
     }
 
+    font-size: 100px;
 }
 
-// TODO: 微調顏色
 .variants {
-    @include fire-text-shadow(#c3eccf #8fe599 #5be764 #1dc723 #0e9504, 60deg)
+    @include fire-text-shadow(#f7feeeb2 #c1eb8ab0 #a5f63cdb #abff3d #b2ff4e6a, 60deg);
+    font-size: 100px;
 }
 
 @keyframes fireTextAni {

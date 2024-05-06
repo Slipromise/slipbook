@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import styles from "../styles/components/EmojiParticles.module.scss";
+import styles from "@/styles/components/EmojiParticles.module.scss";
 import Container from "react-bootstrap/esm/Container";
 import { random, isArray } from "lodash";
 import { useUnmount } from "react-use";

@@ -1,11 +1,12 @@
 import React, { ComponentProps, useMemo, useState } from "react";
 import dayjs from "dayjs";
-import styles from "../styles/components/CompetitionListItem.module.scss";
+import styles from "@/styles/components/CompetitionListItem.module.scss";
 import Stack from "react-bootstrap/esm/Stack";
 import AnchorAvatar from "./AnchorAvatar";
 import Image from "react-bootstrap/esm/Image";
 import { LuSwords } from "react-icons/lu";
 import { BiCollapseVertical } from "react-icons/bi";
+import { useMeasure } from "react-use";
 
 type Props = {
   title: string;
@@ -23,9 +24,6 @@ type Props = {
   onSubscript?: () => void;
 };
 
-// TODO: 彈性調整Props
-const COLLAPSE_ANCHOR_COUNT = 5;
-
 export default function CompetitionListItem({
   title,
   status,
@@ -40,11 +38,18 @@ export default function CompetitionListItem({
 }: Props) {
   const [isCollapsed, setIsCollapsed] = useState(() => true);
 
+  const [anchorContainerRef, bounds] = useMeasure<HTMLSpanElement>();
+
+  const collapseAnchorCount = useMemo(
+    () => Math.floor(bounds.width / 90),
+    [bounds.width]
+  );
+
   const fixedAnchor: Props["anchors"] = useMemo(() => {
-    return isCollapsed && anchors && anchors.length >= COLLAPSE_ANCHOR_COUNT
-      ? anchors?.slice(0, COLLAPSE_ANCHOR_COUNT + 1)
+    return isCollapsed && anchors && anchors.length > collapseAnchorCount
+      ? anchors?.slice(0, collapseAnchorCount)
       : anchors;
-  }, [anchors, isCollapsed]);
+  }, [anchors, collapseAnchorCount, isCollapsed]);
 
   const isATeamWinner = useMemo(() => {
     return (
@@ -72,7 +77,7 @@ export default function CompetitionListItem({
           <Stack direction="horizontal">
             <span data-team-name>{aTeamName}</span>
             {aTeamAvatarSrc ? (
-              <Image data-team-logo src={aTeamAvatarSrc} />
+              <Image data-team-logo src={aTeamAvatarSrc} alt="Home Team" />
             ) : (
               <div data-team-logo>
                 <span>{bTeamName[0]}</span>
@@ -85,7 +90,7 @@ export default function CompetitionListItem({
         <Stack data-team data-winner={!isATeamWinner} data-is-tie={isTie}>
           <Stack direction="horizontal">
             {bTeamAvatarSrc ? (
-              <Image data-team-logo src={bTeamAvatarSrc} />
+              <Image data-team-logo src={bTeamAvatarSrc} alt="Away Team" />
             ) : (
               <div data-team-logo>
                 <span>{bTeamName[0]}</span>
@@ -97,21 +102,30 @@ export default function CompetitionListItem({
         </Stack>
       </Stack>
       {fixedAnchor && (
-        <Stack data-footer data-is-collapsed={isCollapsed}>
+        <Stack
+          data-footer
+          data-is-collapsed={
+            isCollapsed && anchors && anchors.length - fixedAnchor.length > 0
+          }
+          ref={anchorContainerRef}
+        >
           {fixedAnchor.map((itemProps, key) => (
             <AnchorAvatar {...itemProps} key={key} />
           ))}
-          {
+          {((anchors && anchors.length - fixedAnchor.length > 0) ||
+            !isCollapsed) && (
             <div
               className={styles.more}
               onClick={() => setIsCollapsed((b) => !b)}
             >
-              {anchors && isCollapsed && (
-                <span>{`+${anchors.length - fixedAnchor.length}`}</span>
-              )}
+              {anchors &&
+                isCollapsed &&
+                anchors.length - fixedAnchor.length > 0 && (
+                  <span>{`+${anchors.length - fixedAnchor.length}`}</span>
+                )}
               {!isCollapsed && <BiCollapseVertical size="1.5em" />}
             </div>
-          }
+          )}
         </Stack>
       )}
     </Stack>

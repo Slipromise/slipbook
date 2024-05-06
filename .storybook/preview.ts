@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 
-import "../src/styles/index.scss";
+import "@/styles/index.scss";
 // import "../src/styles/customTheme/index.scss";
 // import "../src/styles/customTheme/indexByExtend.scss";
 
@@ -11,7 +11,6 @@ dayjs.extend(duration);
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,

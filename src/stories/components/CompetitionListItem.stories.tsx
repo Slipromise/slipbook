@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import CompetitionListItem from "../../components/CompetitionListItem";
+import CompetitionListItem from "@/components/CompetitionListItem";
 
 import React from "react";
-import { withHolder } from "../../components/withHolder";
+import { withHolder } from "@/components/withHolder";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof CompetitionListItem> = {
   component: CompetitionListItem,
@@ -14,6 +15,10 @@ const meta: Meta<typeof CompetitionListItem> = {
   ],
   argTypes: { startTime: { control: "date" } },
   tags: ["autodocs"],
+  args: {
+    onClick: fn(),
+    onSubscript: fn(),
+  },
 };
 
 export default meta;

@@ -1,8 +1,8 @@
-// TODO: positive & negative 反轉
-// TODO: RWD
-
 .container {
     vertical-align: middle;
+
+    --positive-color: #D40808;
+    --negative-color: green;
 
     *[data-name] {
         display: flex;
@@ -22,16 +22,16 @@
         }
 
         span:nth-child(3) {
-            color: gray;
+            color: rgb(110, 110, 110);
         }
 
     }
 
     *[data-positive='true'] {
-        color: red;
+        color: var(--positive-color);
     }
 
     *[data-negative='true'] {
-        color: green;
+        color: var(--negative-color);
     }
 }

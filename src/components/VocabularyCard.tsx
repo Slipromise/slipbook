@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Stack from "react-bootstrap/Stack";
 import { isString, isArray } from "lodash";
-import styles from "../styles/components/VocabularyCard.module.scss";
+import styles from "@/styles/components/VocabularyCard.module.scss";
 import { AiFillSound } from "react-icons/ai";
 import { BsChevronDoubleDown, BsChevronDoubleUp } from "react-icons/bs";
 type Sentence = { content: string; translation: string } | string;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import HoldemPlayerBar from "../../components/HoldemPlayerBar";
+import HoldemPlayerBar from "@/components/HoldemPlayerBar";
 import { run as runHolder } from "holderjs";
 import { useEffect } from "react";
 

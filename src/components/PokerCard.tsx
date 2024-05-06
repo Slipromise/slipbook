@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/components/PokerCard.module.scss";
+import styles from "@/styles/components/PokerCard.module.scss";
 
 type PokerCardValue =
   | "SA"

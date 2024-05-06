@@ -1,33 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React, { useEffect } from "react";
-import CryptoCurrencyRow, {
-  CryptoCurrencyHeaderRow,
-} from "../../components/CryptoCurrencyRow";
-import Table from "react-bootstrap/Table";
-import { run as runHolder } from "holderjs";
+import React from "react";
+import CryptoCurrencyTable from "@/components/CryptoCurrencyTable";
+import { withHolder } from "@/components/withHolder";
+import { fn } from "@storybook/test";
 
-// TODO: 組合式Story
-
-const meta: Meta<typeof CryptoCurrencyRow> = {
-  component: CryptoCurrencyRow,
+const meta: Meta<typeof CryptoCurrencyTable.Row> = {
+  component: CryptoCurrencyTable.Row,
   tags: ["autodocs"],
   decorators: [
     (story) => {
-      const StoryComponent = story;
-
-      // TODO: 無法使用withHolder
-
-      useEffect(() => {
-        runHolder();
-      }, []);
-      return <StoryComponent />;
+      const Component = withHolder(story);
+      return <Component></Component>;
     },
   ],
+  args: {
+    onClick: fn(),
+    onSubscribe: fn(),
+  },
 };
 
 export default meta;
 
-type Stroy = StoryObj<typeof CryptoCurrencyRow>;
+type Stroy = StoryObj<typeof CryptoCurrencyTable.Row>;
 
 export const Bitcoin: Stroy = {
   args: {

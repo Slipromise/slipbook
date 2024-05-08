@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/components/VocabularyCard Normal play-test 1`] = `
+<div class="VocabularyCard_container__kSPIu card">
+  <div class="card-header">
+    <div class="card-title h5">
+      interaction
+    </div>
+    <div class="card-subtitle h6">
+      名詞 [ˌɪntəˈrækʃən]
+      <svg stroke="currentColor"
+           fill="currentColor"
+           stroke-width="0"
+           viewbox="0 0 1024 1024"
+           height="2em"
+           width="2em"
+           xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M892.1 737.8l-110.3-63.7a15.9 15.9 0 0 0-21.7 5.9l-19.9 34.5c-4.4 7.6-1.8 17.4 5.8 21.8L856.3 800a15.9 15.9 0 0 0 21.7-5.9l19.9-34.5c4.4-7.6 1.7-17.4-5.8-21.8zM760 344a15.9 15.9 0 0 0 21.7 5.9L892 286.2c7.6-4.4 10.2-14.2 5.8-21.8L878 230a15.9 15.9 0 0 0-21.7-5.9L746 287.8a15.99 15.99 0 0 0-5.8 21.8L760 344zm174 132H806c-8.8 0-16 7.2-16 16v40c0 8.8 7.2 16 16 16h128c8.8 0 16-7.2 16-16v-40c0-8.8-7.2-16-16-16zM625.9 115c-5.9 0-11.9 1.6-17.4 5.3L254 352H90c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16h164l354.5 231.7c5.5 3.6 11.6 5.3 17.4 5.3 16.7 0 32.1-13.3 32.1-32.1V147.1c0-18.8-15.4-32.1-32.1-32.1z">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="vstack">
+      <span>
+        inter/act/ion
+      </span>
+      <span>
+        between/act/名詞字尾
+      </span>
+    </div>
+    <div class="vstack">
+      <span>
+        互動
+      </span>
+    </div>
+  </div>
+  <div class="card-footer">
+    <ul class="vstack">
+      <li>
+        There's not enough interaction between management and the workers.
+        <br>
+        管理階層和勞工之間的互動不足
+      </li>
+    </ul>
+    <svg stroke="currentColor"
+         fill="currentColor"
+         stroke-width="0"
+         viewbox="0 0 16 16"
+         class="VocabularyCard_collapsed-icon__cMUuH"
+         data-testid="collapseIcon"
+         height="1em"
+         width="1em"
+         xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd"
+            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+      >
+      </path>
+      <path fill-rule="evenodd"
+            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+      >
+      </path>
+    </svg>
+  </div>
+</div>
+`;

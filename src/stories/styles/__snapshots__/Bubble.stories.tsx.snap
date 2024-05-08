@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/Bubble Animation smoke-test 1`] = `
+<div class="Bubble_stereoscopic__NZdFe Bubble_animation__Xze6B">
+</div>
+`;
+
+exports[`stories/styles/Bubble Normal smoke-test 1`] = `
+<div class="Bubble_normal__TUCmR">
+</div>
+`;
+
+exports[`stories/styles/Bubble Stereoscopic smoke-test 1`] = `
+<div class="Bubble_stereoscopic__NZdFe">
+</div>
+`;

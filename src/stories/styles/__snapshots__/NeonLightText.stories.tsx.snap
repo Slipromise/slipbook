@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/NeonLightText Normal smoke-test 1`] = `
+<div class="NeonLightText_container__CsWVQ">
+  <span>
+    N
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    n
+  </span>
+  <span>
+    L
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    g
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    t
+  </span>
+</div>
+`;

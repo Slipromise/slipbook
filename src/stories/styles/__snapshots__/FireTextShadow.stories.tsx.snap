@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/FireTextShadow Animation smoke-test 1`] = `
+<h1 class="FireTextShadow_animation__cd8db">
+  <span>
+    F
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    r
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    T
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    x
+  </span>
+  <span>
+    t
+  </span>
+  <span>
+    S
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    a
+  </span>
+  <span>
+    d
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    w
+  </span>
+</h1>
+`;
+
+exports[`stories/styles/FireTextShadow Normal smoke-test 1`] = `
+<h1 class="FireTextShadow_normal__LF_VL">
+  <span>
+    F
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    r
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    T
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    x
+  </span>
+  <span>
+    t
+  </span>
+  <span>
+    S
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    a
+  </span>
+  <span>
+    d
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    w
+  </span>
+</h1>
+`;
+
+exports[`stories/styles/FireTextShadow Variants smoke-test 1`] = `
+<h1 class="FireTextShadow_variants__irrI7">
+  <span>
+    F
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    r
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    T
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    x
+  </span>
+  <span>
+    t
+  </span>
+  <span>
+    S
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    a
+  </span>
+  <span>
+    d
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    w
+  </span>
+</h1>
+`;

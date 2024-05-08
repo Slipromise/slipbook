@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/components/CryptoCurrencyRow BNB smoke-test 1`] = `
+<tr class="CryptoCurrencyRow_container__Lhx5J">
+  <td data-rank="true">
+    <span>
+      4
+    </span>
+  </td>
+  <td data-name="true">
+    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f0a593%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f0a593%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22-2.5390625%22%20y%3D%2228%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+         alt="Crypto Currency"
+         class
+    >
+    <span>
+      BNB
+    </span>
+    <span>
+      BNB
+    </span>
+  </td>
+  <td data-price="true">
+    <span>
+      $421.07
+    </span>
+  </td>
+  <td data-changein1h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.19%
+    </span>
+  </td>
+  <td data-changein24h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.14%
+    </span>
+  </td>
+  <td data-changein1w="true">
+    <span data-positive="true"
+          data-negative="false"
+    >
+      9.5%
+    </span>
+  </td>
+  <td data-marketcap="true">
+    <span>
+      $10.15b
+    </span>
+  </td>
+  <td data-volume24h="true">
+    <span>
+      $234.36m
+    </span>
+  </td>
+</tr>
+`;
+
+exports[`stories/components/CryptoCurrencyRow Bitcoin smoke-test 1`] = `
+<tr class="CryptoCurrencyRow_container__Lhx5J">
+  <td data-rank="true">
+    <span>
+      1
+    </span>
+  </td>
+  <td data-name="true">
+    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f0a593%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f0a593%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22-2.5390625%22%20y%3D%2228%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+         alt="Crypto Currency"
+         class
+    >
+    <span>
+      bitcoin
+    </span>
+    <span>
+      BTC
+    </span>
+  </td>
+  <td data-price="true">
+    <span>
+      $51,730.16
+    </span>
+  </td>
+  <td data-changein1h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.19%
+    </span>
+  </td>
+  <td data-changein24h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.14%
+    </span>
+  </td>
+  <td data-changein1w="true">
+    <span data-positive="true"
+          data-negative="false"
+    >
+      9.5%
+    </span>
+  </td>
+  <td data-marketcap="true">
+    <span>
+      $10.15b
+    </span>
+  </td>
+  <td data-volume24h="true">
+    <span>
+      $234.36m
+    </span>
+  </td>
+</tr>
+`;
+
+exports[`stories/components/CryptoCurrencyRow Ethereum smoke-test 1`] = `
+<tr class="CryptoCurrencyRow_container__Lhx5J">
+  <td data-rank="true">
+    <span>
+      2
+    </span>
+  </td>
+  <td data-name="true">
+    <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f0a593%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f0a593%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22-2.5390625%22%20y%3D%2228%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+         alt="Crypto Currency"
+         class
+    >
+    <span>
+      ethereum
+    </span>
+    <span>
+      ETH
+    </span>
+  </td>
+  <td data-price="true">
+    <span>
+      $3,778.97
+    </span>
+  </td>
+  <td data-changein1h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.19%
+    </span>
+  </td>
+  <td data-changein24h="true">
+    <span data-positive="false"
+          data-negative="true"
+    >
+      -0.14%
+    </span>
+  </td>
+  <td data-changein1w="true">
+    <span data-positive="true"
+          data-negative="false"
+    >
+      9.5%
+    </span>
+  </td>
+  <td data-marketcap="true">
+    <span>
+      $10.15b
+    </span>
+  </td>
+  <td data-volume24h="true">
+    <span>
+      $234.36m
+    </span>
+  </td>
+</tr>
+`;

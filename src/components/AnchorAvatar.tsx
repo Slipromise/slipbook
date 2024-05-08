@@ -19,7 +19,11 @@ export default function AnchorAvatar({ src, name }: Props) {
           <span>{name ? name[0] : name}</span>
         </div>
       ) : (
-        <Figure.Image src={src} onError={() => setIsDefaultImage(true)} />
+        <Figure.Image
+          src={src}
+          onError={() => setIsDefaultImage(true)}
+          alt=""
+        />
       )}
       <Figure.Caption>{name}</Figure.Caption>
     </Figure>

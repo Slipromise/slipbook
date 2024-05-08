@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/components/LuckySpinningWheel Normal smoke-test 1`] = `
+<div class="LuckySpinningWheel_container___4z4h">
+  <div class="LuckySpinningWheel_wheel__O3DCn"
+       style="transform: rotate(0deg);"
+  >
+    <span style="--i: 0;">
+    </span>
+    <span style="--i: 1;">
+    </span>
+    <span style="--i: 2;">
+    </span>
+    <span style="--i: 3;">
+    </span>
+    <div class="LuckySpinningWheel_numbers__BUI3w">
+      <b style="--i: 0;">
+        5
+      </b>
+      <b style="--i: 1;">
+        1
+      </b>
+      <b style="--i: 2;">
+        4
+      </b>
+      <b style="--i: 3;">
+        6
+      </b>
+      <b style="--i: 4;">
+        2
+      </b>
+      <b style="--i: 5;">
+        8
+      </b>
+      <b style="--i: 6;">
+        7
+      </b>
+      <b style="--i: 7;">
+        3
+      </b>
+    </div>
+  </div>
+  <div class="LuckySpinningWheel_wheel__O3DCn LuckySpinningWheel_inner__9nS3E"
+       style="transform: rotate(0deg);"
+  >
+    <span style="--i: 0;">
+    </span>
+    <span style="--i: 1;">
+    </span>
+    <span style="--i: 2;">
+    </span>
+    <span style="--i: 3;">
+    </span>
+    <div class="LuckySpinningWheel_numbers__BUI3w">
+      <b style="--i: 0;">
+        5
+      </b>
+      <b style="--i: 1;">
+        1
+      </b>
+      <b style="--i: 2;">
+        4
+      </b>
+      <b style="--i: 3;">
+        6
+      </b>
+      <b style="--i: 4;">
+        2
+      </b>
+      <b style="--i: 5;">
+        8
+      </b>
+      <b style="--i: 6;">
+        7
+      </b>
+      <b style="--i: 7;">
+        3
+      </b>
+    </div>
+  </div>
+  <div class="LuckySpinningWheel_spinBtn__P9qub">
+    Spin
+  </div>
+</div>
+`;

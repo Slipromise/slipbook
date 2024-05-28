@@ -5,34 +5,109 @@ import React from "react";
 
 type Props = {
   className?: React.HtmlHTMLAttributes<HTMLDivElement>["className"];
+  borderSideClassName?: React.HtmlHTMLAttributes<HTMLDivElement>["className"];
 };
 
-function SnakeBrowser({ className }: Props) {
+function SnakeBroader({ className, borderSideClassName }: Props) {
   return (
     <div className={className}>
-      <span className={styles.borderSide} />
-      <span className={styles.borderSide} />
-      <span className={styles.borderSide} />
-      <span className={styles.borderSide} />
-      <p>SnakeBrowser.stories</p>
+      <span className={borderSideClassName} />
+      <span className={borderSideClassName} />
+      <span className={borderSideClassName} />
+      <span className={borderSideClassName} />
+      <p>SnakeBroader</p>
     </div>
   );
 }
 
-const meta: Meta<typeof SnakeBrowser> = {
-  component: SnakeBrowser,
+const meta: Meta<typeof SnakeBroader> = {
+  component: SnakeBroader,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof SnakeBrowser>;
+type Story = StoryObj<typeof SnakeBroader>;
 
-export const Normal: Story = {
+export const Animation4SidesClockwise: Story = {
   args: {
     className: styles.container,
+    borderSideClassName: styles["animation-4-sides-clockwise"],
   },
 };
 
-// TODO: Count 1 2 4
+export const Animation4SidesCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["animation-4-sides-counterclockwise"],
+  },
+};
 
-// TODO: Counterclockwise
+export const Animation2SidesClockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["animation-2-sides-clockwise"],
+  },
+};
+
+export const Animation2SidesCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["animation-2-sides-counterclockwise"],
+  },
+};
+
+export const AnimationSideClockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["animation-1-sides-clockwise"],
+  },
+};
+
+export const AnimationSideCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["animation-1-sides-counterclockwise"],
+  },
+};
+
+export const Hover4SidesClockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-4-sides-clockwise"],
+  },
+};
+
+export const Hover4SidesCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-4-sides-counterclockwise"],
+  },
+};
+
+export const Hover2SidesClockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-2-sides-clockwise"],
+  },
+};
+
+export const Hover2SidesCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-2-sides-counterclockwise"],
+  },
+};
+
+export const HoverSideClockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-1-sides-clockwise"],
+  },
+};
+
+export const HoverSideCounterclockwise: Story = {
+  args: {
+    className: styles.container,
+    borderSideClassName: styles["hover-1-sides-counterclockwise"],
+  },
+};

@@ -1,64 +1,61 @@
-// TODO: refactor this into Mixins, that parameters have type, duration and color.
+@use "../../styles/mixins/neon-light-text-shadow" as *;
 
-.container {
+
+.normal {
     font-size: xx-large;
     color: #111;
 
     span {
-        animation: textAnimation 2.25s linear infinite;
 
-        &:nth-child(2) {
-            animation-delay: .25s;
-        }
+        @include neon-light-text-shadow(#15b925);
+        color: #fff;
 
-        &:nth-child(3) {
-            animation-delay: .5s;
-        }
+    }
+}
 
-        &:nth-child(4) {
-            animation-delay: .75s;
-        }
+.chase {
+    font-size: xx-large;
+    color: #111;
 
-        &:nth-child(5) {
-            animation-delay: 1s;
-        }
+    span {
 
-        &:nth-child(6) {
-            animation-delay: 1.25s;
-        }
+        animation: chaseAnimation 2.7s infinite;
 
-        &:nth-child(7) {
-            animation-delay: 1.5s;
-        }
-
-        &:nth-child(8) {
-            animation-delay: 1.75s;
-        }
-
-        &:nth-child(9) {
-            animation-delay: 2s;
+        @for $i from 1 through 9 {
+            &:nth-child(#{$i}) {
+                animation-delay: $i * 0.3s;
+            }
         }
 
     }
-
-
 }
 
-@keyframes textAnimation {
+.flickering {
+    font-size: xx-large;
+    color: #111;
+
+    span {
+        animation: flickerAnimation 2s infinite alternate;
+    }
+}
+
+.pulsate {
+    font-size: xx-large;
+    color: #111;
+
+    span {
+        animation: pulsateAnimation 2s infinite alternate;
+    }
+}
+
+@keyframes chaseAnimation {
 
     0%,
     100% {
         color: #fff;
         filter: blur(2px);
-        text-shadow:
-            0 0 10px #ff00dd,
-            0 0 20px #ff00dd,
-            0 0 40px #ff00dd,
-            0 0 80px #ff00dd,
-            0 0 120px #ff00dd,
-            0 0 200px #ff00dd,
-            0 0 300px #ff00dd,
-            0 0 400px #ff00dd;
+        @include neon-light-text-shadow(#1C03DE, 0, 10px 20px 40px 80px 120px 200px 300px 400px);
+
     }
 
     5%,
@@ -66,5 +63,39 @@
         color: #111;
         filter: blur(0px);
         text-shadow: none
+    }
+}
+
+@keyframes flickerAnimation {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        @include neon-light-text-shadow(#D829EE);
+    }
+
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+@keyframes pulsateAnimation {
+
+    0% {
+        color: #fff;
+        @include neon-light-text-shadow(#16a6b6, 4px 11px 19px, 40px 80px 90px 100px 150px);
+
+    }
+
+    100% {
+        color: #fff;
+        @include neon-light-text-shadow(#16a6b6, 2px 4px 6px, 10px 45px 55px 70px 80px);
     }
 }

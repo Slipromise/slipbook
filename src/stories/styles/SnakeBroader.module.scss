@@ -1,5 +1,5 @@
 @use '../../styles/mixins/attach-root' as *;
-
+@use '../../styles/mixins/snake-broader' as *;
 
 // TODO: refactor this into Mixins , that parameters have count, size, isClockwise, time and color. 
 
@@ -13,122 +13,129 @@
     overflow: hidden;
 
     .borderSide {
-        position: absolute;
-        pointer-events: none;
 
-        // background-color: green;
+        // @include snakeBorderSide(#21f39f, 10px);
+        @include snakeBorderSide(#21f39f, 10px, animation, 2, 1s);
+        // @include snakeBorderSide(#21f39f, 10px, animation, 4, 1s, false);
+        // @include snakeBorderSide(#21f39f, 10px, hoverTransition);
+        // @include snakeBorderSide(#21f39f, 10px, hoverTransition, 2);
+        // @include snakeBorderSide(#21f39f, 10px, hoverTransition, 4, 1s, false);
+        // position: absolute;
+        // pointer-events: none;
 
-        &:nth-child(1) {
-            top: 0;
-            height: 10px;
-            width: 200%;
-            background: linear-gradient(90deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
-            right: 100%;
-            animation-name: topAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+        // // background-color: green;
 
-            // @include attach-root(':hover') {
-            //     right: -100%;
-            //     transition: right 1s;
+        // &:nth-child(1) {
+        //     top: 0;
+        //     height: 10px;
+        //     width: 200%;
+        //     background: linear-gradient(90deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
+        //     right: 100%;
+        //     animation-name: topAnimation;
+        //     animation-duration: 1s;
+        //     animation-iteration-count: infinite;
 
-            // }
-        }
+        //     // @include attach-root(':hover') {
+        //     //     right: -100%;
+        //     //     transition: right 1s;
 
-        &:nth-child(2) {
-            right: 0;
-            width: 10px;
-            height: 200%;
-            background: linear-gradient(0deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
-            bottom: 100%;
-            animation-name: rightAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+        //     // }
+        // }
 
-            // @include attach-root(':hover') {
-            //     bottom: -100%;
-            //     transition: bottom 1s;
-            //     // transition-delay: .4s;
-            // }
-        }
+        // &:nth-child(2) {
+        //     right: 0;
+        //     width: 10px;
+        //     height: 200%;
+        //     background: linear-gradient(0deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
+        //     bottom: 100%;
+        //     animation-name: rightAnimation;
+        //     animation-duration: 1s;
+        //     animation-iteration-count: infinite;
 
-        &:nth-child(3) {
-            bottom: 0;
-            height: 10px;
-            width: 200%;
-            background: linear-gradient(90deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
-            left: 100%;
-            animation-name: bottomAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+        //     // @include attach-root(':hover') {
+        //     //     bottom: -100%;
+        //     //     transition: bottom 1s;
+        //     //     // transition-delay: .4s;
+        //     // }
+        // }
 
-            // @include attach-root(':hover') {
-            //     left: -100%;
-            //     transition: left 1s;
-            //     transition-delay: s;
-            // }
-        }
+        // &:nth-child(3) {
+        //     bottom: 0;
+        //     height: 10px;
+        //     width: 200%;
+        //     background: linear-gradient(90deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
+        //     left: 100%;
+        //     animation-name: bottomAnimation;
+        //     animation-duration: 1s;
+        //     animation-iteration-count: infinite;
 
-        &:nth-child(4) {
-            left: 0;
-            width: 10px;
-            height: 200%;
-            background: linear-gradient(0deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
-            top: 100%;
+        //     // @include attach-root(':hover') {
+        //     //     left: -100%;
+        //     //     transition: left 1s;
+        //     //     transition-delay: s;
+        //     // }
+        // }
 
-            animation-name: leftAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
+        // &:nth-child(4) {
+        //     left: 0;
+        //     width: 10px;
+        //     height: 200%;
+        //     background: linear-gradient(0deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
+        //     top: 100%;
 
-            // @include attach-root(':hover') {
-            //     top: -100%;
-            //     transition: top 1s;
-            //     // transition-delay: .4s;
-            // }
-        }
+        //     animation-name: leftAnimation;
+        //     animation-duration: 1s;
+        //     animation-iteration-count: infinite;
+
+        //     // @include attach-root(':hover') {
+        //     //     top: -100%;
+        //     //     transition: top 1s;
+        //     //     // transition-delay: .4s;
+        //     // }
+        // }
     }
 
 }
 
-@keyframes topAnimation {
-    from {
-        right: 0%;
-    }
+// @keyframes topAnimation {
+//     from {
+//         right: 0%;
+//     }
 
-    to {
-        right: -100%;
-    }
-}
+//     to {
+//         right: -100%;
+//     }
+// }
 
-@keyframes rightAnimation {
-    from {
+// @keyframes rightAnimation {
+//     from {
 
-        bottom: 0%;
-    }
+//         bottom: 0%;
+//     }
 
-    to {
-        bottom: -100%;
-    }
-}
+//     to {
+//         bottom: -100%;
+//     }
+// }
 
-@keyframes bottomAnimation {
-    from {
+// @keyframes bottomAnimation {
+//     from {
 
-        left: 0%;
-    }
+//         left: 0%;
+//     }
 
-    to {
-        left: -100%;
-    }
-}
+//     to {
+//         left: -100%;
+//     }
+// }
 
-@keyframes leftAnimation {
-    from {
+// @keyframes leftAnimation {
+//     from {
 
-        top: 0%;
-    }
+//         top: 0%;
+//     }
 
-    to {
-        top: -100%;
-    }
-}
+//     to {
+//         top: -100%;
+//     }
+// }

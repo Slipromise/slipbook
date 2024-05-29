@@ -1,0 +1,130 @@
+@use '../../styles/functions/random' as *;
+@use "../../styles/mixins/bubble-random" as *;
+
+@property --x {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+@property --y {
+    syntax: '<length>';
+    inherits: true;
+    initial-value: 0px;
+}
+
+.container {
+    filter: url(#gooey);
+
+    .normal {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(90deg, #f00, #0ff);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // transform-origin: center;
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #f00, #0ff);
+            transform-origin: center;
+            z-index: -1;
+
+            @for $i from 1 through 40 {
+
+                &:nth-child(#{$i}) {
+                    $x: randomNum(-200px, 200px);
+                    $y: randomNum(-200px, 200px);
+                    transform: translate($x, $y);
+                    width: #{randomNum(10px, 60px)};
+                }
+
+            }
+
+        }
+
+    }
+
+
+    .slime {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle at 0% 0%,
+                rgb(3, 110, 250),
+                rgb(5, 232, 164));
+        box-shadow: 0 -2vmin 4vmin rgb(26, 81, 165) inset,
+            0 1vmin 4vmin rgb(54, 131, 71) inset,
+            0 -2vmin 7vmin rgb(66, 131, 121) inset;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: bubbleAni;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.2s;
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle at 0% 0%,
+                    rgb(3, 110, 250),
+                    rgb(5, 232, 164));
+            box-shadow: 0 -2vmin 4vmin rgb(26, 81, 165) inset,
+                0 1vmin 4vmin rgb(54, 131, 71) inset,
+                0 -2vmin 7vmin rgb(66, 131, 121) inset;
+            transform-origin: center;
+            z-index: -1;
+            animation: slimeAnimation 1s ease-in-out infinite alternate-reverse;
+
+
+            @for $i from 1 through 40 {
+
+                &:nth-child(#{$i}) {
+                    --x: #{randomNum(-200px, 200px)};
+                    --y: #{randomNum(-200px, 200px)};
+                    transform: translate(var(--x), var(--y));
+                    width: #{randomNum(10px, 60px)};
+                }
+
+            }
+
+        }
+    }
+
+
+    .filterSvg {
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes slimeAnimation {
+    0% {}
+
+    100% {
+        --x: 0;
+        --y: 0;
+    }
+}
+
+@keyframes bubbleAni {
+    $count: 7;
+    $space: 100 / ($count + 1);
+
+    @for $i from 1 through $count {
+        #{$space * $i * 1% } {
+            @include bubble-random;
+        }
+    }
+}

@@ -23,6 +23,11 @@ const config: TestRunnerConfig = {
   async postVisit(page, context) {
     // Add your configuration here.
 
+    // the #storybook-root element wraps the story. In Storybook 6.x, the selector is #root
+    const elementHandler = await page.$("#storybook-root");
+    const innerHTML = await elementHandler?.innerHTML();
+    expect(innerHTML).toMatchSnapshot();
+
     // Get the entire context of a story, including parameters, args, argTypes, etc.
     const storyContext = await getStoryContext(page, context);
 

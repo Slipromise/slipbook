@@ -1,0 +1,186 @@
+@use './attach-root' as *;
+
+@mixin snakeBorderSide ($color, $borderWidth, $type: animation, $count: 4, $duration: 1s, $isClockwise: true) {
+    position: absolute;
+    pointer-events: none;
+
+    @for $i from 1 through 4 {
+
+        &:nth-child(#{$i}) {
+
+            $zeroDirection: if($i ==1, top,
+                    if($i ==2, right,
+                        if($i ==3, bottom,
+                            left)));
+            $moveDirection: if($i ==1 and $isClockwise ==true, right,
+                    if($i ==1 and $isClockwise ==false, left,
+                        if($i ==2 and $isClockwise ==true, bottom,
+                            if($i ==2 and $isClockwise ==false, top,
+                                if($i ==3 and $isClockwise ==true, left,
+                                    if($i ==3 and $isClockwise ==false, right,
+                                        if($i ==4 and $isClockwise ==true, top,
+                                            bottom)))))));
+            $backgroundDegree: if($i==1 or $i==3, 90deg, 0deg);
+            $backgroundColor1: if($i==1 or $i==4,
+                    if($isClockwise, transparent, $color),
+                    if($isClockwise, $color, transparent));
+            $backgroundColor2: if($i==1 or $i==4,
+                    if($isClockwise, $color, transparent),
+                    if($isClockwise, transparent, $color));
+            $animationName: if($i ==1, topAnimation,
+                    if($i ==2, rightAnimation,
+                        if($i ==3, bottomAnimation,
+                            if($i ==4, leftAnimation,
+                                unset))));
+
+            @if $type ==animation and $count ==4 {
+
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: 100%;
+                height: if($i==1 or $i==3, $borderWidth , 200%);
+                width: if($i==1 or $i==3, 200%, $borderWidth );
+                background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 50%, $backgroundColor1 50%, $backgroundColor2);
+                animation-duration: $duration / $count;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-name: #{$animationName}-#{$count}-#{$isClockwise};
+            }
+
+            @else if $type ==animation and $count ==2 {
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: 100%;
+                height: if($i==1 or $i==3, $borderWidth , 100%);
+                width: if($i==1 or $i==3, 100%, $borderWidth );
+                background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 );
+                animation-duration: $duration / $count;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-name: #{$animationName}-#{$count}-#{$isClockwise};
+                animation-delay: if($i ==1 or $i ==3, 0, $duration / $count / $count);
+            }
+
+            @else if $type ==animation and $count ==1 {
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: 100%;
+                height: if($i==1 or $i==3, $borderWidth , 100%);
+                width: if($i==1 or $i==3, 100%, $borderWidth );
+                background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 );
+                animation-duration: $duration ;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-name: #{$animationName}-#{$count}-#{$isClockwise};
+                animation-delay: if($isClockwise , ($i - 1) * $duration / 4, (4 - $i ) * $duration / 4);
+            }
+
+            @else if $type ==hoverTransition and $count ==4 {
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: 100%;
+                height: if($i==1 or $i==3, $borderWidth , 100%);
+                width: if($i==1 or $i==3, 100%, $borderWidth );
+
+                transition: $moveDirection $duration ;
+                background: linear-gradient($backgroundDegree, $backgroundColor2, $backgroundColor1 );
+
+                @include attach-root(':hover') {
+                    background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 );
+
+                    #{$moveDirection}: -100%;
+                }
+            }
+
+            @else if $type ==hoverTransition and $count ==2 {
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: if($i ==2 or $i ==4, 200%, 100%);
+                height: if($i==1 or $i==3, $borderWidth , 100%);
+                width: if($i==1 or $i==3, 100%, $borderWidth );
+
+                transition: $moveDirection $duration ;
+                background: linear-gradient($backgroundDegree, $backgroundColor2, $backgroundColor1 );
+
+                @include attach-root(':hover') {
+                    background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 );
+
+                    #{$moveDirection}: if($i ==2 or $i ==4, -100%, -200%);
+                }
+            }
+
+            @else if $type ==hoverTransition and $count ==1 {
+
+                #{$zeroDirection}: 0;
+                #{$moveDirection}: if($isClockwise , $i * 100%, (5 - $i) * 100%);
+                height: if($i==1 or $i==3, $borderWidth , 100%);
+                width: if($i==1 or $i==3, 100%, $borderWidth );
+
+                transition: $moveDirection $duration ;
+                background: linear-gradient($backgroundDegree, $backgroundColor2, $backgroundColor1 );
+
+                @include attach-root(':hover') {
+                    background: linear-gradient($backgroundDegree, $backgroundColor1, $backgroundColor2 );
+
+                    #{$moveDirection}: if($isClockwise , ($i - 5) * 100%, $i * -100%);
+
+                }
+            }
+
+
+        }
+    }
+
+
+
+    $direction: if($isClockwise , right, left);
+
+    @keyframes topAnimation-#{$count}-#{$isClockwise} {
+
+        from {
+            #{$direction}: if($count ==4, 0, 100%);
+        }
+
+        to {
+            #{$direction}: if($count ==1, -300%, -100%);
+        }
+    }
+
+    $direction: if($isClockwise , bottom, top);
+
+    @keyframes rightAnimation-#{$count}-#{$isClockwise} {
+        from {
+            #{$direction}: if($count ==4, 0, 100%);
+        }
+
+        to {
+            #{$direction}: if($count ==1, -300%, -100%);
+        }
+    }
+
+    $direction: if($isClockwise , left, right);
+
+    @keyframes bottomAnimation-#{$count}-#{$isClockwise} {
+        from {
+
+            #{$direction}: if($count ==4, 0, 100%);
+        }
+
+        to {
+            #{$direction}: if($count ==1, -300%, -100%);
+        }
+    }
+
+    $direction: if($isClockwise , top, bottom);
+
+    @keyframes leftAnimation-#{$count}-#{$isClockwise} {
+        from {
+
+            #{$direction}: if($count ==4, 0, 100%);
+        }
+
+        to {
+            #{$direction}: if($count ==1, -300%, -100%);
+        }
+    }
+}

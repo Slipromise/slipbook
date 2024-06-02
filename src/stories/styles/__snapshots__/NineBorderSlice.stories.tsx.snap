@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/NineBorderSlice BeforeElement smoke-test 1`] = `
+<div class="NineBorderSlice_container1__Yz1G3">
+  <p>
+    NineBorderSlice.stories
+  </p>
+</div>
+`;
+
+exports[`stories/styles/NineBorderSlice Normal smoke-test 1`] = `
+<div class="NineBorderSlice_container__QxStH">
+  <p>
+    NineBorderSlice.stories
+  </p>
+</div>
+`;
+
+exports[`stories/styles/NineBorderSlice Sizing smoke-test 1`] = `
+<div class="NineBorderSlice_container__QxStH NineBorderSlice_sizingContainer__vz3gE">
+  <p>
+    NineBorderSlice.stories
+  </p>
+</div>
+`;

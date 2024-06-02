@@ -1,10 +1,8 @@
 @use '../../styles/mixins/attach-root' as *;
-
-
-// TODO: refactor this into Mixins , that parameters have count, size, isClockwise, time and color. 
+@use '../../styles/mixins/snake-broader' as *;
 
 .container {
-    // background-color: red;
+    background-color: gray;
     padding: 10px;
 
     width: 200px;
@@ -12,123 +10,52 @@
     position: relative;
     overflow: hidden;
 
-    .borderSide {
-        position: absolute;
-        pointer-events: none;
-
-        // background-color: green;
-
-        &:nth-child(1) {
-            top: 0;
-            height: 10px;
-            width: 200%;
-            background: linear-gradient(90deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
-            right: 100%;
-            animation-name: topAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-
-            // @include attach-root(':hover') {
-            //     right: -100%;
-            //     transition: right 1s;
-
-            // }
-        }
-
-        &:nth-child(2) {
-            right: 0;
-            width: 10px;
-            height: 200%;
-            background: linear-gradient(0deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
-            bottom: 100%;
-            animation-name: rightAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-
-            // @include attach-root(':hover') {
-            //     bottom: -100%;
-            //     transition: bottom 1s;
-            //     // transition-delay: .4s;
-            // }
-        }
-
-        &:nth-child(3) {
-            bottom: 0;
-            height: 10px;
-            width: 200%;
-            background: linear-gradient(90deg, #21f39f, transparent 50%, #21f39f 50%, transparent);
-            left: 100%;
-            animation-name: bottomAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-
-            // @include attach-root(':hover') {
-            //     left: -100%;
-            //     transition: left 1s;
-            //     transition-delay: s;
-            // }
-        }
-
-        &:nth-child(4) {
-            left: 0;
-            width: 10px;
-            height: 200%;
-            background: linear-gradient(0deg, transparent, #21f39f 50%, transparent 50%, #21f39f);
-            top: 100%;
-
-            animation-name: leftAnimation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-
-            // @include attach-root(':hover') {
-            //     top: -100%;
-            //     transition: top 1s;
-            //     // transition-delay: .4s;
-            // }
-        }
+    .animation-4-sides-clockwise {
+        @include snakeBorderSide(#6EE2C3, 10px);
     }
 
-}
-
-@keyframes topAnimation {
-    from {
-        right: 0%;
+    .animation-4-sides-counterclockwise {
+        @include snakeBorderSide(#38EE0D, 10px, animation, 4, 1s, false);
     }
 
-    to {
-        right: -100%;
-    }
-}
-
-@keyframes rightAnimation {
-    from {
-
-        bottom: 0%;
+    .animation-2-sides-clockwise {
+        @include snakeBorderSide(#BF3759, 10px, animation, 2, 1s, true);
     }
 
-    to {
-        bottom: -100%;
-    }
-}
-
-@keyframes bottomAnimation {
-    from {
-
-        left: 0%;
+    .animation-2-sides-counterclockwise {
+        @include snakeBorderSide(#DBD3F3, 10px, animation, 2, 1s, false);
     }
 
-    to {
-        left: -100%;
-    }
-}
-
-@keyframes leftAnimation {
-    from {
-
-        top: 0%;
+    .animation-1-sides-clockwise {
+        @include snakeBorderSide(#3B0110, 10px, animation, 1, 1s, true);
     }
 
-    to {
-        top: -100%;
+    .animation-1-sides-counterclockwise {
+        @include snakeBorderSide(#18D0D8, 10px, animation, 1, 1s, false);
     }
+
+    .hover-4-sides-clockwise {
+        @include snakeBorderSide(#36E5E4, 10px, hoverTransition, 4, 1s, true);
+    }
+
+    .hover-4-sides-counterclockwise {
+        @include snakeBorderSide(#8C6692, 10px, hoverTransition, 4, 1s, false);
+    }
+
+    .hover-2-sides-clockwise {
+        @include snakeBorderSide(#85A652, 10px, hoverTransition, 2, 1s, true);
+    }
+
+    .hover-2-sides-counterclockwise {
+        @include snakeBorderSide(#8E43D2, 10px, hoverTransition, 2, 1s, false);
+    }
+
+    .hover-1-sides-clockwise {
+        @include snakeBorderSide(#35681B, 10px, hoverTransition, 1, 1s, true);
+    }
+
+    .hover-1-sides-counterclockwise {
+        @include snakeBorderSide(#E18CDB, 10px, hoverTransition, 1, 1s, false);
+    }
+
 }

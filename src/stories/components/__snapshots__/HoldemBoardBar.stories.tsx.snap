@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/components/HoldemBoardBar Flop smoke-test 1`] = `
+<div class="HoldemBoardBar_container__5s_so">
+  <div class="HoldemBoardBar_header__i43Uj">
+    <div class="PokerCard_container__qevio"
+         data-card="C2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="H2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="DJ"
+    >
+      <span data-front-card="true">
+        J
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+  </div>
+  <div class="HoldemBoardBar_body__fI1w0">
+    <span>
+      POT
+    </span>
+    <span>
+      300,000
+    </span>
+  </div>
+  <div class="HoldemBoardBar_footer__pOKcU">
+    <span>
+      2024 XXXX EVENTS - final table
+    </span>
+  </div>
+</div>
+`;
+
+exports[`stories/components/HoldemBoardBar PreFlop smoke-test 1`] = `
+<div class="HoldemBoardBar_container__5s_so">
+  <div class="HoldemBoardBar_header__i43Uj">
+  </div>
+  <div class="HoldemBoardBar_body__fI1w0">
+    <span>
+      POT
+    </span>
+    <span>
+      100,000
+    </span>
+  </div>
+  <div class="HoldemBoardBar_footer__pOKcU">
+    <span>
+      2024 XXXX EVENTS - final table
+    </span>
+  </div>
+</div>
+`;
+
+exports[`stories/components/HoldemBoardBar River smoke-test 1`] = `
+<div class="HoldemBoardBar_container__5s_so">
+  <div class="HoldemBoardBar_header__i43Uj">
+    <div class="PokerCard_container__qevio"
+         data-card="C2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="H2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="DJ"
+    >
+      <span data-front-card="true">
+        J
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="SK"
+    >
+      <span data-front-card="true">
+        K
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="SQ"
+    >
+      <span data-front-card="true">
+        Q
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+  </div>
+  <div class="HoldemBoardBar_body__fI1w0">
+    <span>
+      POT
+    </span>
+    <span>
+      10,000,000
+    </span>
+  </div>
+  <div class="HoldemBoardBar_footer__pOKcU">
+    <span>
+      2024 XXXX EVENTS - final table
+    </span>
+  </div>
+</div>
+`;
+
+exports[`stories/components/HoldemBoardBar Turn smoke-test 1`] = `
+<div class="HoldemBoardBar_container__5s_so">
+  <div class="HoldemBoardBar_header__i43Uj">
+    <div class="PokerCard_container__qevio"
+         data-card="C2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="H2"
+    >
+      <span data-front-card="true">
+        2
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="DJ"
+    >
+      <span data-front-card="true">
+        J
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+    <div class="PokerCard_container__qevio"
+         data-card="SK"
+    >
+      <span data-front-card="true">
+        K
+      </span>
+      <span data-back-card="true">
+      </span>
+    </div>
+  </div>
+  <div class="HoldemBoardBar_body__fI1w0">
+    <span>
+      POT
+    </span>
+    <span>
+      1,000,000
+    </span>
+  </div>
+  <div class="HoldemBoardBar_footer__pOKcU">
+    <span>
+      2024 XXXX EVENTS - final table
+    </span>
+  </div>
+</div>
+`;

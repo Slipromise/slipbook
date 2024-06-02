@@ -1,0 +1,68 @@
+@use 'sass:list';
+
+$positionXs: -250px -250px -150px 0px 150px 250px 250px;
+$scales: .8 .8 .9 1 .9 .8 .8;
+$rotateYs: 25deg 25deg 15deg 0deg -15deg -25deg -25deg;
+$zIndexes: 1, 2, 3, 4, 3, 2, 1, 1;
+
+
+.container {
+    position: relative;
+    display: flex;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 400px;
+
+    .item {
+        position: absolute;
+        // opacity: 0.5;
+        width: 200px;
+        height: 300px;
+        background-color: #fff;
+        transition: 0.5s;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        transform-style: preserve-3d;
+        transform-origin: bottom;
+        user-select: none;
+        -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0002);
+
+        @for $i from 1 through 7 {
+            $position: nth($positionXs, $i);
+            $scale: nth($scales, $i);
+            $rotateY: nth($rotateYs, $i);
+            $zIndex: nth($zIndexes, $i);
+
+            &:nth-child(#{$i}) {
+
+                transform: translate3d($position , 0, 0) scale($scale) rotateY($rotateY);
+                z-index: $zIndex;
+            }
+        }
+
+        &:first-child,
+        &:nth-child(7) {
+            // width: 300px;
+            // display: none;
+            opacity: 0;
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: 0;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+        gap: 0.2em;
+    }
+}

@@ -1,0 +1,21 @@
+$_whiteBlurRadiuses: 7px 10px 21px;
+$_colorBlurRadiuses: 42px 82px 92px 102px 151px;
+
+@mixin neon-light-text-shadow ($color,
+    $whiteBlurRadiuses: $_whiteBlurRadiuses,
+    $colorBlurRadiuses: $_colorBlurRadiuses ) {
+    // TODO: 排版規則
+    $text-shadows: (
+    );
+
+@for $i from 1 through length($whiteBlurRadiuses) {
+    $text-shadows: append($text-shadows, 0 0 nth($whiteBlurRadiuses, $i) white, comma);
+}
+
+@for $i from 1 through length($colorBlurRadiuses) {
+    $text-shadows: append($text-shadows, 0 0 nth($colorBlurRadiuses, $i) $color , comma);
+}
+
+color: #fff;
+text-shadow: $text-shadows;
+}

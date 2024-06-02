@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/LightSweep Box smoke-test 1`] = `
+<div class="LightSweep_box__2Uq1A">
+  <h1>
+    LightSweep
+  </h1>
+</div>
+`;
+
+exports[`stories/styles/LightSweep Text smoke-test 1`] = `
+<div class="LightSweep_text__iKWBj">
+  <h1>
+    LightSweep
+  </h1>
+</div>
+`;

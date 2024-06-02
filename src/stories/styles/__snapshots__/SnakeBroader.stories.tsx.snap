@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/SnakeBroader Normal smoke-test 1`] = `
+<div class="SnakeBroader_container__tLmKt">
+  <span class="SnakeBroader_borderSide__q6IDB">
+  </span>
+  <span class="SnakeBroader_borderSide__q6IDB">
+  </span>
+  <span class="SnakeBroader_borderSide__q6IDB">
+  </span>
+  <span class="SnakeBroader_borderSide__q6IDB">
+  </span>
+  <p>
+    SnakeBrowser.stories
+  </p>
+</div>
+`;

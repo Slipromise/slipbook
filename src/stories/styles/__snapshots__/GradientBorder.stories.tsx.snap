@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/GradientBorder Breathe smoke-test 1`] = `
+<div class="GradientBorder_container__1DMXR GradientBorder_breathe__H9MSd">
+  <div class="GradientBorder_insideBox___OwnL">
+    GradientBorder
+  </div>
+</div>
+`;
+
+exports[`stories/styles/GradientBorder Colorize smoke-test 1`] = `
+<div class="GradientBorder_container__1DMXR"
+     style="--gradient-colors: #f2ff00,#aa00ff,#00ff00,#ff0000,#1900ff,#f2ff00;"
+>
+  <div class="GradientBorder_insideBox___OwnL">
+    GradientBorder
+  </div>
+</div>
+`;
+
+exports[`stories/styles/GradientBorder Flow smoke-test 1`] = `
+<div class="GradientBorder_container__1DMXR GradientBorder_flow__meV_W">
+  <div class="GradientBorder_insideBox___OwnL">
+    GradientBorder
+  </div>
+</div>
+`;
+
+exports[`stories/styles/GradientBorder Normal smoke-test 1`] = `
+<div class="GradientBorder_container__1DMXR">
+  <div class="GradientBorder_insideBox___OwnL">
+    GradientBorder
+  </div>
+</div>
+`;

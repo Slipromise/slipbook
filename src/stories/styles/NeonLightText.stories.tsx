@@ -33,10 +33,24 @@ type Story = StoryObj<typeof NeonLightText>;
 export const Normal: Story = {
   args: {
     // className:
-    className: styles.container,
+    className: styles.normal,
   },
 };
 
-// TODO: add type variants
+export const Chase: Story = {
+  args: {
+    className: styles.chase,
+  },
+};
 
-// TODO: add color variants
+export const Flickering: Story = {
+  args: {
+    className: styles.flickering,
+  },
+};
+
+export const Pulsate: Story = {
+  args: {
+    className: styles.pulsate,
+  },
+};

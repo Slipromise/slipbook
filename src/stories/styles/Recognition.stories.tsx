@@ -15,6 +15,9 @@ const Recognition = (props: Props) => {
 
 const meta: Meta<typeof Recognition> = {
   component: Recognition,
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
 };
 
 export default meta;

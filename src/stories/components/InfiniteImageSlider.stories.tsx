@@ -27,3 +27,17 @@ export const Normal: Story = {
     images,
   },
 };
+
+export const AutoLoop: Story = {
+  args: {
+    images,
+    isAuto: true,
+  },
+};
+
+export const LessImage: Story = {
+  args: {
+    images: [images[0], images[1]],
+    isAuto: true,
+  },
+};

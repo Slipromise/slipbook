@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import styles from "./NeonLightText.module.scss";
 import React from "react";
+import { themes } from "@storybook/theming";
 
 type Props = {
   className?: React.HtmlHTMLAttributes<HTMLDivElement>["className"];
@@ -24,6 +25,9 @@ function NeonLightText({ className }: Props) {
 
 const meta: Meta<typeof NeonLightText> = {
   component: NeonLightText,
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
 };
 
 export default meta;

@@ -1,4 +1,5 @@
 import InfiniteImageSlider from "@/components/InfiniteImageSlider";
+import { useArgs } from "@storybook/preview-api";
 import type { Meta, StoryObj } from "@storybook/react";
 import image1 from "../assets/00001-2086282684.png";
 import image2 from "../assets/00002-442336389.png";
@@ -26,9 +27,19 @@ export const Normal: Story = {
   args: {
     images,
   },
+  render: function Render(args) {
+    const [{ isAuto }, updateArgs] = useArgs<{ isAuto?: boolean }>();
+
+    function onChange() {
+      updateArgs({ isAuto: !isAuto });
+    }
+
+    return <InfiniteImageSlider {...args} onAuto={onChange} isAuto={isAuto} />;
+  },
 };
 
 export const AutoLoop: Story = {
+  ...Normal,
   args: {
     images,
     isAuto: true,
@@ -36,6 +47,7 @@ export const AutoLoop: Story = {
 };
 
 export const LessImage: Story = {
+  ...Normal,
   args: {
     images: [images[0], images[1]],
     isAuto: true,

@@ -3,8 +3,8 @@ import styles from "@/styles/components/InfiniteImageSlider.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { RxLoop } from "react-icons/rx";
-import { useInterval } from "react-use";
-
+import { useDebounce, useInterval } from "react-use";
+import lodash, { debounce } from "lodash";
 type Props = {
   images: (StaticImageData | string)[];
   isAuto?: boolean;
@@ -16,9 +16,11 @@ function InfiniteImageSlider({
   images,
   onAuto,
   isAuto,
-  autoFrequency = 1000,
+  autoFrequency = 3000,
 }: Props) {
   const [offset, setOffset] = useState(() => 0);
+
+  const [inAction, setInAction] = useState(() => false);
 
   const indexes = useMemo<number[]>(() => {
     var result = [];
@@ -36,8 +38,18 @@ function InfiniteImageSlider({
     setOffset((prev) => (prev + 1 >= Number.MAX_SAFE_INTEGER ? 0 : prev + 1));
   }, []);
 
-  // TODO: 節流
-  useInterval(onNext, isAuto ? autoFrequency : null);
+  useDebounce(
+    () => {
+      setInAction(false);
+    },
+    300,
+    [offset]
+  );
+
+  useInterval(
+    onNext,
+    isAuto && !inAction && autoFrequency > 200 ? autoFrequency : null
+  );
 
   if (images.length <= 1) {
     return null;
@@ -58,10 +70,19 @@ function InfiniteImageSlider({
         </div>
       ))}
       <div className={styles.buttons}>
-        <IoIosArrowDropleft onClick={onPrev}></IoIosArrowDropleft>
-        <IoIosArrowDropright onClick={onNext}></IoIosArrowDropright>
-        {/* TODO: 待處理 */}
-        {/* <RxLoop onClick={onAuto} data-on={isAuto} /> */}
+        <IoIosArrowDropleft
+          onClick={() => {
+            onPrev();
+            setInAction(true);
+          }}
+        ></IoIosArrowDropleft>
+        <IoIosArrowDropright
+          onClick={() => {
+            onNext();
+            setInAction(true);
+          }}
+        ></IoIosArrowDropright>
+        <RxLoop onClick={onAuto} data-on={isAuto} />
       </div>
     </div>
   );

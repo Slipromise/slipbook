@@ -1,67 +1,65 @@
 import React, { useCallback, useMemo, useState } from "react";
 import styles from "@/styles/components/LuckySpinningWheel.module.scss";
 
-type Props = {};
+type Props = {
+  items: { label: string; value: string | number }[];
+  result?: string | number;
+  onSpin: () => void;
+};
 
-// TODO: 由Props來控制(結果、數量)
-function LuckySpinningWheel({}: Props) {
-  const [angle, setAngle] = useState(() => 0);
-
-  const onSpin = useCallback(() => {
-    setAngle((pre) => pre + Math.ceil(Math.random() * 3600));
-  }, []);
-
+function LuckySpinningWheel({ items, result, onSpin }: Props) {
   const wheelStyles = useMemo(() => {
+    var position = items.findIndex((item) => item.value === result);
+
     return {
       outside: {
-        transform: `rotate(${angle}deg)`,
-      },
-      inside: {
-        transform: `rotate(-${angle}deg)`,
-      },
+        "--count": items.length,
+        "--position": position,
+      } as React.CSSProperties,
     };
-  }, [angle]);
+  }, [items, result]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.wheel} style={wheelStyles.outside}>
-        <span style={{ "--i": 0 } as React.CSSProperties}></span>
-        <span style={{ "--i": 1 } as React.CSSProperties}></span>
-        <span style={{ "--i": 2 } as React.CSSProperties}></span>
-        <span style={{ "--i": 3 } as React.CSSProperties}></span>
-        <div className={styles.numbers}>
-          <b style={{ "--i": 0 } as React.CSSProperties}>5</b>
-          <b style={{ "--i": 1 } as React.CSSProperties}>1</b>
-          <b style={{ "--i": 2 } as React.CSSProperties}>4</b>
-          <b style={{ "--i": 3 } as React.CSSProperties}>6</b>
-          <b style={{ "--i": 4 } as React.CSSProperties}>2</b>
-          <b style={{ "--i": 5 } as React.CSSProperties}>8</b>
-          <b style={{ "--i": 6 } as React.CSSProperties}>7</b>
-          <b style={{ "--i": 7 } as React.CSSProperties}>3</b>
-        </div>
-      </div>
       <div
-        className={`${styles.wheel} ${styles.inner}`}
-        style={wheelStyles.inside}
+        className={styles.wheel}
+        style={wheelStyles.outside}
+        data-result={result}
       >
-        <span style={{ "--i": 0 } as React.CSSProperties}></span>
-        <span style={{ "--i": 1 } as React.CSSProperties}></span>
-        <span style={{ "--i": 2 } as React.CSSProperties}></span>
-        <span style={{ "--i": 3 } as React.CSSProperties}></span>
+        {items.map(({ value }, index) => (
+          <span
+            key={value}
+            style={
+              {
+                "--i": index,
+              } as React.CSSProperties
+            }
+          />
+        ))}
         <div className={styles.numbers}>
-          <b style={{ "--i": 0 } as React.CSSProperties}>5</b>
-          <b style={{ "--i": 1 } as React.CSSProperties}>1</b>
-          <b style={{ "--i": 2 } as React.CSSProperties}>4</b>
-          <b style={{ "--i": 3 } as React.CSSProperties}>6</b>
-          <b style={{ "--i": 4 } as React.CSSProperties}>2</b>
-          <b style={{ "--i": 5 } as React.CSSProperties}>8</b>
-          <b style={{ "--i": 6 } as React.CSSProperties}>7</b>
-          <b style={{ "--i": 7 } as React.CSSProperties}>3</b>
+          {items.map(({ label, value }, index) => (
+            <b
+              key={value}
+              style={
+                {
+                  "--i": index,
+                } as React.CSSProperties
+              }
+              data-hinting={value === result}
+            >
+              {label}
+            </b>
+          ))}
         </div>
       </div>
-      <div className={styles.spinBtn} onClick={onSpin}>
-        Spin
-      </div>
+      {result !== undefined && (
+        <div
+          className={styles.spinBtn}
+          onClick={result === undefined ? undefined : onSpin}
+        >
+          Spin
+        </div>
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Alert from "react-bootstrap/Alert";
 import Badge from "react-bootstrap/Badge";
@@ -33,9 +33,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Toast from "react-bootstrap/Toast";
 
-type Props = {};
-
-function BootstrapComponents({}: Props) {
+function BootstrapComponents() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

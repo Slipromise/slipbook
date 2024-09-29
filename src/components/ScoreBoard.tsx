@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useMemo } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
@@ -13,6 +15,7 @@ type Props = {
   countDownTime?: number;
   countDownFormat?: "HH:mm" | "HH:mm:ss" | "mm:ss" | "ss.SSS";
   subTitle?: string;
+  locale?: string;
 };
 
 function ScoreBoard({
@@ -28,7 +31,7 @@ function ScoreBoard({
     () =>
       ({
         "--percent": `${(aScore / (aScore + bScore)) * 100}%`,
-      }) as React.CSSProperties,
+      } as React.CSSProperties),
     [aScore, bScore]
   );
 

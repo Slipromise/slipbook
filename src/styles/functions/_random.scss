@@ -2,7 +2,7 @@
 
 @function randomNum($min, $max) {
   $rand: math.random();
-  $randomNum: $min +floor($rand * (($max - $min) + 1));
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
 
   @return $randomNum;
 }

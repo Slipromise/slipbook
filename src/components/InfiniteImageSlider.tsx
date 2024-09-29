@@ -1,12 +1,13 @@
-import React, { useCallback, useMemo, useState } from "react";
+"use client";
+
+import { useCallback, useMemo, useState } from "react";
 import styles from "@/styles/components/InfiniteImageSlider.module.scss";
-import Image, { StaticImageData } from "next/image";
+
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import { RxLoop } from "react-icons/rx";
 import { useDebounce, useInterval } from "react-use";
-import lodash, { debounce } from "lodash";
 type Props = {
-  images: (StaticImageData | string)[];
+  images: string[];
   isAuto?: boolean;
   autoFrequency?: number;
   onAuto?: () => void;
@@ -23,7 +24,7 @@ function InfiniteImageSlider({
   const [inAction, setInAction] = useState(() => false);
 
   const indexes = useMemo<number[]>(() => {
-    var result = [];
+    const result: number[] = [];
     for (let i = 0; i < 7; i++) {
       result[i] = offset + i;
     }
@@ -59,7 +60,7 @@ function InfiniteImageSlider({
     <div className={styles.container}>
       {indexes.map((index) => (
         <div className={styles.item} key={index}>
-          <Image
+          <img
             src={
               index >= 0 || Math.abs(index % images.length) === 0
                 ? images[index % images.length]

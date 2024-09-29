@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import Figure from "react-bootstrap/Figure";
 import styles from "@/styles/components/AnchorAvatar.module.scss";
 

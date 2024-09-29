@@ -1,6 +1,6 @@
-import numeral from "numeral";
-import React, { ComponentProps } from "react";
-import { Container } from "react-bootstrap";
+"use client";
+
+import { ComponentProps } from "react";
 import PokerCard from "./PokerCard";
 import styles from "@/styles/components/HoldemBoardBar.module.scss";
 import { useSpring, animated } from "@react-spring/web";
@@ -11,9 +11,10 @@ type Props = {
   cards?: PokerCard[];
   pot: number;
   subtitle: string;
+  locale?: string;
 };
 
-function HoldemBoardBar({ cards, pot, subtitle }: Props) {
+function HoldemBoardBar({ cards, pot, subtitle, locale = "en-US" }: Props) {
   const springValues = useSpring({
     pot,
     config: {
@@ -23,12 +24,20 @@ function HoldemBoardBar({ cards, pot, subtitle }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        {cards?.map((item) => <PokerCard value={item} key={item} />)}
+        {cards?.map((item) => (
+          <PokerCard value={item} key={item} />
+        ))}
       </div>
       <div className={styles.body}>
         <span>POT</span>{" "}
         <animated.span>
-          {springValues.pot.to((n) => numeral(n).format("0,0", Math.floor))}
+          {springValues.pot.to((n) =>
+            new Intl.NumberFormat(locale, {
+              style: "currency",
+              // TODO: check formatting
+              currency: "USD",
+            }).format(n)
+          )}
         </animated.span>
       </div>
       <div className={styles.footer}>

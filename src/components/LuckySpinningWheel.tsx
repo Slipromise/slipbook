@@ -1,5 +1,7 @@
-import React, { useCallback, useMemo, useState } from "react";
-import styles from "../styles/components/LuckySpinningWheel.module.scss";
+"use client";
+
+import React, { useMemo } from "react";
+import styles from "@/styles/components/LuckySpinningWheel.module.scss";
 
 type Props = {
   items: { label: string; value: string | number }[];
@@ -9,7 +11,7 @@ type Props = {
 
 function LuckySpinningWheel({ items, result, onSpin }: Props) {
   const wheelStyles = useMemo(() => {
-    var position = items.findIndex((item) => item.value === result);
+    const position = items.findIndex((item) => item.value === result);
 
     return {
       outside: {

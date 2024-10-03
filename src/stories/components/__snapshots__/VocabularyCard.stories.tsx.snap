@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/components/VocabularyCard Normal play-test 1`] = `
-<div class="VocabularyCard_container__kSPIu card">
+<div class="_container_1j4fq_1 card">
   <div class="card-header">
     <div class="card-title h5">
       interaction
@@ -48,18 +48,18 @@ exports[`stories/components/VocabularyCard Normal play-test 1`] = `
          fill="currentColor"
          stroke-width="0"
          viewbox="0 0 16 16"
-         class="VocabularyCard_collapsed-icon__cMUuH"
+         class="_collapsed-icon_1j4fq_30"
          data-testid="collapseIcon"
          height="1em"
          width="1em"
          xmlns="http://www.w3.org/2000/svg"
     >
       <path fill-rule="evenodd"
-            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+            d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z"
       >
       </path>
       <path fill-rule="evenodd"
-            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+            d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
       >
       </path>
     </svg>

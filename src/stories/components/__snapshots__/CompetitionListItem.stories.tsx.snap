@@ -2,7 +2,7 @@
 
 exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
 <div data-status="ENDING"
-     class="CompetitionListItem_container__3sfl6 hstack"
+     class="_container_1tj1q_1 hstack"
 >
   <div data-header="true"
        class="vstack"
@@ -42,7 +42,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
          viewbox="0 0 24 24"
          stroke-linecap="round"
          stroke-linejoin="round"
-         class="CompetitionListItem_vs-icon__YBcw3"
+         class="_vs-icon_1tj1q_124"
          height="2em"
          width="2em"
          xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
        data-is-collapsed="true"
        class="vstack"
   >
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -121,7 +121,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
         Allie Ferguson
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -129,7 +129,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
       <figcaption class="figure-caption">
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <div data-default-image="true">
         <span>
           R
@@ -139,7 +139,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
         Roy Schultz
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -148,7 +148,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
         Jonathan Thomas
       </figcaption>
     </figure>
-    <div class="CompetitionListItem_more__Hqkq1">
+    <div class="_more_1tj1q_94">
       <span>
         +5
       </span>
@@ -159,7 +159,7 @@ exports[`stories/components/CompetitionListItem Ending smoke-test 1`] = `
 
 exports[`stories/components/CompetitionListItem Normal smoke-test 1`] = `
 <div data-status="NONE"
-     class="CompetitionListItem_container__3sfl6 hstack"
+     class="_container_1tj1q_1 hstack"
 >
   <div data-header="true"
        class="vstack"
@@ -198,7 +198,7 @@ exports[`stories/components/CompetitionListItem Normal smoke-test 1`] = `
          viewbox="0 0 24 24"
          stroke-linecap="round"
          stroke-linejoin="round"
-         class="CompetitionListItem_vs-icon__YBcw3"
+         class="_vs-icon_1tj1q_124"
          height="2em"
          width="2em"
          xmlns="http://www.w3.org/2000/svg"
@@ -268,7 +268,7 @@ exports[`stories/components/CompetitionListItem Normal smoke-test 1`] = `
 
 exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
 <div data-status="STARTED"
-     class="CompetitionListItem_container__3sfl6 hstack"
+     class="_container_1tj1q_1 hstack"
 >
   <div data-header="true"
        class="vstack"
@@ -308,7 +308,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
          viewbox="0 0 24 24"
          stroke-linecap="round"
          stroke-linejoin="round"
-         class="CompetitionListItem_vs-icon__YBcw3"
+         class="_vs-icon_1tj1q_124"
          height="2em"
          width="2em"
          xmlns="http://www.w3.org/2000/svg"
@@ -378,7 +378,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
        data-is-collapsed="true"
        class="vstack"
   >
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -387,7 +387,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
         Allie Ferguson
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -395,7 +395,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
       <figcaption class="figure-caption">
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <div data-default-image="true">
         <span>
           R
@@ -405,7 +405,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
         Roy Schultz
       </figcaption>
     </figure>
-    <figure class="AnchorAvatar_container__AvuZi figure">
+    <figure class="_container_96cgo_1 figure">
       <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2280%22%20height%3D%2280%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2080%2080%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_18f57f77702%20text%20%7B%20fill%3A%23FFFFFF%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_18f57f77702%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%233a5a97%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2221.4609375%22%20y%3D%2244.5%22%3E80x80%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
            alt
            class="figure-img img-fluid"
@@ -414,7 +414,7 @@ exports[`stories/components/CompetitionListItem Started smoke-test 1`] = `
         Jonathan Thomas
       </figcaption>
     </figure>
-    <div class="CompetitionListItem_more__Hqkq1">
+    <div class="_more_1tj1q_94">
       <span>
         +5
       </span>

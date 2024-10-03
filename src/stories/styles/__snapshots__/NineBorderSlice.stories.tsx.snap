@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/styles/NineBorderSlice BeforeElement smoke-test 1`] = `
-<div class="NineBorderSlice_container1__Yz1G3">
+<div class="_container1_139g0_9">
   <p>
     NineBorderSlice.stories
   </p>
@@ -9,7 +9,7 @@ exports[`stories/styles/NineBorderSlice BeforeElement smoke-test 1`] = `
 `;
 
 exports[`stories/styles/NineBorderSlice Normal smoke-test 1`] = `
-<div class="NineBorderSlice_container__QxStH">
+<div class="_container_139g0_1">
   <p>
     NineBorderSlice.stories
   </p>
@@ -17,7 +17,7 @@ exports[`stories/styles/NineBorderSlice Normal smoke-test 1`] = `
 `;
 
 exports[`stories/styles/NineBorderSlice Sizing smoke-test 1`] = `
-<div class="NineBorderSlice_container__QxStH NineBorderSlice_sizingContainer__vz3gE">
+<div class="_container_139g0_1 _sizingContainer_139g0_31">
   <p>
     NineBorderSlice.stories
   </p>

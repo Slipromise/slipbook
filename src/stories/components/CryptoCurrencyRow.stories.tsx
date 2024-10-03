@@ -47,8 +47,8 @@ export const Ethereum: Stroy = {
     changeIn1h: -0.18975577,
     changeIn24h: -0.13245235,
     changeIn1w: 9.5045419,
-    marketCap: 1015473040202.0583,
-    volume24h: 23436245752.813572,
+    marketCap: 473040202.0583,
+    volume24h: 36245752.813572,
   },
 };
 
@@ -63,7 +63,7 @@ export const BNB: Stroy = {
     changeIn1h: -0.18975577,
     changeIn24h: -0.13245235,
     changeIn1w: 9.5045419,
-    marketCap: 1015473040202.0583,
-    volume24h: 23436245752.813572,
+    marketCap: 3040202.0583,
+    volume24h: 45752.813572,
   },
 };

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/components/CircularProgressBar Colorize smoke-test 1`] = `
-<div class="CircularProgressBar_container__pGUJ_"
+<div class="_container_4lpsq_6"
      style="--percent: 60%; --color: red; --duration: 400ms;"
 >
   <h1>
@@ -14,7 +14,7 @@ exports[`stories/components/CircularProgressBar Colorize smoke-test 1`] = `
 `;
 
 exports[`stories/components/CircularProgressBar Normal smoke-test 1`] = `
-<div class="CircularProgressBar_container__pGUJ_"
+<div class="_container_4lpsq_6"
      style="--percent: 40%; --duration: 400ms;"
 >
   <h1>
@@ -24,7 +24,7 @@ exports[`stories/components/CircularProgressBar Normal smoke-test 1`] = `
 `;
 
 exports[`stories/components/CircularProgressBar WithTitles smoke-test 1`] = `
-<div class="CircularProgressBar_container__pGUJ_"
+<div class="_container_4lpsq_6"
      style="--percent: 50%; --duration: 400ms;"
 >
   <h1>

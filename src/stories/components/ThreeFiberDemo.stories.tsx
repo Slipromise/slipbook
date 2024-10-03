@@ -1,13 +1,13 @@
-import * as THREE from "three";
+import { Mesh } from "three";
 import { useRef, useState } from "react";
 import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
 import type { Meta, StoryObj } from "@storybook/react";
 
-function Box(props: ThreeElements["mesh"]) {
-  const ref = useRef<THREE.Mesh>(null!);
+function BoxMesh(props: ThreeElements["mesh"]) {
+  const ref = useRef<Mesh>(null!);
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
-  useFrame((state, delta) => (ref.current.rotation.x += delta));
+  useFrame((_, delta) => (ref.current.rotation.x += delta));
   return (
     <mesh
       {...props}
@@ -23,14 +23,14 @@ function Box(props: ThreeElements["mesh"]) {
   );
 }
 
-const meta: Meta<typeof Box> = {
-  component: Box,
+const meta: Meta<typeof BoxMesh> = {
+  component: BoxMesh,
   tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof BoxMesh>;
 
 export const Normal: Story = {
   args: {
@@ -48,7 +48,7 @@ export const Normal: Story = {
           intensity={Math.PI}
         />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Box {...args} />
+        <BoxMesh {...args} />
       </Canvas>
     );
   },

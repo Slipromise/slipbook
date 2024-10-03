@@ -59,11 +59,11 @@ function HoldemPokerPlayerBar({
           <animated.span>
             {springValues.chipAmount.to((n) =>
               new Intl.NumberFormat(locale, {
-                style: "currency",
+                style: "decimal",
                 notation: "compact",
                 compactDisplay: "short",
-                currency: "USD",
-                maximumSignificantDigits: 2,
+                maximumSignificantDigits: 3,
+                roundingMode: "trunc",
               }).format(n)
             )}
           </animated.span>

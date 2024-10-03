@@ -15,13 +15,15 @@ function SnakeBroader({ className, borderSideClassName }: Props) {
       <span className={borderSideClassName} />
       <span className={borderSideClassName} />
       <span className={borderSideClassName} />
-      <p>SnakeBroader</p>
     </div>
   );
 }
 
 const meta: Meta<typeof SnakeBroader> = {
   component: SnakeBroader,
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
 };
 
 export default meta;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/components/ThreeFiberDemo Normal smoke-test 1`] = `
+<div style="position: relative; width: 100%; height: 100%; overflow: hidden; pointer-events: auto;">
+  <div style="width: 100%; height: 100%;">
+    <canvas data-engine="three.js r168"
+            width="1248"
+            height="150"
+            style="display: block; width: 1248px; height: 150px;"
+    >
+    </canvas>
+  </div>
+</div>
+`;

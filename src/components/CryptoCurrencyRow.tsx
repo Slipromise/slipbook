@@ -50,14 +50,20 @@ function CryptoCurrencyRow({
     },
   });
 
-  const numberFormat = useMemo(
+  const prizeNumberFormat = useMemo(
+    () => new Intl.NumberFormat(locale, { style: "currency", currency }),
+    [currency, locale]
+  );
+
+  const compactNumberFormat = useMemo(
     () =>
       new Intl.NumberFormat(locale, {
         style: "currency",
         currency,
         notation: "compact",
         compactDisplay: "short",
-        maximumSignificantDigits: 2,
+        maximumFractionDigits: 2,
+        roundingMode: "trunc",
       }),
     [currency, locale]
   );
@@ -67,6 +73,8 @@ function CryptoCurrencyRow({
       new Intl.NumberFormat(locale, {
         style: "percent",
         signDisplay: "exceptZero",
+        maximumFractionDigits: 2,
+        roundingMode: "trunc",
       }),
     [locale]
   );
@@ -83,7 +91,7 @@ function CryptoCurrencyRow({
       </td>
       <td data-price>
         <animated.span>
-          {animateValues.price.to((n) => numberFormat.format(n))}
+          {animateValues.price.to((n) => prizeNumberFormat.format(n))}
         </animated.span>
       </td>
       <td data-changeIn1h>
@@ -112,12 +120,12 @@ function CryptoCurrencyRow({
       </td>
       <td data-marketCap>
         <animated.span>
-          {animateValues.marketCap.to((n) => numberFormat.format(n))}
+          {animateValues.marketCap.to((n) => compactNumberFormat.format(n))}
         </animated.span>
       </td>
       <td data-volume24h>
         <animated.span>
-          {animateValues.volume24h.to((n) => numberFormat.format(n))}
+          {animateValues.volume24h.to((n) => compactNumberFormat.format(n))}
         </animated.span>
       </td>
     </tr>

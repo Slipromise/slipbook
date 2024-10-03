@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/components/HoldemPlayerBar Cover smoke-test 1`] = `
-<div class="HoldemPlayerBar_container__qLJbo container HoldemPlayerBar_container__qLJbo-appear HoldemPlayerBar_container__qLJbo-appear-active">
+<div class="_container_2rwrs_6 container _container_2rwrs_6-appear _container_2rwrs_6-appear-active">
   <div data-left="true"
        class="vstack"
   >
@@ -10,14 +10,14 @@ exports[`stories/components/HoldemPlayerBar Cover smoke-test 1`] = `
          class
     >
     <span>
-      123m
+      123M
     </span>
   </div>
   <div data-middle="true"
        class="vstack"
   >
     <div data-cards="true">
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card
       >
         <span data-front-card="true">
@@ -25,7 +25,7 @@ exports[`stories/components/HoldemPlayerBar Cover smoke-test 1`] = `
         <span data-back-card="true">
         </span>
       </div>
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card
       >
         <span data-front-card="true">
@@ -55,7 +55,7 @@ exports[`stories/components/HoldemPlayerBar Fold smoke-test 1`] = `""`;
 
 exports[`stories/components/HoldemPlayerBar InTurn smoke-test 1`] = `
 <div data-is-turn="true"
-     class="HoldemPlayerBar_container__qLJbo container HoldemPlayerBar_container__qLJbo-appear HoldemPlayerBar_container__qLJbo-appear-active"
+     class="_container_2rwrs_6 container _container_2rwrs_6-appear _container_2rwrs_6-appear-active"
 >
   <div data-left="true"
        class="vstack"
@@ -65,14 +65,14 @@ exports[`stories/components/HoldemPlayerBar InTurn smoke-test 1`] = `
          class
     >
     <span>
-      123m
+      123M
     </span>
   </div>
   <div data-middle="true"
        class="vstack"
   >
     <div data-cards="true">
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card="SA"
       >
         <span data-front-card="true">
@@ -81,7 +81,7 @@ exports[`stories/components/HoldemPlayerBar InTurn smoke-test 1`] = `
         <span data-back-card="true">
         </span>
       </div>
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card="DJ"
       >
         <span data-front-card="true">
@@ -109,7 +109,7 @@ exports[`stories/components/HoldemPlayerBar InTurn smoke-test 1`] = `
 `;
 
 exports[`stories/components/HoldemPlayerBar Normal smoke-test 1`] = `
-<div class="HoldemPlayerBar_container__qLJbo container HoldemPlayerBar_container__qLJbo-appear HoldemPlayerBar_container__qLJbo-appear-active">
+<div class="_container_2rwrs_6 container _container_2rwrs_6-appear _container_2rwrs_6-appear-active">
   <div data-left="true"
        class="vstack"
   >
@@ -118,14 +118,14 @@ exports[`stories/components/HoldemPlayerBar Normal smoke-test 1`] = `
          class
     >
     <span>
-      123m
+      123M
     </span>
   </div>
   <div data-middle="true"
        class="vstack"
   >
     <div data-cards="true">
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card="C2"
       >
         <span data-front-card="true">
@@ -134,7 +134,7 @@ exports[`stories/components/HoldemPlayerBar Normal smoke-test 1`] = `
         <span data-back-card="true">
         </span>
       </div>
-      <div class="PokerCard_container__qevio"
+      <div class="_container_orzyj_2"
            data-card="H7"
       >
         <span data-front-card="true">

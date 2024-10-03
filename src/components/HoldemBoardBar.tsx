@@ -33,9 +33,7 @@ function HoldemBoardBar({ cards, pot, subtitle, locale = "en-US" }: Props) {
         <animated.span>
           {springValues.pot.to((n) =>
             new Intl.NumberFormat(locale, {
-              style: "currency",
-              // TODO: check formatting
-              currency: "USD",
+              style: "decimal",
             }).format(n)
           )}
         </animated.span>

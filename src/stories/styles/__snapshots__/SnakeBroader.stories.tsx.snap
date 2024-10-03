@@ -1,17 +1,157 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`stories/styles/SnakeBroader Normal smoke-test 1`] = `
-<div class="SnakeBroader_container__tLmKt">
-  <span class="SnakeBroader_borderSide__q6IDB">
+exports[`stories/styles/SnakeBroader Animation2SidesClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-2-sides-clockwise_1xvzd_168">
   </span>
-  <span class="SnakeBroader_borderSide__q6IDB">
+  <span class="_animation-2-sides-clockwise_1xvzd_168">
   </span>
-  <span class="SnakeBroader_borderSide__q6IDB">
+  <span class="_animation-2-sides-clockwise_1xvzd_168">
   </span>
-  <span class="SnakeBroader_borderSide__q6IDB">
+  <span class="_animation-2-sides-clockwise_1xvzd_168">
   </span>
-  <p>
-    SnakeBrowser.stories
-  </p>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Animation2SidesCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-2-sides-counterclockwise_1xvzd_252">
+  </span>
+  <span class="_animation-2-sides-counterclockwise_1xvzd_252">
+  </span>
+  <span class="_animation-2-sides-counterclockwise_1xvzd_252">
+  </span>
+  <span class="_animation-2-sides-counterclockwise_1xvzd_252">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Animation4SidesClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-4-sides-clockwise_1xvzd_8">
+  </span>
+  <span class="_animation-4-sides-clockwise_1xvzd_8">
+  </span>
+  <span class="_animation-4-sides-clockwise_1xvzd_8">
+  </span>
+  <span class="_animation-4-sides-clockwise_1xvzd_8">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Animation4SidesCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-4-sides-counterclockwise_1xvzd_88">
+  </span>
+  <span class="_animation-4-sides-counterclockwise_1xvzd_88">
+  </span>
+  <span class="_animation-4-sides-counterclockwise_1xvzd_88">
+  </span>
+  <span class="_animation-4-sides-counterclockwise_1xvzd_88">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader AnimationSideClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-1-sides-clockwise_1xvzd_336">
+  </span>
+  <span class="_animation-1-sides-clockwise_1xvzd_336">
+  </span>
+  <span class="_animation-1-sides-clockwise_1xvzd_336">
+  </span>
+  <span class="_animation-1-sides-clockwise_1xvzd_336">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader AnimationSideCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_animation-1-sides-counterclockwise_1xvzd_420">
+  </span>
+  <span class="_animation-1-sides-counterclockwise_1xvzd_420">
+  </span>
+  <span class="_animation-1-sides-counterclockwise_1xvzd_420">
+  </span>
+  <span class="_animation-1-sides-counterclockwise_1xvzd_420">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Hover2SidesClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-2-sides-clockwise_1xvzd_680">
+  </span>
+  <span class="_hover-2-sides-clockwise_1xvzd_680">
+  </span>
+  <span class="_hover-2-sides-clockwise_1xvzd_680">
+  </span>
+  <span class="_hover-2-sides-clockwise_1xvzd_680">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Hover2SidesCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-2-sides-counterclockwise_1xvzd_768">
+  </span>
+  <span class="_hover-2-sides-counterclockwise_1xvzd_768">
+  </span>
+  <span class="_hover-2-sides-counterclockwise_1xvzd_768">
+  </span>
+  <span class="_hover-2-sides-counterclockwise_1xvzd_768">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Hover4SidesClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-4-sides-clockwise_1xvzd_504">
+  </span>
+  <span class="_hover-4-sides-clockwise_1xvzd_504">
+  </span>
+  <span class="_hover-4-sides-clockwise_1xvzd_504">
+  </span>
+  <span class="_hover-4-sides-clockwise_1xvzd_504">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader Hover4SidesCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-4-sides-counterclockwise_1xvzd_592">
+  </span>
+  <span class="_hover-4-sides-counterclockwise_1xvzd_592">
+  </span>
+  <span class="_hover-4-sides-counterclockwise_1xvzd_592">
+  </span>
+  <span class="_hover-4-sides-counterclockwise_1xvzd_592">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader HoverSideClockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-1-sides-clockwise_1xvzd_856">
+  </span>
+  <span class="_hover-1-sides-clockwise_1xvzd_856">
+  </span>
+  <span class="_hover-1-sides-clockwise_1xvzd_856">
+  </span>
+  <span class="_hover-1-sides-clockwise_1xvzd_856">
+  </span>
+</div>
+`;
+
+exports[`stories/styles/SnakeBroader HoverSideCounterclockwise smoke-test 1`] = `
+<div class="_container_1xvzd_1">
+  <span class="_hover-1-sides-counterclockwise_1xvzd_944">
+  </span>
+  <span class="_hover-1-sides-counterclockwise_1xvzd_944">
+  </span>
+  <span class="_hover-1-sides-counterclockwise_1xvzd_944">
+  </span>
+  <span class="_hover-1-sides-counterclockwise_1xvzd_944">
+  </span>
 </div>
 `;

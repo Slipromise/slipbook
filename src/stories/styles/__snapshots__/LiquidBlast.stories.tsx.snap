@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/LiquidBlast Normal smoke-test 1`] = `
+<div class="_container_15o0e_11">
+  <div class="_normal_15o0e_14">
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+  </div>
+  <svg class="_filterSvg_15o0e_459">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic"
+                      stddeviation="10"
+      >
+      </feGaussianBlur>
+      <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -10">
+      </feColorMatrix>
+    </filter>
+  </svg>
+</div>
+`;
+
+exports[`stories/styles/LiquidBlast Slime smoke-test 1`] = `
+<div class="_container_15o0e_11">
+  <div class="_slime_15o0e_193">
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+    <i class="_particle_15o0e_24">
+    </i>
+  </div>
+  <svg class="_filterSvg_15o0e_459">
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic"
+                      stddeviation="10"
+      >
+      </feGaussianBlur>
+      <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 50 -10">
+      </feColorMatrix>
+    </filter>
+  </svg>
+</div>
+`;

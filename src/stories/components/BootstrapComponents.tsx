@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Alert from "react-bootstrap/Alert";
 import Badge from "react-bootstrap/Badge";
 import Stack from "react-bootstrap/Stack";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+// import BSButton from "react-bootstrap/Button";
+// import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -20,10 +20,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import OverlayTrigger, {
-  OverlayTriggerProps,
-} from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
+// import OverlayTrigger, {
+//   OverlayTriggerProps,
+// } from "react-bootstrap/OverlayTrigger";
+// import Tooltip from "react-bootstrap/Tooltip";
 import Pagination from "react-bootstrap/Pagination";
 import Placeholder from "react-bootstrap/Placeholder";
 import ProgressBar from "react-bootstrap/ProgressBar";
@@ -33,18 +33,18 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import Toast from "react-bootstrap/Toast";
 
-type Props = {};
+// TODO: 與@react-three/fiber 有衝突待解決
 
-function BootstrapComponents({}: Props) {
+function BootstrapComponents() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const [show2, setShow2] = useState(false);
 
   const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
+  // const handleShow2 = () => setShow2(true);
 
   return (
     <div>
@@ -109,28 +109,28 @@ function BootstrapComponents({}: Props) {
         </Breadcrumb.Item>
         <Breadcrumb.Item active>Data</Breadcrumb.Item>
       </Breadcrumb>
-      <ButtonGroup aria-label="Basic example">
-        <Button variant="secondary">Left</Button>
-        <Button variant="secondary">Middle</Button>
-        <Button variant="secondary">Right</Button>
-      </ButtonGroup>
-      <Button variant="primary">Primary</Button>{" "}
-      <Button variant="secondary">Secondary</Button>{" "}
-      <Button variant="success">Success</Button>{" "}
-      <Button variant="warning">Warning</Button>{" "}
-      <Button variant="danger">Danger</Button>{" "}
-      <Button variant="info">Info</Button>{" "}
-      <Button variant="light">Light</Button>{" "}
-      <Button variant="dark">Dark</Button>
-      <Button variant="link">Link</Button>
-      <Button variant="outline-primary">Primary</Button>{" "}
-      <Button variant="outline-secondary">Secondary</Button>{" "}
-      <Button variant="outline-success">Success</Button>{" "}
-      <Button variant="outline-warning">Warning</Button>{" "}
-      <Button variant="outline-danger">Danger</Button>{" "}
-      <Button variant="outline-info">Info</Button>{" "}
-      <Button variant="outline-light">Light</Button>{" "}
-      <Button variant="outline-dark">Dark</Button>
+      {/* <ButtonGroup aria-label="Basic example">
+        <BSButton variant="secondary">Left</BSButton>
+        <BSButton variant="secondary">Middle</BSButton>
+        <BSButton variant="secondary">Right</BSButton>
+      </ButtonGroup> */}
+      {/* <BSButton variant="primary">Primary</BSButton>
+      <BSButton variant="secondary">Secondary</BSButton>
+      <BSButton variant="success">Success</BSButton>
+      <BSButton variant="warning">Warning</BSButton>
+      <BSButton variant="danger">Danger</BSButton>
+      <BSButton variant="info">Info</BSButton>
+      <BSButton variant="light">Light</BSButton>
+      <BSButton variant="dark">Dark</BSButton>
+      <BSButton variant="link">Link</BSButton>
+      <BSButton variant="outline-primary">Primary</BSButton>
+      <BSButton variant="outline-secondary">Secondary</BSButton>
+      <BSButton variant="outline-success">Success</BSButton>
+      <BSButton variant="outline-warning">Warning</BSButton>
+      <BSButton variant="outline-danger">Danger</BSButton>
+      <BSButton variant="outline-info">Info</BSButton>
+      <BSButton variant="outline-light">Light</BSButton>
+      <BSButton variant="outline-dark">Dark</BSButton> */}
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src="holder.js/100px180" />
         <Card.Body>
@@ -140,7 +140,7 @@ function BootstrapComponents({}: Props) {
               " Some quick example text to build on the card title and make up the bulk of the card's content."
             }
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          {/* <BSButton variant="primary">Go somewhere</BSButton> */}
         </Card.Body>
       </Card>
       <Carousel data-bs-theme="dark">
@@ -236,14 +236,14 @@ function BootstrapComponents({}: Props) {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="secondary">Close</Button>
-            <Button variant="primary">Save changes</Button>
+            {/* <BSButton variant="secondary">Close</BSButton>
+            <BSButton variant="primary">Save changes</BSButton> */}
           </Modal.Footer>
         </Modal.Dialog>
       </div>
-      <Button variant="primary" onClick={handleShow}>
+      {/* <BSButton variant="primary" onClick={handleShow}>
         Launch static backdrop modal
-      </Button>
+      </BSButton> */}
       <Modal
         show={show}
         onHide={handleClose}
@@ -258,10 +258,10 @@ function BootstrapComponents({}: Props) {
           escape key.
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          {/* <BSButton variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary">Understood</Button>
+          </BSButton>
+          <BSButton variant="primary">Understood</BSButton> */}
         </Modal.Footer>
       </Modal>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -289,9 +289,9 @@ function BootstrapComponents({}: Props) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Button variant="primary" onClick={handleShow2}>
+      {/* <BSButton variant="primary" onClick={handleShow2}>
         Launch
-      </Button>
+      </BSButton> */}
       <Offcanvas show={show2} onHide={handleClose2}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
@@ -301,7 +301,7 @@ function BootstrapComponents({}: Props) {
           have chosen. Like, text, images, lists, etc.
         </Offcanvas.Body>
       </Offcanvas>
-      {["top", "right", "bottom", "left"].map((placement) => (
+      {/* {["top", "right", "bottom", "left"].map((placement) => (
         <OverlayTrigger
           key={placement}
           placement={placement as OverlayTriggerProps["placement"]}
@@ -311,9 +311,9 @@ function BootstrapComponents({}: Props) {
             </Tooltip>
           }
         >
-          <Button variant="secondary">Tooltip on {placement}</Button>
+          <BSButton variant="secondary">Tooltip on {placement}</BSButton>
         </OverlayTrigger>
-      ))}
+      ))} */}
       <Pagination>
         <Pagination.First />
         <Pagination.Prev />
@@ -341,21 +341,21 @@ function BootstrapComponents({}: Props) {
                 " Some quick example text to build on the card title and make up the bulk of the card's content."
               }
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            {/* <BSButton variant="primary">Go somewhere</BSButton> */}
           </Card.Body>
         </Card>
 
         <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
-            <Placeholder as={Card.Title} animation="glow">
+            {/* <Placeholder as={Card.Title} animation="glow">
               <Placeholder xs={6} />
-            </Placeholder>
-            <Placeholder as={Card.Text} animation="glow">
+            </Placeholder> */}
+            {/* <Placeholder as={Card.Text} animation="glow">
               <Placeholder xs={7} /> <Placeholder xs={4} />{" "}
               <Placeholder xs={4} /> <Placeholder xs={6} />{" "}
               <Placeholder xs={8} />
-            </Placeholder>
+            </Placeholder> */}
             <Placeholder.Button variant="primary" xs={6} />
           </Card.Body>
         </Card>

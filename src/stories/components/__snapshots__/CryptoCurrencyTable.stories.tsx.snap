@@ -31,7 +31,7 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
     </tr>
   </thead>
   <tbody>
-    <tr class="CryptoCurrencyRow_container__Lhx5J">
+    <tr class="_container_y2li0_1">
       <td data-rank="true">
         <span>
           1
@@ -58,14 +58,14 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
         <span data-positive="false"
               data-negative="true"
         >
-          -0.19%
+          -0.18%
         </span>
       </td>
       <td data-changein24h="true">
         <span data-positive="false"
               data-negative="true"
         >
-          -0.14%
+          -0.13%
         </span>
       </td>
       <td data-changein1w="true">
@@ -77,16 +77,16 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
       </td>
       <td data-marketcap="true">
         <span>
-          $10.15b
+          $1.01T
         </span>
       </td>
       <td data-volume24h="true">
         <span>
-          $234.36m
+          $23.43B
         </span>
       </td>
     </tr>
-    <tr class="CryptoCurrencyRow_container__Lhx5J">
+    <tr class="_container_y2li0_1">
       <td data-rank="true">
         <span>
           2
@@ -113,14 +113,14 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
         <span data-positive="false"
               data-negative="true"
         >
-          -0.19%
+          -0.18%
         </span>
       </td>
       <td data-changein24h="true">
         <span data-positive="false"
               data-negative="true"
         >
-          -0.14%
+          -0.13%
         </span>
       </td>
       <td data-changein1w="true">
@@ -132,16 +132,16 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
       </td>
       <td data-marketcap="true">
         <span>
-          $10.15b
+          $473.04M
         </span>
       </td>
       <td data-volume24h="true">
         <span>
-          $234.36m
+          $36.24M
         </span>
       </td>
     </tr>
-    <tr class="CryptoCurrencyRow_container__Lhx5J">
+    <tr class="_container_y2li0_1">
       <td data-rank="true">
         <span>
           4
@@ -168,14 +168,14 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
         <span data-positive="false"
               data-negative="true"
         >
-          -0.19%
+          -0.18%
         </span>
       </td>
       <td data-changein24h="true">
         <span data-positive="false"
               data-negative="true"
         >
-          -0.14%
+          -0.13%
         </span>
       </td>
       <td data-changein1w="true">
@@ -187,12 +187,12 @@ exports[`stories/components/CryptoCurrencyTable Normal smoke-test 1`] = `
       </td>
       <td data-marketcap="true">
         <span>
-          $10.15b
+          $3.04M
         </span>
       </td>
       <td data-volume24h="true">
         <span>
-          $234.36m
+          $45.75K
         </span>
       </td>
     </tr>

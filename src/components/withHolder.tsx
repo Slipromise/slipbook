@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { run as runHolder } from "holderjs";
 
-export function withHolder<P = {}>(WrappedComponent: React.ComponentType<P>) {
+export function withHolder<P = unknown>(
+  WrappedComponent: React.ComponentType<P>
+) {
   const displayName =
     WrappedComponent.displayName || WrappedComponent.name || "Component";
 

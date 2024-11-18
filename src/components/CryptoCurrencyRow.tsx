@@ -1,15 +1,16 @@
-import React from "react";
+"use client";
+
 import Image from "react-bootstrap/esm/Image";
-import numeral from "numeral";
 import styles from "@/styles/components/CryptoCurrencyRow.module.scss";
 import { useSpring, animated } from "@react-spring/web";
+import { useMemo } from "react";
 
 type Props = {
   name: string;
   rank: number;
   symbol: string;
   symbolUri: string;
-  pricingUnit: string;
+  currency: string;
   price: number;
   changeIn1h: number;
   changeIn24h: number;
@@ -18,6 +19,7 @@ type Props = {
   marketCap: number;
   onSubscribe: () => void;
   onClick: () => void;
+  locale?: string;
 };
 
 function CryptoCurrencyRow({
@@ -25,15 +27,16 @@ function CryptoCurrencyRow({
   rank,
   symbol,
   symbolUri,
-  pricingUnit,
+  currency,
   price,
   changeIn1h,
   changeIn24h,
   changeIn1w,
   volume24h,
   marketCap,
-  onSubscribe,
-  onClick,
+  // onSubscribe,
+  // onClick,
+  locale = "en-US",
 }: Props) {
   const animateValues = useSpring({
     price,
@@ -47,6 +50,35 @@ function CryptoCurrencyRow({
     },
   });
 
+  const prizeNumberFormat = useMemo(
+    () => new Intl.NumberFormat(locale, { style: "currency", currency }),
+    [currency, locale]
+  );
+
+  const compactNumberFormat = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency,
+        notation: "compact",
+        compactDisplay: "short",
+        maximumFractionDigits: 2,
+        roundingMode: "trunc",
+      }),
+    [currency, locale]
+  );
+
+  const volumeFormat = useMemo(
+    () =>
+      new Intl.NumberFormat(locale, {
+        style: "percent",
+        signDisplay: "exceptZero",
+        maximumFractionDigits: 2,
+        roundingMode: "trunc",
+      }),
+    [locale]
+  );
+
   return (
     <tr className={styles.container}>
       <td data-rank>
@@ -59,9 +91,7 @@ function CryptoCurrencyRow({
       </td>
       <td data-price>
         <animated.span>
-          {animateValues.price.to((n) =>
-            numeral(n).format("$0,0.00", Math.floor)
-          )}
+          {animateValues.price.to((n) => prizeNumberFormat.format(n))}
         </animated.span>
       </td>
       <td data-changeIn1h>
@@ -69,9 +99,7 @@ function CryptoCurrencyRow({
           data-positive={changeIn1h > 0}
           data-negative={changeIn1h < 0}
         >
-          {animateValues.changeIn1h.to((n) =>
-            numeral(n / 100).format("+0.00%", Math.floor)
-          )}
+          {animateValues.changeIn1h.to((n) => volumeFormat.format(n / 100))}
         </animated.span>
       </td>
       <td data-changeIn24h>
@@ -79,9 +107,7 @@ function CryptoCurrencyRow({
           data-positive={changeIn24h > 0}
           data-negative={changeIn24h < 0}
         >
-          {animateValues.changeIn24h.to((n) =>
-            numeral(n / 100).format("+0.00%", Math.floor)
-          )}
+          {animateValues.changeIn24h.to((n) => volumeFormat.format(n / 100))}
         </animated.span>
       </td>
       <td data-changeIn1w>
@@ -89,23 +115,17 @@ function CryptoCurrencyRow({
           data-positive={changeIn1w > 0}
           data-negative={changeIn1w < 0}
         >
-          {animateValues.changeIn1w.to((n) =>
-            numeral(n / 100).format("+0.00%", Math.floor)
-          )}
+          {animateValues.changeIn1w.to((n) => volumeFormat.format(n / 100))}
         </animated.span>
       </td>
       <td data-marketCap>
         <animated.span>
-          {animateValues.marketCap.to((n) =>
-            numeral(n / 100).format("$0,0.00a", Math.floor)
-          )}
+          {animateValues.marketCap.to((n) => compactNumberFormat.format(n))}
         </animated.span>
       </td>
       <td data-volume24h>
         <animated.span>
-          {animateValues.volume24h.to((n) =>
-            numeral(n / 100).format("$0,0.00a", Math.floor)
-          )}
+          {animateValues.volume24h.to((n) => compactNumberFormat.format(n))}
         </animated.span>
       </td>
     </tr>

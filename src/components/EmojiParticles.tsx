@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "@/styles/components/EmojiParticles.module.scss";
 import Container from "react-bootstrap/esm/Container";
@@ -150,10 +152,10 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
     } else {
       nextArgs.current = args;
     }
-  }, args);
+  }, [args, ms]);
 
   useUnmount(() => {
-    timeout.current && clearTimeout(timeout.current);
+    clearTimeout(timeout.current);
   });
 
   return state;

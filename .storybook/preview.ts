@@ -1,17 +1,13 @@
 import type { Preview, ReactRenderer } from "@storybook/react";
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import "@/styles/index.scss";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-import { withThemeByDataAttribute } from "@storybook/addon-themes";
-
-import "@/styles/index.scss";
-// import "../src/styles/customTheme/index.scss";
-// import "../src/styles/customTheme/indexByExtend.scss";
-
+// import "holderjs/holder";
 dayjs.extend(duration);
 
 const preview: Preview = {
   parameters: {
-    layout: "centered",
     controls: {
       matchers: {
         color: /(background|color)$/i,

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/styles/Bubble Animation smoke-test 1`] = `
-<div class="Bubble_stereoscopic__NZdFe Bubble_animation__Xze6B">
+<div class="_stereoscopic_2sm3s_8 _animation_2sm3s_16">
 </div>
 `;
 
 exports[`stories/styles/Bubble Normal smoke-test 1`] = `
-<div class="Bubble_normal__TUCmR">
+<div class="_normal_2sm3s_1">
 </div>
 `;
 
 exports[`stories/styles/Bubble Stereoscopic smoke-test 1`] = `
-<div class="Bubble_stereoscopic__NZdFe">
+<div class="_stereoscopic_2sm3s_8">
 </div>
 `;

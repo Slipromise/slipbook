@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import { ComponentProps } from "react";
 import { Table } from "react-bootstrap";
 import CryptoCurrencyRow, {
   CryptoCurrencyHeaderRow,
@@ -23,4 +23,4 @@ function CryptoCurrencyTable({ items }: Props) {
   );
 }
 
-export default Object.assign(CryptoCurrencyTable, { Row: CryptoCurrencyRow });
+export default CryptoCurrencyTable;

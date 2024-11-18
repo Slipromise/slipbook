@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/components/ScoreBoard Normal smoke-test 1`] = `
-<div class="ScoreBoard_container__Kf5rs container"
+<div class="_container_1d6r3_6 container"
      style="--percent: 41.17647058823529%;"
 >
   <div data-team="true"
@@ -38,7 +38,7 @@ exports[`stories/components/ScoreBoard Normal smoke-test 1`] = `
 `;
 
 exports[`stories/components/ScoreBoard WithCountdown smoke-test 1`] = `
-<div class="ScoreBoard_container__Kf5rs container"
+<div class="_container_1d6r3_6 container"
      style="--percent: 58.82352941176471%;"
 >
   <div data-team="true"
@@ -78,7 +78,7 @@ exports[`stories/components/ScoreBoard WithCountdown smoke-test 1`] = `
 `;
 
 exports[`stories/components/ScoreBoard WithSubtitle smoke-test 1`] = `
-<div class="ScoreBoard_container__Kf5rs container"
+<div class="_container_1d6r3_6 container"
      style="--percent: 58.82352941176471%;"
 >
   <div data-team="true"

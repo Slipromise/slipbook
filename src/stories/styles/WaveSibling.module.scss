@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    >div {
+        background-color: #0f1b26;
+        width: 250px;
+        height: 50px;
+        border-radius: 1rem;
+        position: relative;
+        transition: 0.5s;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+
+
+        &:hover {
+            background-color: #1296ff;
+            scale: 1.75;
+            z-index: 10000;
+            box-shadow: 0 0 50px rgb(0, 0, 0, 0.25);
+
+            // TODO: Sibling mixins
+            &+* {
+                background-color: #0d75c9;
+                scale: 1.5;
+                z-index: 2;
+                box-shadow: 0 0 50px rgb(0, 0, 0, 0.15);
+            }
+
+            &+*+* {
+                background-color: #0d75c9;
+                scale: 1.25;
+                z-index: 1;
+                box-shadow: 0 0 50px rgb(0, 0, 0, 0.05);
+            }
+        }
+
+        &:has(+ *:hover) {
+            background-color: #0d75c9;
+            scale: 1.5;
+            z-index: 2;
+            box-shadow: 0 0 50px rgb(0, 0, 0, 0.15);
+        }
+
+        &:has(+* + *:hover) {
+            background-color: #0d75c9;
+            scale: 1.25;
+            z-index: 1;
+            box-shadow: 0 0 50px rgb(0, 0, 0, 0.05);
+        }
+
+
+    }
+}

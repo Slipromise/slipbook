@@ -1,0 +1,63 @@
+@use '../../styles/functions/random'as *;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90dvw;
+    height: 90dvh;
+    overflow: hidden;
+    // overflow:visible;
+    // overflow: ;
+
+    >div {
+        width: 400px;
+        height: 150px;
+        background-color: white;
+        border-radius: 20px;
+        position: relative;
+        filter: url(#gooey) ;
+
+        @for $i from 1 through 20 {
+            >div:nth-child(#{$i}) {
+                --scale: #{randomNum(1,3)};
+                position: absolute;
+                background-color: white;
+                left: randomNum(-15,400) * 1px;
+                width: 30px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                animation: animation 2s infinite;
+                transform: translateY(-50vh) scale(var(--scale));
+                animation-delay: randomNum(1000, 5000) * 1ms;
+            }
+        }
+    }
+
+    >h2 {
+        position: absolute;
+        font-size: 6em;
+        color: #1d2b3a
+    }
+}
+
+
+
+@keyframes animation {
+    0% {
+        transform: translateY(-50vh) scale(var(--scale));
+    }
+
+    25% {
+        transform: translateY(0) scale(var(--scale));
+    }
+
+    50% {
+        transform: translateY(150px) scale(var(--scale));
+    }
+
+    100% {
+        transform: translateY(calc(50vh + 150px)) scale(var(--scale));
+    }
+
+}

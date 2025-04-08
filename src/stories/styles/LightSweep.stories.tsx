@@ -17,6 +17,11 @@ function LightSweep({ className }: Props) {
 
 const meta: Meta<typeof LightSweep> = {
   component: LightSweep,
+  parameters: {
+    layout: "centered",
+    backgrounds: { default: "dark" },
+  },
+  globals: { theme: "dark" },
 };
 
 export default meta;

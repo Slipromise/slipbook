@@ -26,6 +26,11 @@ const GradientBorder = ({ className, children, gradientColors }: Props) => {
 
 const meta: Meta<typeof GradientBorder> = {
   component: GradientBorder,
+  parameters: {
+    layout: "centered",
+    backgrounds: { default: "dark" },
+  },
+  globals: { theme: "dark" },
 };
 
 export default meta;

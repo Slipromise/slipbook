@@ -30,6 +30,9 @@ function FireTextShadow({ className }: Props) {
 
 const meta: Meta<typeof FireTextShadow> = {
   component: FireTextShadow,
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

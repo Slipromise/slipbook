@@ -25,7 +25,9 @@ function BoxMesh(props: ThreeElements["mesh"]) {
 
 const meta: Meta<typeof BoxMesh> = {
   component: BoxMesh,
-  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

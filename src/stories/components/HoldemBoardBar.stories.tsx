@@ -4,6 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof HoldemBoardBar> = {
   component: HoldemBoardBar,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

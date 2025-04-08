@@ -1,11 +1,11 @@
 import { Sprite, Stage } from "@pixi/react";
 import { Meta, StoryObj } from "@storybook/react";
+import image from "../assets/gift.png"
 
 const meta: Meta<typeof Sprite> = {
   component: Sprite,
-  tags: ["autodocs"],
   parameters: {
-    //   layout: "padded",
+      layout: "centered",
   },
 };
 
@@ -17,13 +17,13 @@ type Story = StoryObj<typeof Sprite>;
 
 export const Normal: Story = {
   args: {
-    image: "https://pixijs.io/pixi-react/img/bunny.png",
-    x: 300,
-    y: 150,
+    image,
+    x: 0,
+    y: 0,
   },
   render: function Render(args) {
     return (
-      <Stage width={400} height={300} options={{ background: 0x1099bb }}>
+      <Stage width={1024} height={1024} options={{ background: 0x1099bb }}>
         <Sprite {...args} />
       </Stage>
     );

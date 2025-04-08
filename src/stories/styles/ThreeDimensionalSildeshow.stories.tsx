@@ -23,7 +23,7 @@ function ThreeDimensionalSildeshow({ list, duration }: Props) {
       {list.map(({ src, title }, index) => (
         <div key={index} style={{ "--i": index } as React.CSSProperties}>
           <h2>
-            {index +1}
+            {index + 1}
             <span>{title}</span>
           </h2>
           <img src={src}></img>
@@ -35,13 +35,13 @@ function ThreeDimensionalSildeshow({ list, duration }: Props) {
 
 const meta: Meta<typeof ThreeDimensionalSildeshow> = {
   component: ThreeDimensionalSildeshow,
-  tags: ["autodocs"],
   parameters: {
     layout: "centered",
     backgrounds: {
       default: "dark",
     },
   },
+  globals: { theme: "dark" },
 };
 
 export default meta;
@@ -52,26 +52,26 @@ export const Normal: Story = {
   args: {
     list: [
       {
-        title: "Ragnarok",
-        src: "src/stories/assets/00001-2086282684.png",
+        title: "Emma",
+        src: "/images/00001-2086282684.png",
       },
       {
-        title: "Wonderland",
-        src: "src/stories/assets/00002-442336389.png",
+        title: "Sophia",
+        src: "/images/00002-442336389.png",
       },
       {
-        title: "Ocean Lord",
-        src: "src/stories/assets/00003-3958138843.png",
+        title: "Olivia",
+        src: "/images/00003-3958138843.png",
       },
       {
-        title: "Sir Loin",
-        src: "src/stories/assets/00004-15481453.png",
+        title: "Hannah",
+        src: "/images/00004-15481453.png",
       },
       {
-        title: "Steam Punk",
-        src: "src/stories/assets/00005-15481453.png",
+        title: "Chloe",
+        src: "/images/00005-15481453.png",
       },
     ],
-    duration:5000,
+    duration: 5000,
   },
 };

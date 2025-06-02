@@ -1,0 +1,74 @@
+.container {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.leftToRight {
+
+    background-image: linear-gradient(to right, rgb(64, 255, 170), rgb(64, 121, 255), rgb(64, 255, 170), rgb(64, 121, 255), rgb(64, 255, 170));
+    background-clip: text;
+    color: transparent;
+    animation: leftToRight 3s linear infinite;
+    background-size: 300% 100%;
+    animation-timing-function: ease-in-out
+}
+
+.gold {
+    background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%);
+    background-clip: text;
+    position: relative;
+
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    margin: 0;
+    font-size: 30vh;
+    text-transform: uppercase;
+
+    &::after {
+        background: none;
+        content: attr(data-text) / "";
+        left: 0;
+        z-index: -1;
+        position: absolute;
+        text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.silver {
+    background: linear-gradient(to bottom, #cccccc 22%, #474747 24%, #b8b8b8 26%, #b8b8b8 27%, #d9d9d9 40%, #3e3e3e 78%);
+    background-clip: text;
+    position: relative;
+
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    margin: 0;
+    font-size: 30vh;
+    text-transform: uppercase;
+
+    &::after {
+        background: none;
+        content: attr(data-text) / "";
+        left: 0;
+        z-index: -1;
+        position: absolute;
+
+        text-shadow:
+            -1px 0 1px #b3b3b3, 0 1px 1px #b3b3b3,
+            5px 5px 10px rgba(0, 0, 0, 0.4),
+            -5px -5px 10px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

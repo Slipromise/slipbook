@@ -5,6 +5,9 @@ import HoldemPlayerBar from "@/components/HoldemPlayerBar";
 const meta: Meta<typeof HoldemPlayerBar> = {
   component: HoldemPlayerBar,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

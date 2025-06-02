@@ -1,5 +1,7 @@
+
+import type { Meta, StoryObj } from "@storybook/react";
 import React, { useState } from "react";
-import styles from "@/styles/components/AnimationCubes.module.scss";
+import styles from "./AnimationCubes.module.scss";
 import { useInterval } from "react-use";
 import { sample } from "lodash";
 
@@ -7,7 +9,7 @@ type Props = { updateRate?: number; duration?: number };
 
 const CUBE_SIDE = [-3, -2, -1, 0, 1, 2, 3];
 
-export default function AnimationCubes({
+function AnimationCubes({
   updateRate = 500,
   duration = 2000,
 }: Props) {
@@ -62,3 +64,27 @@ export default function AnimationCubes({
     </div>
   );
 }
+
+const meta: Meta<typeof AnimationCubes> = {
+  component: AnimationCubes,
+  parameters: {
+    layout: "centered",
+  },
+};
+export default meta;
+
+type Story = StoryObj<typeof AnimationCubes>;
+
+export const Normal: Story = {
+  args: {
+    updateRate: 500,
+    duration: 2000,
+  },
+};
+
+export const FastUpdates: Story = {
+  args: {
+    updateRate: 250,
+    duration: 4000,
+  },
+};

@@ -22,6 +22,7 @@ function SnakeBroader({ className, borderSideClassName }: Props) {
 const meta: Meta<typeof SnakeBroader> = {
   component: SnakeBroader,
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

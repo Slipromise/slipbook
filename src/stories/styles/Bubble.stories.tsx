@@ -13,6 +13,9 @@ function Bubble({ className }: Props) {
 
 const meta: Meta<typeof Bubble> = {
   component: Bubble,
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

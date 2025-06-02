@@ -4,6 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof CircularProgressBar> = {
   component: CircularProgressBar,
   tags: ["autodocs"],
+  parameters:{
+    layout: "centered",
+  }
 };
 
 export default meta;

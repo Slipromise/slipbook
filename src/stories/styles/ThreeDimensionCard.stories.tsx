@@ -45,6 +45,7 @@ const ThreeDimensionCard = () => {
 const meta: Meta<typeof ThreeDimensionCard> = {
   component: ThreeDimensionCard,
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

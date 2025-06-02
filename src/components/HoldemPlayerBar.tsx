@@ -1,5 +1,6 @@
-import numeral from "numeral";
-import React, { ComponentProps, useMemo, useRef } from "react";
+"use client";
+
+import { ComponentProps, useMemo, useRef } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "@/styles/components/HoldemPlayerBar.module.scss";
@@ -18,6 +19,7 @@ type Props = {
   cards: [PokerCard, PokerCard];
   position: "BB" | "SB" | "D" | "CO" | "UTG";
   isTurn: boolean;
+  locale?: string;
 };
 
 function HoldemPokerPlayerBar({
@@ -28,6 +30,7 @@ function HoldemPokerPlayerBar({
   cards,
   position,
   isTurn,
+  locale = "en-US",
 }: Props) {
   const nodeRef = useRef<HTMLDivElement>(null);
   const isIn = useMemo(() => status !== "FOLD", [status]);
@@ -55,7 +58,13 @@ function HoldemPokerPlayerBar({
           <Image src={avatarUri} alt="" />
           <animated.span>
             {springValues.chipAmount.to((n) =>
-              numeral(n).format("0a", Math.floor)
+              new Intl.NumberFormat(locale, {
+                style: "decimal",
+                notation: "compact",
+                compactDisplay: "short",
+                maximumSignificantDigits: 3,
+                roundingMode: "trunc",
+              }).format(n)
             )}
           </animated.span>
         </Stack>

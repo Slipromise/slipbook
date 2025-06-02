@@ -1,5 +1,6 @@
-import React, { ComponentProps, useMemo, useState } from "react";
-import dayjs from "dayjs";
+"use client";
+
+import { ComponentProps, useMemo, useState } from "react";
 import styles from "@/styles/components/CompetitionListItem.module.scss";
 import Stack from "react-bootstrap/esm/Stack";
 import AnchorAvatar from "./AnchorAvatar";
@@ -70,7 +71,13 @@ export default function CompetitionListItem({
     >
       <Stack data-header>
         <span data-title>{title}</span>
-        <span data-time>{dayjs(startTime).format("HH:mm")}</span>
+        <span data-time>
+          {new Intl.DateTimeFormat(undefined, {
+            hour: "numeric",
+            minute: "numeric",
+            hour12: false,
+          }).format(startTime)}
+        </span>
       </Stack>
       <Stack data-body>
         <Stack data-team data-winner={isATeamWinner} data-is-tie={isTie}>

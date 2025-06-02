@@ -24,6 +24,9 @@ function NeonLightText({ className }: Props) {
 
 const meta: Meta<typeof NeonLightText> = {
   component: NeonLightText,
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
 };
 
 export default meta;

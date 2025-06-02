@@ -1,24 +1,36 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import styles from "./Recognition.module.scss";
 
-type Props = {};
+type Props = { contentStyle: string };
 
-const Recognition = (props: Props) => {
+const Recognition = ({ contentStyle }: Props) => {
   return (
     <div className={styles.container}>
-      <div className={styles.face}></div>
-      <h3>facial recognition</h3>
+      <div className={contentStyle}></div>
+      <h3>recognition</h3>
     </div>
   );
 };
 
 const meta: Meta<typeof Recognition> = {
   component: Recognition,
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Recognition>;
 
-export const Face: Story = {};
+export const Face: Story = {
+  args: {
+    contentStyle: styles.face,
+  },
+};
+
+export const FingerPrint: Story = {
+  args: {
+    contentStyle: styles.fingerPrint,
+  },
+};

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stories/styles/Recognition Face smoke-test 1`] = `
+<div class="_container_1e0mf_1">
+  <div class="_face_1e0mf_8">
+  </div>
+  <h3>
+    recognition
+  </h3>
+</div>
+`;
+
+exports[`stories/styles/Recognition FingerPrint smoke-test 1`] = `
+<div class="_container_1e0mf_1">
+  <div class="_fingerPrint_1e0mf_44">
+  </div>
+  <h3>
+    recognition
+  </h3>
+</div>
+`;

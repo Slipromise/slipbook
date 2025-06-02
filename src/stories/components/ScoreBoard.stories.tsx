@@ -1,10 +1,12 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import ScoreBoard from "@/components/ScoreBoard";
 
 const meta: Meta<typeof ScoreBoard> = {
   component: ScoreBoard,
   tags: ["autodocs"],
+  parameters: {
+    layout: "padded",
+  },
 };
 
 export default meta;

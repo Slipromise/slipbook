@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/components/LuckySpinningWheel Normal smoke-test 1`] = `
-<div class="LuckySpinningWheel_container___4z4h">
-  <div class="LuckySpinningWheel_wheel__O3DCn"
-       style="transform: rotate(0deg);"
+<div class="_container_kpqoj_1">
+  <div class="_wheel_kpqoj_19"
+       data-result="1"
+       style="--count: 10; --position: 0;"
   >
     <span style="--i: 0;">
     </span>
@@ -13,73 +14,239 @@ exports[`stories/components/LuckySpinningWheel Normal smoke-test 1`] = `
     </span>
     <span style="--i: 3;">
     </span>
-    <div class="LuckySpinningWheel_numbers__BUI3w">
-      <b style="--i: 0;">
-        5
+    <span style="--i: 4;">
+    </span>
+    <span style="--i: 5;">
+    </span>
+    <span style="--i: 6;">
+    </span>
+    <span style="--i: 7;">
+    </span>
+    <span style="--i: 8;">
+    </span>
+    <span style="--i: 9;">
+    </span>
+    <div class="_numbers_kpqoj_47">
+      <b data-hinting="true"
+         style="--i: 0;"
+      >
+        🍔
       </b>
-      <b style="--i: 1;">
-        1
+      <b data-hinting="false"
+         style="--i: 1;"
+      >
+        ❤️
       </b>
-      <b style="--i: 2;">
-        4
+      <b data-hinting="false"
+         style="--i: 2;"
+      >
+        🌷
       </b>
-      <b style="--i: 3;">
-        6
+      <b data-hinting="false"
+         style="--i: 3;"
+      >
+        ⚽
       </b>
-      <b style="--i: 4;">
-        2
+      <b data-hinting="false"
+         style="--i: 4;"
+      >
+        🚘
       </b>
-      <b style="--i: 5;">
-        8
+      <b data-hinting="false"
+         style="--i: 5;"
+      >
+        🔧
       </b>
-      <b style="--i: 6;">
-        7
+      <b data-hinting="false"
+         style="--i: 6;"
+      >
+        🎙️
       </b>
-      <b style="--i: 7;">
-        3
+      <b data-hinting="false"
+         style="--i: 7;"
+      >
+        📱
+      </b>
+      <b data-hinting="false"
+         style="--i: 8;"
+      >
+        🗿
+      </b>
+      <b data-hinting="false"
+         style="--i: 9;"
+      >
+        ✂️
       </b>
     </div>
   </div>
-  <div class="LuckySpinningWheel_wheel__O3DCn LuckySpinningWheel_inner__9nS3E"
-       style="transform: rotate(0deg);"
-  >
-    <span style="--i: 0;">
-    </span>
-    <span style="--i: 1;">
-    </span>
-    <span style="--i: 2;">
-    </span>
-    <span style="--i: 3;">
-    </span>
-    <div class="LuckySpinningWheel_numbers__BUI3w">
-      <b style="--i: 0;">
-        5
-      </b>
-      <b style="--i: 1;">
-        1
-      </b>
-      <b style="--i: 2;">
-        4
-      </b>
-      <b style="--i: 3;">
-        6
-      </b>
-      <b style="--i: 4;">
-        2
-      </b>
-      <b style="--i: 5;">
-        8
-      </b>
-      <b style="--i: 6;">
-        7
-      </b>
-      <b style="--i: 7;">
-        3
-      </b>
-    </div>
-  </div>
-  <div class="LuckySpinningWheel_spinBtn__P9qub">
+  <div class="_spinBtn_kpqoj_66">
     Spin
+  </div>
+</div>
+`;
+
+exports[`stories/components/LuckySpinningWheel Reward smoke-test 1`] = `
+<div class="_container_kpqoj_1">
+  <div class="_wheel_kpqoj_19"
+       data-result="4"
+       style="--count: 10; --position: 3;"
+  >
+    <span style="--i: 0;">
+    </span>
+    <span style="--i: 1;">
+    </span>
+    <span style="--i: 2;">
+    </span>
+    <span style="--i: 3;">
+    </span>
+    <span style="--i: 4;">
+    </span>
+    <span style="--i: 5;">
+    </span>
+    <span style="--i: 6;">
+    </span>
+    <span style="--i: 7;">
+    </span>
+    <span style="--i: 8;">
+    </span>
+    <span style="--i: 9;">
+    </span>
+    <div class="_numbers_kpqoj_47">
+      <b data-hinting="false"
+         style="--i: 0;"
+      >
+        🍔
+      </b>
+      <b data-hinting="false"
+         style="--i: 1;"
+      >
+        ❤️
+      </b>
+      <b data-hinting="false"
+         style="--i: 2;"
+      >
+        🌷
+      </b>
+      <b data-hinting="true"
+         style="--i: 3;"
+      >
+        ⚽
+      </b>
+      <b data-hinting="false"
+         style="--i: 4;"
+      >
+        🚘
+      </b>
+      <b data-hinting="false"
+         style="--i: 5;"
+      >
+        🔧
+      </b>
+      <b data-hinting="false"
+         style="--i: 6;"
+      >
+        🎙️
+      </b>
+      <b data-hinting="false"
+         style="--i: 7;"
+      >
+        📱
+      </b>
+      <b data-hinting="false"
+         style="--i: 8;"
+      >
+        🗿
+      </b>
+      <b data-hinting="false"
+         style="--i: 9;"
+      >
+        ✂️
+      </b>
+    </div>
+  </div>
+  <div class="_spinBtn_kpqoj_66">
+    Spin
+  </div>
+</div>
+`;
+
+exports[`stories/components/LuckySpinningWheel Spinning smoke-test 1`] = `
+<div class="_container_kpqoj_1">
+  <div class="_wheel_kpqoj_19"
+       style="--count: 10; --position: -1;"
+  >
+    <span style="--i: 0;">
+    </span>
+    <span style="--i: 1;">
+    </span>
+    <span style="--i: 2;">
+    </span>
+    <span style="--i: 3;">
+    </span>
+    <span style="--i: 4;">
+    </span>
+    <span style="--i: 5;">
+    </span>
+    <span style="--i: 6;">
+    </span>
+    <span style="--i: 7;">
+    </span>
+    <span style="--i: 8;">
+    </span>
+    <span style="--i: 9;">
+    </span>
+    <div class="_numbers_kpqoj_47">
+      <b data-hinting="false"
+         style="--i: 0;"
+      >
+        🍔
+      </b>
+      <b data-hinting="false"
+         style="--i: 1;"
+      >
+        ❤️
+      </b>
+      <b data-hinting="false"
+         style="--i: 2;"
+      >
+        🌷
+      </b>
+      <b data-hinting="false"
+         style="--i: 3;"
+      >
+        ⚽
+      </b>
+      <b data-hinting="false"
+         style="--i: 4;"
+      >
+        🚘
+      </b>
+      <b data-hinting="false"
+         style="--i: 5;"
+      >
+        🔧
+      </b>
+      <b data-hinting="false"
+         style="--i: 6;"
+      >
+        🎙️
+      </b>
+      <b data-hinting="false"
+         style="--i: 7;"
+      >
+        📱
+      </b>
+      <b data-hinting="false"
+         style="--i: 8;"
+      >
+        🗿
+      </b>
+      <b data-hinting="false"
+         style="--i: 9;"
+      >
+        ✂️
+      </b>
+    </div>
   </div>
 </div>
 `;

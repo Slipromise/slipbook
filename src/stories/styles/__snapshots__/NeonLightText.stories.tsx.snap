@@ -1,7 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`stories/styles/NeonLightText Chase smoke-test 1`] = `
+<div class="_chase_a5pkv_11">
+  <span>
+    N
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    n
+  </span>
+  <span>
+    L
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    g
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    t
+  </span>
+</div>
+`;
+
+exports[`stories/styles/NeonLightText Flickering smoke-test 1`] = `
+<div class="_flickering_a5pkv_46">
+  <span>
+    N
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    n
+  </span>
+  <span>
+    L
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    g
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    t
+  </span>
+</div>
+`;
+
 exports[`stories/styles/NeonLightText Normal smoke-test 1`] = `
-<div class="NeonLightText_container__CsWVQ">
+<div class="_normal_a5pkv_1">
+  <span>
+    N
+  </span>
+  <span>
+    e
+  </span>
+  <span>
+    o
+  </span>
+  <span>
+    n
+  </span>
+  <span>
+    L
+  </span>
+  <span>
+    i
+  </span>
+  <span>
+    g
+  </span>
+  <span>
+    h
+  </span>
+  <span>
+    t
+  </span>
+</div>
+`;
+
+exports[`stories/styles/NeonLightText Pulsate smoke-test 1`] = `
+<div class="_pulsate_a5pkv_54">
   <span>
     N
   </span>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`stories/styles/FireTextShadow Animation smoke-test 1`] = `
-<h1 class="FireTextShadow_animation__cd8db">
+<h1 class="_animation_qd7ng_6">
   <span>
     F
   </span>
@@ -48,7 +48,7 @@ exports[`stories/styles/FireTextShadow Animation smoke-test 1`] = `
 `;
 
 exports[`stories/styles/FireTextShadow Normal smoke-test 1`] = `
-<h1 class="FireTextShadow_normal__LF_VL">
+<h1 class="_normal_qd7ng_1">
   <span>
     F
   </span>
@@ -95,7 +95,7 @@ exports[`stories/styles/FireTextShadow Normal smoke-test 1`] = `
 `;
 
 exports[`stories/styles/FireTextShadow Variants smoke-test 1`] = `
-<h1 class="FireTextShadow_variants__irrI7">
+<h1 class="_variants_qd7ng_19">
   <span>
     F
   </span>

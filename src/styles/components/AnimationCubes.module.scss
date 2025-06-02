@@ -1,0 +1,83 @@
+.container {
+    position: relative;
+    // height: 500px;
+    // width: 500px;
+
+    transform: skewY(-20deg);
+
+    .cube {
+        position: relative;
+
+        translate: calc(var(--z) * 60px) calc(var(--z) * 60px);
+
+        >div {
+            position: absolute;
+
+            translate: calc(-70px * var(--x));
+
+
+
+            >span {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                background-color: #dcdcdc;
+                transition: 1.5s;
+
+                &.active {
+                    background-color: #ef4149;
+                    transform: translate(0, -50px);
+                    animation: colorAnimation var(--duration) ease-in-out infinite;
+
+                    &::before {
+                        background-color: #f75d64;
+                    }
+
+                    &::after {
+                        background-color: #f14e55;
+                        box-shadow: -150px 150px 5px rgba(0, 0, 0, 0.15);
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -40px;
+                    width: 40px;
+                    height: 100%;
+                    background-color: #c8c8c8;
+                    transform-origin: right;
+                    transform: skewY(45deg);
+                    transition: 1.5s;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: -40px;
+                    left: 0;
+                    width: 100%;
+                    height: 40px;
+                    background-color: #f2f2f2;
+                    transform-origin: bottom;
+                    transform: skewX(45deg);
+                    transition: 1.5s;
+                    box-shadow: -100px 100px 5px rgba(0, 0, 0, 0.15);
+                }
+            }
+
+        }
+
+    }
+}
+
+@keyframes colorAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}

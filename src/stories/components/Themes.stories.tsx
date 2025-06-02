@@ -1,18 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { run as runHolder } from "holderjs";
-import React, { useEffect } from "react";
+
 import BootstrapComponents from "./BootstrapComponents";
 
 const meta: Meta<typeof BootstrapComponents> = {
   component: BootstrapComponents,
-  decorators: [
-    (SC) => {
-      useEffect(() => {
-        runHolder();
-      }, []);
-      return <SC></SC>;
-    },
-  ],
   tags: ["skip-test"],
 };
 

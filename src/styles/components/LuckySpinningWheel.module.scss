@@ -13,7 +13,7 @@
         width: 30px;
         height: 50px;
         background-color: #f43648;
-        top: 45px;
+        top: -20px;
         clip-path: polygon(50% 0, 65% 50%, 50% 100%, 35% 50%);
     }
 
@@ -24,16 +24,27 @@
         border: 3px solid #39ffe2;
         box-shadow: 0 0 10px #39ffe2;
         border-radius: 50%;
-        background-color: #0a1b18;
-        transition: transform 3s ease-in-out;
+        background-color: #484848;
+        transition: all 3s ease-in-out;
+        animation: wheelSpinning 1s linear infinite;
+        filter: blur(2px);
+
+        &[data-result] {
+            filter: blur(0);
+            animation: wheelStopping 2s linear 1;
+            animation-fill-mode: forwards;
+            --rotate-degrees: calc((360 / var(--count) * (var(--position)) + 360 / var(--count) / 2) * -1deg);
+
+        }
 
         span {
             position: absolute;
             left: calc(50% - 1px);
             width: 2px;
-            height: 100%;
+            height: 50%;
             background-color: #39ffe2;
-            transform: rotate(calc(45deg * var(--i)));
+            transform: rotate(calc(360 / var(--count) * var(--i) * 1deg));
+            transform-origin: 0 100%;
             // filter: drop-shadow(0 0 5px #39ffe2);
             box-shadow: 0 0 10px #39ffe2;
         }
@@ -41,7 +52,8 @@
         .numbers {
             position: absolute;
             inset: 0;
-            rotate: 22.5deg;
+            // rotate: 22.5deg;
+            rotate: calc(360 / var(--count) / 2 * 1deg);
 
             b {
                 position: absolute;
@@ -50,17 +62,18 @@
                 text-align: center;
                 color: #39ffe2;
                 font-weight: 500;
-                transform: rotate(calc(45deg * var(--i)));
+                transform: rotate(calc(360 / var(--count) * var(--i) * 1deg));
                 filter: drop-shadow(0 0 5px #39ffe2);
                 user-select: none;
+
+                &[data-hinting=true] {
+                    animation: hinting 1s linear 2s infinite alternate-reverse;
+                }
+
+
             }
         }
 
-        &.inner {
-            width: 260px;
-            height: 260px;
-            transition-duration: 5s;
-        }
     }
 
     .spinBtn {
@@ -79,5 +92,59 @@
         font-size: 1.5em;
         font-weight: 600;
         letter-spacing: 0.1em;
+        animation: spinButtonShowing 2s linear 1;
+    }
+}
+
+@keyframes wheelSpinning {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+// TODO: 旋轉的節奏調整
+
+@keyframes wheelStopping {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(calc(-360deg + var(--rotate-degrees)));
+    }
+}
+
+@keyframes hinting {
+    0% {
+        filter: drop-shadow(0 0 5px #39ffe2);
+        color: #39ffe2;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 9px #ffffff);
+        color: #ffffff;
+    }
+}
+
+@keyframes spinButtonShowing {
+
+    0% {
+        transform: scale(0)
+    }
+
+    50% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1)
     }
 }

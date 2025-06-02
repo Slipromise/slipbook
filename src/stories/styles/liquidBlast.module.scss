@@ -120,7 +120,7 @@
 
 @keyframes bubbleAni {
     $count: 7;
-    $space: 100 / ($count + 1);
+    $space: calc(100 / ($count + 1));
 
     @for $i from 1 through $count {
         #{$space * $i * 1% } {

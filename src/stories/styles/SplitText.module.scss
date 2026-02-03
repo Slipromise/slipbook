@@ -1,0 +1,9 @@
+.container {
+    // background-color: red;
+    color: white;
+    font-size: 5rem;
+
+    >* {
+        position: relative;
+    }
+}

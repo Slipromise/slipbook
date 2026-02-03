@@ -1,6 +1,6 @@
 import CircularProgressBar from "@/components/CircularProgressBar";
-import { Meta, StoryObj } from "@storybook/react";
-import styles from './PixelizingFilter.module.scss'
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import styles from "./PixelizingFilter.module.scss";
 
 type Props = {
   children?: React.ReactNode;
@@ -9,9 +9,9 @@ type Props = {
 function PixelizingFilter({ children }: Props) {
   return (
     <div>
-      <div className={styles.container} >{children}</div>
+      <div className={styles.container}>{children}</div>
       <div className={styles.filter}></div>
-      <svg style={{position:'absolute'}} >
+      <svg style={{ position: "absolute" }}>
         <filter id="pixelateStr" x="0" y="0" width="100%" height="100%">
           <feFlood x="1" y="1" height="1" width="1"></feFlood>
           <feComposite

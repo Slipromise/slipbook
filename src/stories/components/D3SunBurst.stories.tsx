@@ -1,5 +1,5 @@
 import D3SunBurst from "@/components/D3SunBurst";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof D3SunBurst> = {
   component: D3SunBurst,
@@ -150,17 +150,17 @@ export const Default: Story = {
           ],
         },
         {
-          name: 'Blockchain',
+          name: "Blockchain",
           children: [
-            {name:'Solidity', value: 70},
-            {name:'Ganache', value: 70},
-            {name:'Hardhat', value: 70},
-            {name:'Ethers.js', value: 70},
-            {name:'Web3.js', value: 70},
-            {name:'Truffle', value: 70},
-            {name:'Hardhat', value: 60},
-          ]
-        }
+            { name: "Solidity", value: 70 },
+            { name: "Ganache", value: 70 },
+            { name: "Hardhat", value: 70 },
+            { name: "Ethers.js", value: 70 },
+            { name: "Web3.js", value: 70 },
+            { name: "Truffle", value: 70 },
+            { name: "Hardhat", value: 60 },
+          ],
+        },
       ],
     },
   },

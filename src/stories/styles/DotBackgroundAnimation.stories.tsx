@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./DotBackgroundAnimation.module.scss";
-import { CSSProperties, useEffect, useMemo, useRef } from "react";
+import { type CSSProperties, useEffect, useMemo, useRef } from "react";
 
 function DotBackgroundAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,11 +15,11 @@ function DotBackgroundAnimation() {
     const eventListener = (event: MouseEvent) => {
       containerRef.current?.style.setProperty(
         "--mouse-x",
-        `${event.clientX}px`
+        `${event.clientX}px`,
       );
       containerRef.current?.style.setProperty(
         "--mouse-y",
-        `${event.clientY}px`
+        `${event.clientY}px`,
       );
 
       containerRef.current

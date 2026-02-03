@@ -1,7 +1,15 @@
 import RadialMenu from "@/components/RadialMenu";
-import type { Meta, StoryObj } from "@storybook/react";
-import { IoMdSettings ,IoMdHome,IoMdPerson,IoMdMail,IoLogoGameControllerB,IoMdDocument} from "react-icons/io";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import {
+  IoMdSettings,
+  IoMdHome,
+  IoMdPerson,
+  IoMdMail,
+  IoLogoGameControllerB,
+  IoMdDocument,
+} from "react-icons/io";
+import { fn } from "storybook/test";
+
 const meta = {
   component: RadialMenu,
   parameters: {
@@ -20,7 +28,7 @@ export const Normal: Story = {
     items: [
       { component: IoMdSettings, onClick: fn() },
       { component: IoMdHome, onClick: fn() },
-      { component: IoMdPerson, onClick:fn() },
+      { component: IoMdPerson, onClick: fn() },
       { component: IoMdMail, onClick: fn() },
       { component: IoLogoGameControllerB, onClick: fn() },
       { component: IoMdDocument, onClick: fn() },
@@ -28,22 +36,21 @@ export const Normal: Story = {
   },
 };
 
-
 export const TwoItems: Story = {
-    args: {
-        items: [
-        { component: IoMdSettings, onClick: fn() },
-        { component: IoMdHome, onClick: fn() },
-        ],
-    },
-}
+  args: {
+    items: [
+      { component: IoMdSettings, onClick: fn() },
+      { component: IoMdHome, onClick: fn() },
+    ],
+  },
+};
 
 export const ThreeItems: Story = {
-    args:{
-        items:[
-            { component: IoMdSettings, onClick: fn() },
-            { component: IoMdHome, onClick: fn() },
-            { component: IoMdPerson, onClick: fn() },
-        ],
-    }
-}
+  args: {
+    items: [
+      { component: IoMdSettings, onClick: fn() },
+      { component: IoMdHome, onClick: fn() },
+      { component: IoMdPerson, onClick: fn() },
+    ],
+  },
+};

@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { OrbitControls, useFBX, useAnimations } from "@react-three/drei";
 import { Suspense, useEffect } from "react";
 
@@ -14,7 +14,8 @@ function FBXModel({ fbxUrl, animationIndex }: Props) {
   const { actions, names } = useAnimations(fbx.animations, fbx);
 
   useEffect(() => {
-    if (animationIndex !== undefined) {
+    if (animationIndex !== undefined && actions !== null) {
+      // eslint-disable-next-line storybook/context-in-play-function
       actions[names[animationIndex]]?.reset().fadeIn(0.5).play();
     }
   }, [actions, animationIndex, names]);

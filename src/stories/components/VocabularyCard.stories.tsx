@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import VocabularyCard from "@/components/VocabularyCard";
-import { userEvent, within, expect } from "@storybook/test";
-import { fn } from "@storybook/test";
+import { userEvent, within, expect, fn } from "storybook/test";
 
 const meta: Meta<typeof VocabularyCard> = {
   component: VocabularyCard,
@@ -33,8 +32,8 @@ export const Normal: Story = {
 
     await expect(
       canvas.queryAllByText(
-        /There's not enough interaction between management and the workers./i
-      ).length
+        /There's not enough interaction between management and the workers./i,
+      ).length,
     ).not.toBe(0);
 
     await step("合攏例句", async () => {
@@ -42,8 +41,8 @@ export const Normal: Story = {
 
       await expect(
         canvas.queryAllByText(
-          /There's not enough interaction between management and the workers./i
-        ).length
+          /There's not enough interaction between management and the workers./i,
+        ).length,
       ).toBe(0);
     });
 
@@ -52,8 +51,8 @@ export const Normal: Story = {
 
       await expect(
         canvas.queryAllByText(
-          /There's not enough interaction between management and the workers./i
-        ).length
+          /There's not enough interaction between management and the workers./i,
+        ).length,
       ).toBe(1);
     });
   },

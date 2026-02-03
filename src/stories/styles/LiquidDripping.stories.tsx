@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./LiquidDripping.module.scss";
 
 function LiquidDripping() {
@@ -29,7 +29,7 @@ function LiquidDripping() {
         </div>
         <h2>Liquid</h2>
       </div>
-      <svg style={{display:'none'}} >
+      <svg style={{ display: "none" }}>
         <filter id="gooey">
           <feGaussianBlur in="SourceGraphic" stdDeviation="10"></feGaussianBlur>
           <feColorMatrix

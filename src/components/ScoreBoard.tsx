@@ -5,7 +5,10 @@ import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "@/styles/components/ScoreBoard.module.scss";
 import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
 import { useSpring, animated, AnimationConfig } from "@react-spring/web";
+
+dayjs.extend(duration);
 
 type Props = {
   aTitle: string;
@@ -31,8 +34,8 @@ function ScoreBoard({
     () =>
       ({
         "--percent": `${(aScore / (aScore + bScore)) * 100}%`,
-      } as React.CSSProperties),
-    [aScore, bScore]
+      }) as React.CSSProperties,
+    [aScore, bScore],
   );
 
   const scores = useSpring<{ aScore: number; bScore: number }>({

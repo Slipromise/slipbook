@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./GlitchText.module.scss";
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 
 type Props = {
   text: string;
@@ -38,6 +38,3 @@ export const Normal: Story = {
     duration: 1000,
   },
 };
-
-
-  

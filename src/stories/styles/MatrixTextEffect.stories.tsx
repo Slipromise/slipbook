@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useEffect, useMemo, useRef } from "react";
 import { useInterval, useWindowSize } from "react-use";
 import styles from "@/styles/components/MatrixTextEffect.module.scss";
-
 
 type Props = {
   text?: string;
@@ -48,36 +47,39 @@ function MatrixTextEffect({
         drops.current = drops.current.map((drop, index) => {
           const char = chars[Math.floor(Math.random() * chars.length)];
           ctx.fillText(char, index * fontSize, drop * fontSize);
-          return drop * fontSize >= height && Math.random() > 0.975 ? 0 : drop + 1;
+          return drop * fontSize >= height && Math.random() > 0.975
+            ? 0
+            : drop + 1;
         });
       }
     }
   }, refreshRate);
 
-  return <div className={styles.container} ><canvas ref={canvasRef}  /></div>;
+  return (
+    <div className={styles.container}>
+      <canvas ref={canvasRef} />
+    </div>
+  );
 }
 
-
-
 const meta: Meta = {
-    component: MatrixTextEffect,
-    parameters:{
-        layout: 'fullscreen',
-    }
-} satisfies Meta<typeof MatrixTextEffect>; 
+  component: MatrixTextEffect,
+  parameters: {
+    layout: "fullscreen",
+  },
+} satisfies Meta<typeof MatrixTextEffect>;
 
 export default meta;
 
 type Story = StoryObj<typeof MatrixTextEffect>;
 
 export const Default: Story = {
-    args: {},
-} 
-
+  args: {},
+};
 
 export const Emoji: Story = {
-    args:{
-        text:'☺︎☹︎☠︎❣︎❤︎☘︎⛸︎♠︎♥︎♦︎♣︎♟︎⛷︎⛰︎⛩︎♨︎⛴︎✈︎☀︎⏱︎⏲︎☁︎⛈︎☂︎⛱︎❄︎☃︎☄︎⛑︎☎︎⌨︎✏︎✒︎✉︎✂︎⛏︎⚒︎⚔︎⚙︎⚖︎⛓︎⚗︎⚰︎⚱︎⚠︎☢︎☣︎⬆︎↗︎➡︎↘︎⬇︎↙︎⬅︎↖︎↕︎↔︎↩︎↪︎⤴︎⤵︎⚛︎✡︎☸︎☯︎✝︎☦︎☪︎☮︎▶︎⏭︎⏯︎◀︎⏮︎⏸︎⏹︎⏺︎⏏︎♀︎♂︎⚧︎✖︎♾︎‼︎⁉︎⚕︎♻︎⚜︎☑︎✔︎〽︎✳︎✴︎❇︎©︎®︎™︎🅰︎🅱︎ℹ︎Ⓜ︎🅾︎🅿︎🈂︎🈷︎㊗︎㊙︎◼︎◻︎▪︎▫︎',
-        fontSize:20,
-    }
-}
+  args: {
+    text: "☺︎☹︎☠︎❣︎❤︎☘︎⛸︎♠︎♥︎♦︎♣︎♟︎⛷︎⛰︎⛩︎♨︎⛴︎✈︎☀︎⏱︎⏲︎☁︎⛈︎☂︎⛱︎❄︎☃︎☄︎⛑︎☎︎⌨︎✏︎✒︎✉︎✂︎⛏︎⚒︎⚔︎⚙︎⚖︎⛓︎⚗︎⚰︎⚱︎⚠︎☢︎☣︎⬆︎↗︎➡︎↘︎⬇︎↙︎⬅︎↖︎↕︎↔︎↩︎↪︎⤴︎⤵︎⚛︎✡︎☸︎☯︎✝︎☦︎☪︎☮︎▶︎⏭︎⏯︎◀︎⏮︎⏸︎⏹︎⏺︎⏏︎♀︎♂︎⚧︎✖︎♾︎‼︎⁉︎⚕︎♻︎⚜︎☑︎✔︎〽︎✳︎✴︎❇︎©︎®︎™︎🅰︎🅱︎ℹ︎Ⓜ︎🅾︎🅿︎🈂︎🈷︎㊗︎㊙︎◼︎◻︎▪︎▫︎",
+    fontSize: 20,
+  },
+};

@@ -1,5 +1,4 @@
-
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useState } from "react";
 import styles from "./AnimationCubes.module.scss";
 import { useInterval } from "react-use";
@@ -9,10 +8,7 @@ type Props = { updateRate?: number; duration?: number };
 
 const CUBE_SIDE = [-3, -2, -1, 0, 1, 2, 3];
 
-function AnimationCubes({
-  updateRate = 500,
-  duration = 2000,
-}: Props) {
+function AnimationCubes({ updateRate = 500, duration = 2000 }: Props) {
   const [activeIndexes, setActiveIndexes] = useState<string[]>(() => []);
 
   useInterval(
@@ -34,7 +30,7 @@ function AnimationCubes({
     },
     CUBE_SIDE.length * CUBE_SIDE.length > activeIndexes.length
       ? updateRate
-      : undefined
+      : undefined,
   );
 
   return (

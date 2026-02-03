@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
+/* eslint-disable react-hooks/purity */
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./BleedingButton.module.scss";
 import { useMemo } from "react";
 
@@ -64,7 +65,7 @@ export const Normal: Story = {
 };
 
 export const MoreParticles: Story = {
-    args:{
-        particleCount: 500,
-    }
-}
+  args: {
+    particleCount: 500,
+  },
+};

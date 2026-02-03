@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useEffect, useRef } from "react";
 
 type Props = {
@@ -112,7 +112,7 @@ const FuzzyText = ({
           -fuzzRange,
           -fuzzRange,
           offscreenWidth + 2 * fuzzRange,
-          tightHeight + 2 * fuzzRange
+          tightHeight + 2 * fuzzRange,
         );
         const intensity = isHovering ? hoverIntensity : baseIntensity;
         for (let j = 0; j < tightHeight; j++) {
@@ -126,7 +126,7 @@ const FuzzyText = ({
             dx,
             j,
             offscreenWidth,
-            1
+            1,
           );
         }
         animationFrameId = window.requestAnimationFrame(run);

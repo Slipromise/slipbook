@@ -3,7 +3,14 @@ import styles from "@/styles/components/RadialMenu.module.scss";
 import { IoCloseOutline } from "react-icons/io5";
 
 type Props = {
-  items: { component: React.ElementType; onClick: () => void }[];
+  items: {
+    component: React.ComponentType<{
+      onClick: () => void;
+      className: string;
+      style: React.CSSProperties;
+    }>;
+    onClick: () => void;
+  }[];
 };
 
 export default function RadialMenu({ items }: Props) {
@@ -19,8 +26,8 @@ export default function RadialMenu({ items }: Props) {
         data-main-icon
         onClick={() => setIsExpended((prev) => !prev)}
       />
-      {items.map(({ component: C, onClick }, i) => (
-        <C
+      {items.map(({ component: Comp, onClick }, i) => (
+        <Comp
           key={i}
           onClick={onClick}
           className={styles.item}

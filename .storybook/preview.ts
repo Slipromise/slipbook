@@ -1,10 +1,16 @@
-import type { Preview, ReactRenderer } from "@storybook/react";
-import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import type { Preview } from "@storybook/react-vite";
 import "@/styles/index.scss";
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
-// import "holderjs/holder";
-dayjs.extend(duration);
+import { extend } from "@pixi/react";
+import {
+  AnimatedSprite,
+  Container,
+  Graphics,
+  HTMLText,
+  Sprite,
+  Text,
+} from "pixi.js";
+
+extend({ Sprite, Container, Text, HTMLText, AnimatedSprite, Graphics });
 
 const preview: Preview = {
   parameters: {
@@ -14,19 +20,14 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: "todo",
+    },
   },
-  decorators: [
-    withThemeByDataAttribute<ReactRenderer>({
-      // TODO: 搭配react-bootstrap themeProvider 做主題切換（因該不可行）
-      // TODO: 需要使用動態替換Bootstrap樣式來進行
-      themes: {
-        light: "light",
-        dark: "dark",
-      },
-      defaultTheme: "light",
-      attributeName: "data-bs-theme",
-    }),
-  ],
 };
 
 export default preview;

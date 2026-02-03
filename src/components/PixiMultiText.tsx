@@ -1,6 +1,5 @@
-import { Container, Text } from "@pixi/react";
+// import "@pixi/react";
 import { TextStyle } from "pixi.js";
-import React from "react";
 
 type LayerSpec = {
   style: TextStyle;
@@ -14,16 +13,16 @@ type Props = {
 
 export default function PixiMultiText({ text, species }: Props) {
   return (
-    <Container>
-      {species.map(({ style, offset }, i) => (
-        <Text
+    <pixiContainer>
+      {species?.map(({ style, offset }, i) => (
+        <pixiText
           key={i}
           text={text}
           style={style}
           x={offset?.x}
           y={offset?.y}
-        ></Text>
+        ></pixiText>
       ))}
-    </Container>
+    </pixiContainer>
   );
 }

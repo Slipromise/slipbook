@@ -1,6 +1,6 @@
 import InfiniteImageSlider from "@/components/InfiniteImageSlider";
-import { useArgs } from "@storybook/preview-api";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useArgs } from "storybook/internal/preview-api";
 
 const meta: Meta<typeof InfiniteImageSlider> = {
   component: InfiniteImageSlider,

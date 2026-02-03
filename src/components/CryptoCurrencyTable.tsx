@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 import { Table } from "react-bootstrap";
 import CryptoCurrencyRow, {
   CryptoCurrencyHeaderRow,

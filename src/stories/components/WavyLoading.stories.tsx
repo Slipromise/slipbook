@@ -1,5 +1,5 @@
 import WavyLoading from "@/components/WavyLoading";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof WavyLoading> = {
   component: WavyLoading,
@@ -7,8 +7,8 @@ const meta: Meta<typeof WavyLoading> = {
   parameters: {
     layout: "centered",
     backgrounds: {
-        default: "dark",
-      },
+      default: "dark",
+    },
   },
 };
 
@@ -21,6 +21,6 @@ export const Normal: Story = {};
 export const EscapeMode: Story = {
   args: {
     text: "Escape-mode",
-    duration: 3000
-  }
+    duration: 3000,
+  },
 };

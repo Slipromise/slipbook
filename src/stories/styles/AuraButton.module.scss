@@ -1,0 +1,79 @@
+// Pseudo-random function based on index
+@function pseudoRandom($index, $seed: 1) {
+    @return ($index * 73 * $seed) % 100 / 100;
+}
+
+// Mixin for particle animation with randomness
+@mixin particleAnimation($index, $totalParticles: 40) {
+    $angle: (360deg / $totalParticles) * $index + (pseudoRandom($index, 2) * 20deg - 10deg);
+    $delay: (pseudoRandom($index, 3) * 0.8s);
+    $duration: (1.2s + pseudoRandom($index, 4) * 0.8s);
+    $distance: (150px + pseudoRandom($index, 5) * 150px);
+    $size: (30px + pseudoRandom($index, 6) * 12px);
+
+    animation: expandParticle $duration ease-out $delay infinite;
+    transform-origin: 50% 50%;
+    --angle: #{$angle};
+    --distance: #{$distance};
+    --size: #{$size};
+}
+
+// Keyframes for particle expansion with variability
+@keyframes expandParticle {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(calc(var(--distance) * cos(var(--angle))),
+                calc(var(--distance) * sin(var(--angle)))) scale(0);
+    }
+}
+
+.container {
+    font-size: 64px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    >button {
+        color: #fff;
+        border: none;
+        background-color: #e50914;
+        border-radius: 50px;
+        padding: 10px 40px;
+        text-transform: uppercase;
+        transition: .5s ease;
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+        box-shadow: 0 0 50px #e50914;
+    }
+
+    >button:hover {
+
+        transform: scale(1.2);
+    }
+
+    >div {
+        position: absolute;
+        width: var(--size, 10px);
+        height: var(--size, 10px);
+        background-color: #e50914;
+        border-radius: 50%;
+        pointer-events: none;
+        top: 50%;
+        left: 50%;
+        margin: calc(var(--size, 10px) / -2) 0 0 calc(var(--size, 10px) / -2);
+
+        @for $i from 0 through 39 {
+            &:nth-child(#{$i + 2}) {
+                @include particleAnimation($i, 40);
+            }
+        }
+    }
+}

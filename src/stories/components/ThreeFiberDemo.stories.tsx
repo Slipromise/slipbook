@@ -1,7 +1,7 @@
 import { Mesh } from "three";
 import { useRef, useState } from "react";
-import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Canvas, useFrame, type ThreeElements } from "@react-three/fiber";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 function BoxMesh(props: ThreeElements["mesh"]) {
   const ref = useRef<Mesh>(null!);
@@ -25,7 +25,9 @@ function BoxMesh(props: ThreeElements["mesh"]) {
 
 const meta: Meta<typeof BoxMesh> = {
   component: BoxMesh,
-  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

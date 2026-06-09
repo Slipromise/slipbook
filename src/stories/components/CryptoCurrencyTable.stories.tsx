@@ -1,6 +1,6 @@
 import CryptoCurrencyTable from "@/components/CryptoCurrencyTable";
-import type { Meta, StoryObj } from "@storybook/react";
-import { ComponentProps } from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { ComponentProps } from "react";
 import { Bitcoin, Ethereum, BNB } from "./CryptoCurrencyRow.stories";
 
 const meta: Meta<typeof CryptoCurrencyTable> = {

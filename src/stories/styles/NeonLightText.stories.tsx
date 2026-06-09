@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./NeonLightText.module.scss";
 import React from "react";
 
@@ -25,6 +25,7 @@ function NeonLightText({ className }: Props) {
 const meta: Meta<typeof NeonLightText> = {
   component: NeonLightText,
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

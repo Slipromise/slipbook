@@ -1,0 +1,21 @@
+
+
+.filter{
+    backdrop-filter: url(#pixelateStr);
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    z-index: 999;
+    animation: animation 2s infinite alternate steps(10);
+}
+
+
+
+@keyframes animation {
+    from {
+        left: 0;
+    }
+    to{
+        left: 100%;
+    }
+}

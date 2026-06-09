@@ -1,9 +1,12 @@
 import HoldemBoardBar from "@/components/HoldemBoardBar";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof HoldemBoardBar> = {
   component: HoldemBoardBar,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

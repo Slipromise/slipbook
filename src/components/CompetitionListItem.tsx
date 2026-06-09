@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps, useMemo, useState } from "react";
+import { type ComponentProps, useMemo, useState } from "react";
 import styles from "@/styles/components/CompetitionListItem.module.scss";
 import Stack from "react-bootstrap/esm/Stack";
 import AnchorAvatar from "./AnchorAvatar";
@@ -43,7 +43,7 @@ export default function CompetitionListItem({
 
   const collapseAnchorCount = useMemo(
     () => Math.floor(bounds.width / 90),
-    [bounds.width]
+    [bounds.width],
   );
 
   const fixedAnchor: Props["anchors"] = useMemo(() => {
@@ -60,7 +60,7 @@ export default function CompetitionListItem({
 
   const isTie = useMemo(
     () => status === "ENDING" && aTeamScore === bTeamScore,
-    [aTeamScore, bTeamScore, status]
+    [aTeamScore, bTeamScore, status],
   );
 
   return (

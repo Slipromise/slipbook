@@ -52,7 +52,7 @@ function CryptoCurrencyRow({
 
   const prizeNumberFormat = useMemo(
     () => new Intl.NumberFormat(locale, { style: "currency", currency }),
-    [currency, locale]
+    [currency, locale],
   );
 
   const compactNumberFormat = useMemo(
@@ -63,9 +63,9 @@ function CryptoCurrencyRow({
         notation: "compact",
         compactDisplay: "short",
         maximumFractionDigits: 2,
-        roundingMode: "trunc",
+        // roundingMode: "trunc",
       }),
-    [currency, locale]
+    [currency, locale],
   );
 
   const volumeFormat = useMemo(
@@ -74,9 +74,9 @@ function CryptoCurrencyRow({
         style: "percent",
         signDisplay: "exceptZero",
         maximumFractionDigits: 2,
-        roundingMode: "trunc",
+        // roundingMode: "trunc",
       }),
-    [locale]
+    [locale],
   );
 
   return (

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./GradientBorder.module.scss";
 import React, { useMemo } from "react";
 
@@ -26,6 +26,11 @@ const GradientBorder = ({ className, children, gradientColors }: Props) => {
 
 const meta: Meta<typeof GradientBorder> = {
   component: GradientBorder,
+  parameters: {
+    layout: "centered",
+    backgrounds: { default: "dark" },
+  },
+  globals: { theme: "dark" },
 };
 
 export default meta;

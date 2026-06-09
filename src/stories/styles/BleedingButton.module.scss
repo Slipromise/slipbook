@@ -1,0 +1,63 @@
+.container{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    text-decoration: none;
+
+    .bubbles{
+        position: absolute;
+        background-color: #f00;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.7rem;
+        filter: url(#gooey);
+        
+        .bubble{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #f00;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: bubble 1.5s linear infinite;
+            animation-delay: calc(var(--i) * 0.2s);
+        }
+    }
+    .text{
+        // position: absolute;
+        z-index: 50;
+        background-color: #111;
+        color: red;
+        margin: 0 3px;
+        padding: 1rem;
+        border-radius: 2rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        
+    }
+    &:hover{
+        .text{
+            background-color: #f00;
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translate(0) scale(1);
+    }
+    100% {
+        transform: translate(var(--dx),var(--dy)) scale(0.5);
+    }
+}

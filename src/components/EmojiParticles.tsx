@@ -39,7 +39,7 @@ function EmojiParticles({
 }: Props) {
   const throttleArgs = useMemo(
     () => [likeCount, heartCount, ...customCounts],
-    [customCounts, heartCount, likeCount]
+    [customCounts, heartCount, likeCount],
   );
 
   const iconItems = useThrottleIcons(duration, throttleArgs);
@@ -71,9 +71,9 @@ export default EmojiParticles;
 
 const useThrottleIcons = (ms: number = 5000, args: number[]) => {
   const [state, setState] = useState<IconItem[]>([]);
-  const timeout = useRef<ReturnType<typeof setTimeout>>();
+  const timeout = useRef<ReturnType<typeof setTimeout>>(null);
   const currentArgs = useRef<number[]>([0, 0]);
-  const nextArgs = useRef<number[]>();
+  const nextArgs = useRef<number[]>(null);
   const iconIds = useRef<Set<number>>(new Set());
 
   useEffect(() => {
@@ -89,6 +89,7 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
 
     const setter: React.SetStateAction<IconItem[]> = (origin) => {
       if (
+        nextArgs.current &&
         compareArray(currentArgs.current, nextArgs.current) &&
         compareArray(currentArgs.current, args)
       ) {
@@ -106,7 +107,7 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
 
       for (let i = 0; i < currentArgs.current.length; i++) {
         const currentArg = currentArgs.current[i];
-        const nextArg = nextArgs.current[i];
+        const nextArg = nextArgs.current?.[i] || -1;
 
         isOver = nextArg - currentArg > limitCount ? true : false;
 
@@ -130,7 +131,7 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
         }
       }
       if (!isOver) {
-        nextArgs.current = undefined;
+        nextArgs.current = null;
       }
 
       return result;
@@ -144,7 +145,7 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
           // setState((origin) => {});
           timeout.current = setTimeout(timeoutCallback, ms);
         } else {
-          timeout.current = undefined;
+          timeout.current = null;
           // TODO: 清除時動畫演一半
         }
       };
@@ -155,7 +156,7 @@ const useThrottleIcons = (ms: number = 5000, args: number[]) => {
   }, [args, ms]);
 
   useUnmount(() => {
-    clearTimeout(timeout.current);
+    if (timeout.current) clearTimeout(timeout.current);
   });
 
   return state;

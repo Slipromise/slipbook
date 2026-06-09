@@ -1,10 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import HoldemPlayerBar from "@/components/HoldemPlayerBar";
 
 const meta: Meta<typeof HoldemPlayerBar> = {
   component: HoldemPlayerBar,
   tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

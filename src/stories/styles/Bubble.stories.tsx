@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./Bubble.module.scss";
 
 import React from "react";
@@ -13,6 +13,9 @@ function Bubble({ className }: Props) {
 
 const meta: Meta<typeof Bubble> = {
   component: Bubble,
+  parameters: {
+    layout: "centered",
+  },
 };
 
 export default meta;

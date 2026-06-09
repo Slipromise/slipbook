@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps, useMemo, useRef } from "react";
+import { type ComponentProps, useMemo, useRef } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Stack from "react-bootstrap/esm/Stack";
 import styles from "@/styles/components/HoldemPlayerBar.module.scss";
@@ -63,8 +63,8 @@ function HoldemPokerPlayerBar({
                 notation: "compact",
                 compactDisplay: "short",
                 maximumSignificantDigits: 3,
-                roundingMode: "trunc",
-              }).format(n)
+                // roundingMode: "trunc",
+              }).format(n),
             )}
           </animated.span>
         </Stack>

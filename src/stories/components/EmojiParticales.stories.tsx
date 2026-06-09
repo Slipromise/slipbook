@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import EmojiParticles from "@/components/EmojiParticles";
 
 const meta: Meta<typeof EmojiParticles> = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./SnakeBroader.module.scss";
 
 import React from "react";
@@ -22,6 +22,7 @@ function SnakeBroader({ className, borderSideClassName }: Props) {
 const meta: Meta<typeof SnakeBroader> = {
   component: SnakeBroader,
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

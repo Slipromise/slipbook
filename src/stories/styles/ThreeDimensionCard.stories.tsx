@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { RefObject, useEffect, useRef } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import { type RefObject, useEffect, useRef } from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./ThreeDimensionCard.module.scss";
 import gift from "../assets/gift.png";
 
@@ -45,6 +45,7 @@ const ThreeDimensionCard = () => {
 const meta: Meta<typeof ThreeDimensionCard> = {
   component: ThreeDimensionCard,
   parameters: {
+    layout: "centered",
     backgrounds: { default: "dark" },
   },
 };

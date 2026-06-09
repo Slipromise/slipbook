@@ -1,8 +1,8 @@
 import LuckySpinningWheel from "@/components/LuckySpinningWheel";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import React from "react";
-import { useArgs } from "@storybook/preview-api";
 import _ from "lodash";
+import { useArgs } from "storybook/internal/preview-api";
 
 const meta: Meta<typeof LuckySpinningWheel> = {
   component: LuckySpinningWheel,
@@ -31,7 +31,7 @@ export const Normal: Story = {
     onSpin: () => {},
   },
   render: function Render(
-    args: React.ComponentProps<typeof LuckySpinningWheel>
+    args: React.ComponentProps<typeof LuckySpinningWheel>,
   ) {
     const [{ result }, updateArgs] = useArgs();
     const { onSpin, ...props } = args;

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./SplitText.module.scss";
 import { useEffect, useMemo, useRef } from "react";
 import { easeOutBounce, easeOutElastic, easeOutQuart } from "@/utils/easing";
@@ -25,12 +25,10 @@ function SplitText({
       type === "lines"
         ? [text]
         : type === "words"
-        ? text.split(" ").filter((word) => word.trim() !== "")
-        : text.split(""),
-    [text, type]
+          ? text.split(" ").filter((word) => word.trim() !== "")
+          : text.split(""),
+    [text, type],
   );
-
-  console.log(ref);
 
   useEffect(() => {
     let id: number;
@@ -47,16 +45,16 @@ function SplitText({
           if (child instanceof HTMLSpanElement) {
             const progress = Math.min(
               Math.max(time - start - i * delay, 0) / duration,
-              1
+              1,
             );
             const easedProgress =
               ease === "easeOutElastic"
                 ? easeOutElastic(progress)
                 : ease === "easeOutBounce"
-                ? easeOutBounce(progress)
-                : ease === "easeOutQuart"
-                ? easeOutQuart(progress)
-                : progress;
+                  ? easeOutBounce(progress)
+                  : ease === "easeOutQuart"
+                    ? easeOutQuart(progress)
+                    : progress;
 
             child.style.setProperty("top", `${1 - easedProgress}em`);
             child.style.setProperty("opacity", `${easedProgress}`);

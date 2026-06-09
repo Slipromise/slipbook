@@ -1,12 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./GlowingGlassmorphismButton.module.scss";
 
 type Props = {
-    classsName?: React.HtmlHTMLAttributes<HTMLButtonElement>["className"];
-
+  classsName?: React.HtmlHTMLAttributes<HTMLButtonElement>["className"];
 };
 
-function GlowingGlassmorphismButton({classsName}: Props) {
+function GlowingGlassmorphismButton({ classsName }: Props) {
   return (
     <button className={`${classsName} ${styles.container}`}>
       <span>Hover me</span>
@@ -33,7 +32,7 @@ export const Normal: Story = {
 };
 
 export const Variant1: Story = {
-    args: {
-        classsName: styles.variant1,
-    },
-}
+  args: {
+    classsName: styles.variant1,
+  },
+};

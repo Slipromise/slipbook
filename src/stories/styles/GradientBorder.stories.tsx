@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./GradientBorder.module.scss";
 import React, { useMemo } from "react";
 

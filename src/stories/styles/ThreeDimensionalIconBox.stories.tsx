@@ -1,16 +1,14 @@
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./ThreeDimensionalIconBox.module.scss";
 
 type Props = {
   icon?: string;
 };
 
-function ThreeDimensionalIconBox({icon }: Props) {
+function ThreeDimensionalIconBox({ icon }: Props) {
   return (
-    <div
-      className={styles.container}
-    >
-      <div data-icon={icon} >
+    <div className={styles.container}>
+      <div data-icon={icon}>
         <span></span>
         <span></span>
         <span></span>
@@ -32,20 +30,20 @@ export default meta;
 
 type Story = StoryObj<typeof ThreeDimensionalIconBox>;
 
-export const Twitter:Story = {
-    args: {
-        icon: "\ue61b"
-    }
-} 
+export const Twitter: Story = {
+  args: {
+    icon: "\ue61b",
+  },
+};
 
-export const Github:Story = {
-    args:{
-        icon: '\uf09b'
-    }
-}
+export const Github: Story = {
+  args: {
+    icon: "\uf09b",
+  },
+};
 
-export const React:Story = {
-    args:{
-        icon:'\uf41b'
-    }
-}
+export const React: Story = {
+  args: {
+    icon: "\uf41b",
+  },
+};

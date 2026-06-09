@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./StarBorder.module.scss";
 
 type Props = {
@@ -13,7 +13,7 @@ function StarBorder({ color, duration }: Props) {
       style={
         {
           "--color": color,
-          "--duration":duration ? `${duration}ms`: undefined,
+          "--duration": duration ? `${duration}ms` : undefined,
         } as React.CSSProperties
       }
     >
@@ -43,8 +43,8 @@ export const Normal: Story = {
 };
 
 export const Custom: Story = {
-    args: {
-        color: "#cc00ff",
-        duration: 10000
-    }
-}
+  args: {
+    color: "#cc00ff",
+    duration: 10000,
+  },
+};

@@ -1,6 +1,6 @@
 "use client";
 
-import { HTMLAttributes, useMemo } from "react";
+import { type HTMLAttributes, useMemo } from "react";
 import styles from "@/styles/components/CircularProgressBar.module.scss";
 import { AnimationConfig, useSpring, animated } from "@react-spring/web";
 

@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import styles from "./WaveSibling.module.scss";
 
 function WaveSibling() {
   return (
-    <div className={styles.container} >
+    <div className={styles.container}>
       <div />
       <div />
       <div />
@@ -18,17 +18,15 @@ function WaveSibling() {
 }
 
 const meta = {
-    component: WaveSibling,
-    parameters: {
-        backgrounds: { default: "dark" },
-        layout: "centered",
-    },
+  component: WaveSibling,
+  parameters: {
+    backgrounds: { default: "dark" },
+    layout: "centered",
+  },
 } satisfies Meta<typeof WaveSibling>;
 
 export default meta;
 
 type Story = StoryObj<typeof WaveSibling>;
 
-export const Normal:Story = {
-
-}
+export const Normal: Story = {};

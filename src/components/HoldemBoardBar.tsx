@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 import PokerCard from "./PokerCard";
 import styles from "@/styles/components/HoldemBoardBar.module.scss";
 import { useSpring, animated } from "@react-spring/web";
@@ -34,7 +34,7 @@ function HoldemBoardBar({ cards, pot, subtitle, locale = "en-US" }: Props) {
           {springValues.pot.to((n) =>
             new Intl.NumberFormat(locale, {
               style: "decimal",
-            }).format(n)
+            }).format(n),
           )}
         </animated.span>
       </div>
